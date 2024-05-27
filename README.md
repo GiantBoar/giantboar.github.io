@@ -1,2 +1,0 @@
-# giantboar.github.io
-webite 
