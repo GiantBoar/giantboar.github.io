@@ -31,6 +31,8 @@ github:
 twitter:
   username: giant_boar # change to your twitter username
 
+future: true
+
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
