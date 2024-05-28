@@ -1,6 +1,6 @@
 ---
 title: Tester thingy
-date: 2022-05-28 22:12:00 -500
+date: 2021-05-28 22:12:00 +0
 catagories: [testing, temp]
 tags: [something, somethingelse, yadayada]
 ---
