@@ -2,12 +2,14 @@
 title: Dithered Rendering
 description: >-
   Creating stylised 3D graphics using dithering in Unity's Universal Render Pipeline
-author: cotes
 date: 2024-05-30 00:27:00 +0100
 categories: [Unity, Tutorial]
 tags: [rendering, shadergraph]
 pin: true
 published: true
+image:
+    path: ../assets/postassets/20240530/lighthouse-screenshot.png
+    alt: A lighthouse scene rendered using the dithering shader
 ---
 
 ## Summary
@@ -225,6 +227,8 @@ Its **very important** that you make sure your Render Texture has **no anti-alia
 
 now you hopefully have a working render feature! In the next little section we'll make a test shader using Shadergraph to make sure its all working good.
 
+---
+
 ## The Shader
 
 Although we probably could write the shader out in HLSL, its more fun to play around with using unity's Shadergraph, since it helps to visualise the shader as it progresses through each node.
@@ -311,7 +315,12 @@ Now that we have our percentage, we can run the result though the **step** node,
 
 Now all thats left is to add this final result to the result of our colour rounding, and we have a finished graph.
 
-You can now happily enjoy the many fruits of your labour.
+You can now happily enjoy the many fruits of your labour. I hope you make some cool scenes using this shader, and learned how to create a custom post processing path in unity!!
+
+<div style="display:flex">
+    <img src="../assets/postassets/20240530/lighthouse-screenshot.png" title="A lighthouse rendered using the dithering effect" alt="A low-poly 3D lighthouse rendered with a ps1 dithering filter" height="20%">
+    <img src="../assets/postassets/20240530/city-screenshot.png" title="A snowy city scene rendered with dithering" alt="A low-poly 3D snowy city rendered with a ps1 dithering filter" height="20%">
+</div>
 
 ## Footnotes
 

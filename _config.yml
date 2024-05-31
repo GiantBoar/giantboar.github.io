@@ -16,7 +16,7 @@ timezone: Europe/London
 
 title: GiantBoar # the main title
 
-tagline: Game developer and other things # it will display as the sub-title
+tagline: Game development blog (mostly programming rabbitholes) # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   Game development portfolio and blog.
@@ -40,8 +40,8 @@ social:
   email: maximuspatteson@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username # change to your twitter homepage
-    - https://github.com/username # change to your github homepage
+    - https://twitter.com/giant_boar # change to your twitter homepage
+    - https://github.com/GiantBoar # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
