@@ -11,3 +11,5 @@ end
 gem "tzinfo-data", "~> 1.2024"
 
 gem "tzinfo", "~> 2.0"
+
+gem "jekyll-seo-tag"
