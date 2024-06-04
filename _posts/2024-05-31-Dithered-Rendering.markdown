@@ -12,7 +12,7 @@ image:
     alt: A lighthouse scene rendered using the dithering shader
 ---
 
-## Summary
+## Summary 
 
 An easy way of improving the visuals of your PSX-style game is to squash down the resolution and use dithering to reduce the number of colours while preserving the shading and depth. This tutorial goes over the basics of rendering using dithering, particularly to achieve this psx style. (as well as how to use shadergraph and a custom render feature in unity's URP)
 
@@ -48,7 +48,7 @@ Before we dig into things its probably helpful to have at least a basic understa
 
 ### Dithering
 
-![Wikipedia dithering example](../assets/postassets/20240530/dithering-example.png){: width="300px" .right}
+![Wikipedia dithering example](../assets/postassets/20240530/dithering-example.png){: width="200" .right }
 
 [Dithering](https://en.wikipedia.org/wiki/Dither){: target="_none" } is an old process of smoothly transitioning between two values in an image, essentially 'faking' more data than really exists. Its primary function was to avoid colour banding in compressed images (the ugly big flat surfaces of colour in low-quality pictures) by faking a smooth gradient using clusters of noisy pixels.
 
@@ -210,11 +210,11 @@ Once you have these two scripts in your project, and hopefully have set up URP s
 
 By clicking **'Add Render Feature'** and selecting your custom render feature from the dropdown, you've added it to your render pipeline. Hooray! but unfortunately you haven't actually set anything else up yet, so either nothing has happened or your project has started throwing errors.
 
-![Add Render Feature Context Menu](../assets/postassets/20240530/dither-pass-add.png){: width="400px" }
+![Add Render Feature Context Menu](../assets/postassets/20240530/dither-pass-add.png){: width="100%" }
 
 The next thing to do is to create a Render Texture asset to assign to this render feature in the inspector, as well as set up your **Render Pass Event** (which should probably be *before rendering post processing*). 
 
-![Render Feature Inspector](../assets/postassets/20240530/render-feature-inspector.png){: width="600" }
+![Render Feature Inspector](../assets/postassets/20240530/render-feature-inspector.png){: width="100%"  }
 
 You can create a Render Texture by doing **Assets > Create > Custom Render Texture**. Since this will be the squashed down resolution we want, its probably good to set it to something like **640 x 360**, or **480 x 270**, basically some multiple of 16 x 9 (the standard screen ratio). If you want to try some different ratios, like 4x3 for that retro aesthetic, thats probably better done by adding black bars either side of the screen than by actually messing with the output resolution, since on a full-screen application it will warp and stretch otherwise.
 Its **very important** that you make sure your Render Texture has **no anti-aliasing** and **Filter Mode is set to Point**, since if either of these things aren't true it will look strange.

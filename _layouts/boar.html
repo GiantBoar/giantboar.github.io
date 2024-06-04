@@ -1,12 +1,44 @@
 ---
 layout: boar
+permalink: /boar/
 ---
 
 <!-- C:\Ruby33-x64\lib\ruby\gems\3.3.0\gems\jekyll-theme-chirpy-7.0.1 -->
 
-<div>
-    <div id="main">
-            <p>whtas up poopies</p>
-    </div>
+<header>
+<title>Welcome To The Boar Zone</title>
+<link rel="icon" type="image/x-icon" href="../assets/img/favicons/favicon.ico">
+    <style>
+        .pixel-image{
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
 
-</div>
+            max-width: 1792px;
+        }
+
+        .center{
+			margin:0;
+			position:absolute;
+			top:50%;
+			left:50%;
+
+            width: 100%;
+
+			transform:translate(-50%,-50%);
+				
+			font-family: Stropica;
+			text-align:center;
+		}
+    </style>
+</header>
+
+<body>
+    <!-- href="{{ '/blog/home' | relative_url }}">fart -->
+    <div class="center" id="main">
+        <img src="../assets/img/header-text.gif" width="100%" style="max-width: 800px;"> <br>
+        <img src="../assets/img/cube.gif" width="400px">
+        <p>This is where the cool people are</p>
+        <a href="{{ '/blog/home/' | relative_url }}">go to the awesome blog</a>
+    </div>
+</body>
