@@ -5,8 +5,8 @@ description: >-
 date: 2024-05-30 00:27:00 +0100
 categories: [Unity, Tutorial]
 tags: [rendering, shadergraph]
-pin: true
-published: true
+pin: false
+published: false
 image:
     path: ../assets/postassets/20240530/lighthouse-screenshot.png
     alt: A lighthouse scene rendered using the dithering shader

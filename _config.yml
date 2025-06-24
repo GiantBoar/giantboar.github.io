@@ -188,7 +188,7 @@ defaults:
     values:
       comments: false
   - scope:
-      path: ""
+      path: _tabs
       type: tabs # see `site.collections`
     values:
       layout: page
@@ -223,5 +223,5 @@ jekyll-archives:
     category: category
     tag: tag
   permalinks:
-    tag: /tags/:name/
+    tag: blog/tags/:name/
     category: /categories/:name/
