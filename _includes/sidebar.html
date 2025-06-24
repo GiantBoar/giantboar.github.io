@@ -25,6 +25,12 @@
           <span>FRONT PAGE</span>
         </a>
       </li>
+      <li class="nav-item{% if "/blog/" == page.url %}{{ " active" }}{% endif %}">
+        <a href="{{ '/blog/' | relative_url }}" class="nav-link">
+          <i class="fa-fw fas fa-file"></i>
+          <span>BLOG</span>
+        </a>
+      </li>
       <!-- the real tabs -->
       {% for tab in site.tabs %}
         <li class="nav-item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
