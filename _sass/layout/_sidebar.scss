@@ -18,10 +18,16 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
   width: v.$sidebar-width;
   background: var(--sidebar-bg);
   border-right: 1px solid var(--sidebar-border-color);
+  padding-right: 30px;
 
   /* Hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+
+  --a: 90deg; /* the angle of the spikes */
+  --s: 60px;  /* the size of the spikes */
+  
+  mask: conic-gradient(from -135deg at right,#0000,#000 1deg 89deg,#0000 90deg) 50%/100% 60px;
 
   /* Hide scrollbar for Chrome, Safari and Opera */
   &::-webkit-scrollbar {
