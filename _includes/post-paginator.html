@@ -6,7 +6,7 @@
     {% if paginator.previous_page %}
       {% assign prev_url = paginator.previous_page_path | relative_url %}
     {% else %}
-      {% assign prev_url = '#' %}
+      {% assign prev_url = "/blog/" | relative_url %}
     {% endif %}
 
     <li class="page-item {% unless paginator.previous_page %}disabled{% endunless %}">
