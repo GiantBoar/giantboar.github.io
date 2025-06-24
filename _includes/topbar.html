@@ -30,15 +30,9 @@
 
           {% elsif page.layout == 'category' or page.layout == 'tag' %}
             <span>
-              {% if {{ item | relative_url }} == '/blog' %}
-              <a href="{{ item | append: '/' | relative_url }}">
+              <a href="{% if item != '' %}/blog{% endif %}{{ item | append: '/' | relative_url }}">
                 {{- site.data.locales[include.lang].tabs[item] | default: page.title -}}
               </a>
-              {% else %}
-              <a href="/blog{{ item | append: '/' | relative_url }}">
-                {{- site.data.locales[include.lang].tabs[item] | default: page.title -}}
-              </a>
-              {% endif %}
             </span>
           {% endif %}
         {% endfor %}
