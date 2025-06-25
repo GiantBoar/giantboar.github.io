@@ -1,0 +1,18 @@
+---
+title: Welcome To GIANTBLOG
+description: >-
+  Introductory post and links hub
+date: 2025-06-25 00:11:36 +0100
+categories: [General]
+tags: []
+pin: true
+published: true
+---
+
+# GiantBoar Development Blog
+
+![Profile Picture](../assets/img/general/profile-picture-header.png)
+
+Hello! I'm a UK game developer and programmer and this is my blog where I post about projects im working on, including <a href="/blog/categories/tutorials/">tutorials</a> on game development / programming things, updates on the development of current projects, and little programming rabbitholes. 
+
+You can see updates for my current project Oslo <a href="/blog/categories/oslo/">here</a>

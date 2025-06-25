@@ -2,7 +2,7 @@
   color-scheme: dark;
 
   /* Framework color */
-  --main-bg: rgb(27, 27, 30);
+  --main-bg: #28262e;
   --mask-bg: rgb(68, 69, 70);
   --main-border-color: rgb(44, 45, 45);
 
@@ -13,14 +13,14 @@
   --heading-color: #cccccc;
   --label-color: #a7a7a7;
   --blockquote-border-color: rgb(66, 66, 66);
-  --blockquote-text-color: #868686;
-  --link-color: rgb(138, 180, 248);
-  --link-underline-color: rgb(82, 108, 150);
+  --blockquote-text-color: #f2d361;
+  --link-color: #df928e;
+  --link-underline-color: #df928e;
   --button-bg: #1e1e1e;
-  --btn-border-color: #2e2f31;
+  --btn-border-color: #2e2e31;
   --btn-backtotop-color: var(--text-color);
   --btn-backtotop-border-color: #212122;
-  --card-header-bg: #292929;
+  --card-header-bg: #2d2b34;
   --checkbox-color: rgb(118, 120, 121);
   --checkbox-checked-color: var(--link-color);
   --img-bg: radial-gradient(circle, rgb(22, 22, 24) 0%, rgb(32, 32, 32) 100%);
@@ -32,19 +32,20 @@
   );
 
   /* Sidebar */
-  --site-title-color: #d0d0d3;
-  --site-subtitle-color: #c0c0c4;
-  --sidebar-bg: #28262e;
+  --site-title-color: #28262e;
+  --site-subtitle-color: #28262e;
+  --sidebar-bg: #777da1;
   --sidebar-border-color: #292929;
-  --sidebar-muted-color: #7e7e89;
-  --sidebar-active-color: #afa3dcf2;
-  --sidebar-hover-bg: #353140;
-  --sidebar-btn-bg: #232328;
-  --sidebar-btn-color: #787878;
-  --avatar-border-color: rgba(206, 206, 206, 0);
+  --sidebar-muted-color: #28262e;
+  --sidebar-active-color: var(--sidebar-bg);
+  --sidebar-hover-bg: #28262e;
+  --sidebar-hover-text-color: var(--sidebar-bg);
+  --sidebar-btn-bg: #28262e;
+  --sidebar-btn-color: var(--sidebar-bg);
+  --avatar-border-color: #28262e;
 
   /* Topbar */
-  --topbar-bg: rgb(27, 27, 30, 0.64);
+  --topbar-bg: var(--main-bg);
   --topbar-text-color: var(--text-color);
   --search-border-color: rgb(55, 55, 55);
   --search-icon-color: rgb(100, 102, 105);
@@ -56,41 +57,43 @@
   --btn-paginator-hover-color: #2e2e2e;
 
   /* Posts */
-  --toc-highlight: rgb(116, 178, 243);
+  --toc-highlight: #ebc950;
   --toc-popup-border-color: #373737;
-  --tag-hover: rgb(43, 56, 62);
+  --tag-hover: rgb(46, 43, 62);
   --tb-odd-bg: #252526; /* odd rows of the posts' table */
   --tb-even-bg: rgb(31, 31, 34); /* even rows of the posts' table */
   --tb-border-color: var(--tb-odd-bg);
   --footnote-target-bg: rgb(63, 81, 181);
   --btn-share-color: #6c757d;
   --btn-share-hover-color: #bfc1ca;
-  --card-bg: #1e1e1e;
-  --card-hovor-bg: #464d51;
+  --card-bg: #28262e;
+  --card-hovor-bg: #3c374a;
   --card-shadow: rgb(21, 21, 21, 0.72) 0 6px 18px 0,
     rgb(137, 135, 135, 0.24) 0 0 0 1px;
   --kbd-wrap-color: #6a6a6a;
   --kbd-text-color: #d3d3d3;
   --kbd-bg-color: #242424;
   --prompt-text-color: rgb(216, 212, 212, 0.75);
-  --prompt-tip-bg: rgb(22, 60, 36, 0.64);
-  --prompt-tip-icon-color: rgb(15, 164, 15, 0.81);
-  --prompt-info-bg: rgb(7, 59, 104, 0.8);
-  --prompt-info-icon-color: #0075d1;
-  --prompt-warning-bg: rgb(90, 69, 3, 0.88);
-  --prompt-warning-icon-color: rgb(255, 165, 0, 0.8);
-  --prompt-danger-bg: rgb(86, 28, 8, 0.8);
-  --prompt-danger-icon-color: #cd0202;
+  --prompt-tip-bg: rgb(73, 105, 90, 0.6);
+  --prompt-tip-icon-color: rgb(132, 220, 179, 0.8);
+  --prompt-info-bg: rgb(66, 68, 84, 0.8);
+  --prompt-info-icon-color: rgb(119, 125, 161, 0.8);
+  --prompt-warning-bg: rgb(118, 103, 47, 0.8);
+  --prompt-warning-icon-color: rgb(235, 201, 80, 0.8);
+  --prompt-danger-bg: rgb(123, 86, 84, 0.8);
+  --prompt-danger-icon-color: #df928e;
+  --subtitle-color: #7f7f80;
 
   /* Tags */
-  --tag-border: rgb(59, 79, 88);
-  --tag-shadow: rgb(32, 33, 33);
-  --dash-color: rgb(63, 65, 68);
-  --search-tag-bg: #292828;
+  --tag-trending-button-color: #ebc950;
+  --tag-border: rgb(63, 59, 88);
+  --tag-shadow: rgb(32, 32, 33);
+  --dash-color: rgb(63, 63, 68);
+  --search-tag-bg: #282829;
 
   /* Categories */
   --categories-border: rgb(64, 66, 69, 0.5);
-  --categories-hover-bg: rgb(73, 75, 76);
+  --categories-hover-bg: var(--main-bg);
   --categories-icon-hover-color: white;
 
   /* Archive */
@@ -139,14 +142,7 @@
   }
 
   #archives li:nth-child(odd) {
-    background-image: linear-gradient(
-      to left,
-      rgb(26, 26, 30),
-      rgb(39, 39, 45),
-      rgb(39, 39, 45),
-      rgb(39, 39, 45),
-      rgb(26, 26, 30)
-    );
+    background-color: #2e2b35;
   }
 
   /* stylelint-disable-next-line selector-id-pattern */
@@ -231,15 +227,15 @@
   }
 
   .highlight .kc {
-    color: #d28445;
+    color: #ff0000;
   }
 
   .highlight .kt {
-    color: #d28445;
+    color: #ff0000;
   }
 
   .highlight .kd {
-    color: #d28445;
+    color: #ff0000;
   }
 
   .highlight .s,

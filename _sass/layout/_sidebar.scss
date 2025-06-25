@@ -149,6 +149,7 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
 
         &:hover {
           background-color: var(--sidebar-hover-bg);
+          color: var(--sidebar-hover-text-color);
         }
 
         i {

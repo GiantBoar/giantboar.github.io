@@ -3,12 +3,13 @@ title: Dithered Rendering
 description: >-
   Creating stylised 3D graphics using dithering in Unity's Universal Render Pipeline
 date: 2025-06-24 05:28:00 +0100
-categories: [Unity, Tutorial]
-tags: [rendering, shadergraph]
+categories: [Tutorial, Unity]
+tags: [Rendering, Unity, C#]
 pin: false
 published: true
+post-image-path: ../assets/postassets/DitheredRendering
 image:
-    path: ../assets/postassets/20240530/lighthouse-screenshot.png
+    path: ../assets/postassets/DitheredRendering/lighthouse-screenshot.png
     alt: A lighthouse scene rendered using the dithering shader
 ---
 
@@ -20,8 +21,8 @@ Visually standing out in the modern era of indie games is almost impossible with
 An interesting way of achieving this effect visually is through the use of **dithered rendering**, a technique that crunches down the number of colours displayed on-screen while preserving the shading and depth. This tutorial goes over the basics of rendering using dithering, specifically using the bayer matrix. (as well as how to use shadergraph and a custom render feature in unity's URP)
 
 <div style="display:flex">
-    <img src="../assets/postassets/20240530/lighthouse-screenshot.png" title="A lighthouse rendered using the dithering effect" alt="A low-poly 3D lighthouse rendered with a ps1 dithering filter" height="20%">
-    <img src="../assets/postassets/20240530/city-screenshot.png" title="A snowy city scene rendered with dithering" alt="A low-poly 3D snowy city rendered with a ps1 dithering filter" height="20%">
+    <img src="{{ page.post-image-path }}/lighthouse-screenshot.png" title="A lighthouse rendered using the dithering effect" alt="A low-poly 3D lighthouse rendered with a ps1 dithering filter" height="20%">
+    <img src="{{ page.post-image-path }}/city-screenshot.png" title="A snowy city scene rendered with dithering" alt="A low-poly 3D snowy city rendered with a ps1 dithering filter" height="20%">
 </div>
 
 *these are two scenes from a very work in progress game, currently called Twin Angels*
@@ -33,7 +34,7 @@ An interesting way of achieving this effect visually is through the use of **dit
 
 Some time in early 2022 I got really into visual shaders for games, particularly [**Return of the Obra Dinn**](https://store.steampowered.com/app/653530/Return_of_the_Obra_Dinn/)'s one-bit dithering technique, and tried recreating it for some smaller projects. 
 
-![Return of the Obra Dinn dithering example](../assets/postassets/20240530/obra-dinn.jpeg)
+![Return of the Obra Dinn dithering example]({{ page.post-image-path }}/obra-dinn.jpeg)
 
 <div style="text-align: center;">
     [Image Source <a href="https://www.engadget.com/2019-10-04-return-obra-dinn-consoles-october-18-release.html?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAANNYDDcLgwJbxMAxXu1k2TlPO-sKIrzUoqd991-1Q2jY0nvSmDAPyN3b3Uh_flUQ98yHGlyhnPe_3Xd2Q-TWW1q_oZLAh1RGOv2RoJ93gh28dHk5gbZbr_Sak9Lp6vze1VAEXslOGcEcg6Xl-xXtr_okITBRMYxOd9o5DFCkUkSe">Engadget</a>]
@@ -51,7 +52,7 @@ Before we dig into things its probably helpful to have at least a basic understa
 
 ### Dithering
 
-![Wikipedia dithering example](../assets/postassets/20240530/dithering-example.png){: width="200" .right }
+![Wikipedia dithering example]({{ page.post-image-path }}/dithering-example.png){: width="200" .right }
 
 [Dithering](https://en.wikipedia.org/wiki/Dither){: target="_none" } is an old process of smoothly transitioning between two values in an image, essentially 'faking' more data than really exists. Its primary function was to avoid colour banding in compressed images (the big ugly flat surfaces of colour in low-quality pictures) by faking a smooth gradient using clusters of noisy pixels.
 
@@ -59,7 +60,7 @@ It's a pretty simple effect, but by chequerboarding pixels of two different colo
 
 Using the **Bayer Matrix** dithering texture we can easily dither between two values. Using this 'edge' value sliding up and down in the example we can see which pixels in the matrix are darker than this value, which will be black, and which are lighter, which will be white. In graphics programming this is called a `step(edge, value)` function, which takes an edge and a value, returning 1 if the value is greater than the edge, and 0 if the value is lower.
 
-![Bayer dithering example gif](../assets/postassets/20240530/bayer-example.gif){: width="200px"}
+![Bayer dithering example gif]({{ page.post-image-path }}/bayer-example.gif){: width="200px"}
 
 We can use the result of this (the little dither square on the right) to interpolate between two values. The easiest example of this is a one-bit shader that interpolates between a background colour and a highlight colour depending on the brightness of each pixel. The basic idea is that this dithering texture is tiled across the entire screen, and then for every pixel in the rendered image we check if the luminocity is above or below that same pixel in the tiled bayer matrix texture, returning either black or white.
 
@@ -69,8 +70,8 @@ We can use the result of this (the little dither square on the right) to interpo
 Here I have a shot of the lighthouse rendered normally, no dithering, against one rendered using a one-bit dithering filter:
 
 <div style="display:flex">
-    <img src="../assets/postassets/20240530/multiple-bit-lighthouse.png" title="The Lighthouse rendered normally" alt="The Lighthouse rendered normally" height="20%">
-    <img src="../assets/postassets/20240530/one-bit-lighthouse.png" title="The Lighthouse rendered with a one-bit filter" alt="The Lighthouse rendered with a one-bit filter" height="20%">
+    <img src="{{ page.post-image-path }}/multiple-bit-lighthouse.png" title="The Lighthouse rendered normally" alt="The Lighthouse rendered normally" height="20%">
+    <img src="{{ page.post-image-path }}/one-bit-lighthouse.png" title="The Lighthouse rendered with a one-bit filter" alt="The Lighthouse rendered with a one-bit filter" height="20%">
 </div>
 
 (these can look weird on some screens, click to enhance the one-bit picture to see it better)
@@ -209,16 +210,16 @@ public class DitherPassFeature : ScriptableRendererFeature
 
 ### Basic Setup
 
-![Universal Render Pipeline Assets](../assets/postassets/20240530/urp-assets.png){: width="125px" .right }
+![Universal Render Pipeline Assets]({{ page.post-image-path }}/urp-assets.png){: width="125px" .right }
 Once you have these two scripts in your project, and hopefully have set up URP so that you have a **Universal Render Pipeline Asset** and **Unviersal Renderer Data** objects, you can add your render pass to the Universal Renderer Data object.
 
 By clicking **'Add Render Feature'** and selecting your custom render feature from the dropdown, you've added it to your render pipeline. Hooray! but unfortunately you haven't actually set anything else up yet, so either nothing has happened or your project has started throwing errors.
 
-![Add Render Feature Context Menu](../assets/postassets/20240530/dither-pass-add.png){: width="100%" }
+![Add Render Feature Context Menu]({{ page.post-image-path }}/dither-pass-add.png){: width="100%" }
 
 The next thing to do is to create a Render Texture asset to assign to this render feature in the inspector, as well as set up your **Render Pass Event** (which should preferably be *before rendering post processing*). 
 
-![Render Feature Inspector](../assets/postassets/20240530/render-feature-inspector.png){: width="100%"  }
+![Render Feature Inspector]({{ page.post-image-path }}/render-feature-inspector.png){: width="100%"  }
 
 You can create a Render Texture by doing **Assets > Create > Custom Render Texture**. Since this will be the squashed down resolution we want, its probably good to set it to something like **640 x 360**, or **480 x 270**, basically some multiple of 16 x 9 (the standard screen ratio). If you want to try some different ratios, like 4x3 for that retro aesthetic, thats probably better done by adding black bars either side of the screen than by actually messing with the output resolution, since on a full-screen application it will warp and stretch otherwise.
 Its **very important** that you make sure your Render Texture has **no anti-aliasing** and **Filter Mode is set to Point**, since if either of these things aren't true it will look strange.
@@ -243,15 +244,15 @@ The basic idea behind our dithering shader is **4 steps**:
 3. Apply the dithering texture to this remainder, using it to smoothly interpolate between each step of the ColourDepth multiples.
 4. add this back to the result from step 1.
 
-![PSX style 3D lighthouse rendered without any filters](../assets/postassets/20240530/shader-step-0.png){: width="350px" .right }
+![PSX style 3D lighthouse rendered without any filters]({{ page.post-image-path }}/shader-step-0.png){: width="350px" .right }
 
 Here's the lighthouse scene again, this time showcasing each step of our shader, first without any effects applied. As you can see, the second and third stages are really dark, this is because we're using tiny number values, which are visually represented as very very dark colours. Games like [Buckshot Roulette](https://store.steampowered.com/app/2835570/Buckshot_Roulette/) just use the result of the first step, creating cool colour banding (callback to how dithering was originally used to alleviate colour banding in compressed images)
 
 <div style="display:flex">
-    <img src="../assets/postassets/20240530/shader-step-1.png" title="The first step, featuring heavy colour banding" alt="A 3D low-poly lighthouse rendered with heavy colour banding" height="20%">
-    <img src="../assets/postassets/20240530/shader-step-2.png" title="The second step, just the remainder of the inital rounding of colours" alt="A 3D low-poly lighthouse with very dark colours, almost like a ghost imprint of the missing aspects of the lighthouse after step 1" height="20%">
-    <img src="../assets/postassets/20240530/shader-step-3.png" title="The third step, this remainder with dithering applied" alt="A 3D low-poly lighthouse ghost imprint rendered with a dithered filter" height="20%">
-    <img src="../assets/postassets/20240530/shader-step-4.png" title="The fourth step, and the compilation of our inital rounded image with the additional dithering" alt="A 3D low-poly psx style lighthouse rendered with a dithering filter" height="20%">
+    <img src="{{ page.post-image-path }}/shader-step-1.png" title="The first step, featuring heavy colour banding" alt="A 3D low-poly lighthouse rendered with heavy colour banding" height="20%">
+    <img src="{{ page.post-image-path }}/shader-step-2.png" title="The second step, just the remainder of the inital rounding of colours" alt="A 3D low-poly lighthouse with very dark colours, almost like a ghost imprint of the missing aspects of the lighthouse after step 1" height="20%">
+    <img src="{{ page.post-image-path }}/shader-step-3.png" title="The third step, this remainder with dithering applied" alt="A 3D low-poly lighthouse ghost imprint rendered with a dithered filter" height="20%">
+    <img src="{{ page.post-image-path }}/shader-step-4.png" title="The fourth step, and the compilation of our inital rounded image with the additional dithering" alt="A 3D low-poly psx style lighthouse rendered with a dithering filter" height="20%">
 </div>
 
 ### Shadergraph Setup
@@ -259,17 +260,17 @@ Here's the lighthouse scene again, this time showcasing each step of our shader,
 Shadergraph is unity's node-based shader editor. If you have installed and set up URP, you should be able to make a **Fullscreen Shader Graph** by doing **Assets > Create > Shader Graph > URP > Fullscreen Shader Graph**. 
 
 In order to make this shader work with our custom render pass, we need to first give it a Texture2D parameter called `MainTex`. This name is really important, as the reference name for this variable, _MainTex, needs to be accurate in order for the render pipeline to give our material the correct information.
-![MainTex parameter in shadergraph](../assets/postassets/20240530/main-tex-parameter.png){: width="600px" }
+![MainTex parameter in shadergraph]({{ page.post-image-path }}/main-tex-parameter.png){: width="600px" }
 
 This **MainTex** parameter is the texture for our render, and contains the result of the screen's render. To create a simple test shader, just put this node into a **One-Minus** node, and then have that output to the base colour out value. 
 
-![Inverse Colours Shadergraph](../assets/postassets/20240530/shadergraph-inverse-colours-example.png){: width="600px" }
+![Inverse Colours Shadergraph]({{ page.post-image-path }}/shadergraph-inverse-colours-example.png){: width="600px" }
 
 Then, you can make a material using **Assets > Create > Material** and drag the Shadergraph asset onto that material. You can then assign this material in the render feature settings on your URP asset, which should hopefully output this inverted colours render. (without, and then with the shader active)
 
 <div style="display:flex">
-    <img src="../assets/postassets/20240530/shader-step-0.png" title="The lighthouse without any effects" alt="A 3D low-poly lighthouse" height="20%">
-    <img src="../assets/postassets/20240530/inverted-colours-render.png" title="The lighthouse with inverted colours" alt="A 3D low-poly lighthouse showcasing inverted colours" height="20%">
+    <img src="{{ page.post-image-path }}/shader-step-0.png" title="The lighthouse without any effects" alt="A 3D low-poly lighthouse" height="20%">
+    <img src="{{ page.post-image-path }}/inverted-colours-render.png" title="The lighthouse with inverted colours" alt="A 3D low-poly lighthouse showcasing inverted colours" height="20%">
 </div>
 
 ### Constructing The Shader
@@ -280,7 +281,7 @@ In addition to these two textures, we need a **ColourDepth** float, which determ
 
 Here's the graph in its entirety, but I will break down each part of it in a moment.
 
-![Dithering Shader Full Shadergraph](../assets/postassets/20240530/shadergraph-full-dither.png)
+![Dithering Shader Full Shadergraph]({{ page.post-image-path }}/shadergraph-full-dither.png)
 
 lets start with the dithering texture itself
 
@@ -288,11 +289,11 @@ lets start with the dithering texture itself
 
 This little bit of the graph works by dividing the size of the **MainTex** texture (and therefore the size of the screen) by the size of the **DitherTex** texture. Using this value as the **tiling** input in a **Tiling and Offset** node, we effectively repeat this image across the entire screen. This will be really useful when we need to use it to interpolate between stages of the rounded colours.
 
-![Tiling the dither texture across the screen](../assets/postassets/20240530/shadergraph-dither-tiling.png){: width="600px" }
+![Tiling the dither texture across the screen]({{ page.post-image-path }}/shadergraph-dither-tiling.png){: width="600px" }
 
 after this, we use the **ColourClamp** variable to clamp the upper and lower limits of the dither texture, making it flatten out quicker.
 
-![Clamping the dither texture using a Clamp node](../assets/postassets/20240530/shadergraph-dither-clamping.png){: width="600px" }
+![Clamping the dither texture using a Clamp node]({{ page.post-image-path }}/shadergraph-dither-clamping.png){: width="600px" }
 
 now we can move onto handling the colours
 
@@ -305,25 +306,25 @@ First, we round the colour of the pixel down to the nearest multiple of ColourDe
 
 In our shadergraph, that equation looks like this:
 
-![Shadergraph colour rounding](../assets/postassets/20240530/shadergraph-colour-rounding.png){: width="600px" }
+![Shadergraph colour rounding]({{ page.post-image-path }}/shadergraph-colour-rounding.png){: width="600px" }
 
 Ignore all the lines disappearing off the bottom of the screen, thats for stage 2.
 
 Now that we have the rounded colours, we need the remainder of this division, which we can calculate using a **modulo** node. In order to sample our dither matrix, we need a value between 0 and 1 that represents the percentage of the way through the gradient each point is, which is calculated using `value / maxvalue = percent`. In our shadergraph, this means dividing the result of our modulo operation by the **ColourDepth** parameter.
 
-![Remainder of colour division](../assets/postassets/20240530/shadergraph-colour-remainder.png){: width="600px" }
+![Remainder of colour division]({{ page.post-image-path }}/shadergraph-colour-remainder.png){: width="600px" }
 
 Now that we have our percentage, we can run the result though the **step** node, and then multiply the result by the colour steps, which is our parameter **ColourDepth**.
 
-![dithering the remainder](../assets/postassets/20240530/shadergraph-dithering-remainder.png){: width="600px" }
+![dithering the remainder]({{ page.post-image-path }}/shadergraph-dithering-remainder.png){: width="600px" }
 
 Now all thats left is to add this final result to the result of our colour rounding, and we have a finished graph.
 
 You can now happily enjoy the many fruits of your labour. I hope you make some cool scenes using this shader, and learned how to create a custom post processing path in unity!
 
 <div style="display:flex">
-    <img src="../assets/postassets/20240530/lighthouse-screenshot.png" title="A lighthouse rendered using the dithering effect" alt="A low-poly 3D lighthouse rendered with a ps1 dithering filter" height="20%">
-    <img src="../assets/postassets/20240530/city-screenshot.png" title="A snowy city scene rendered with dithering" alt="A low-poly 3D snowy city rendered with a ps1 dithering filter" height="20%">
+    <img src="{{ page.post-image-path }}/lighthouse-screenshot.png" title="A lighthouse rendered using the dithering effect" alt="A low-poly 3D lighthouse rendered with a ps1 dithering filter" height="20%">
+    <img src="{{ page.post-image-path }}/city-screenshot.png" title="A snowy city scene rendered with dithering" alt="A low-poly 3D snowy city rendered with a ps1 dithering filter" height="20%">
 </div>
 
 ## Footnotes
