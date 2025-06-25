@@ -13,6 +13,6 @@ published: true
 
 ![Profile Picture](../assets/img/general/profile-picture-header.png)
 
-Hello! I'm a UK game developer and programmer and this is my blog where I post about projects im working on, including <a href="/blog/categories/tutorials/">tutorials</a> on game development / programming things, updates on the development of current projects, and little programming rabbitholes. 
+Hello! I'm a UK game developer and programmer and this is my blog where I post about projects im working on, including <a href="/blog/categories/tutorial/">tutorials</a> on game development / programming things, updates on the development of current projects, and little programming rabbitholes. 
 
 You can see updates for my current project Oslo <a href="/blog/categories/oslo/">here</a>
