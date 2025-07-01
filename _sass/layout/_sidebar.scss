@@ -23,9 +23,6 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
   /* Hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
-
-  --a: 90deg; /* the angle of the spikes */
-  --s: 60px;  /* the size of the spikes */
   
   mask: conic-gradient(from -135deg at right,#0000,#000 1deg 89deg,#0000 90deg) 50%/100% 60px;
 
@@ -102,7 +99,6 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
 
   .site-title {
     @extend %clickable-transition;
-    @extend %sidebar-link-hover;
 
     font-family: inherit;
     font-weight: 900;
@@ -144,9 +140,9 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
 
         display: flex;
         align-items: center;
-        border-radius: 0.75rem;
+        border-radius: 0.25rem;
         font-weight: 600;
-
+        
         &:hover {
           background-color: var(--sidebar-hover-bg);
           color: var(--sidebar-hover-text-color);

@@ -171,6 +171,8 @@ collections:
   tabs:
     output: true
     sort_by: order
+  games:
+    output: true
 
 defaults:
   - scope:
@@ -185,6 +187,7 @@ defaults:
       permalink: /blog/posts/:title/
   - scope:
       path: _drafts
+      type: posts
     values:
       comments: false
   - scope:
@@ -193,6 +196,13 @@ defaults:
     values:
       layout: page
       permalink: /blog/:title/
+  - scope:
+      path: _games
+      type: games
+    values:
+      layout: gamepage
+      permalink: /games/:title/
+
 
 sass:
   style: compressed

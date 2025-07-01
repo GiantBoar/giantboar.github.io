@@ -1,0 +1,36 @@
+<!-- topbar for the home-style pages -->
+
+<!doctype html>
+
+<script>
+function showDropdown() {
+  document.getElementById("games-dropdown").classList.toggle("dropdown-visible");
+}
+</script>
+
+{% capture divider %}
+<li class="home-navitem"><i>•</i></li>
+{% endcapture %}
+
+<div id="homebar" class="flex-d">
+    <ul>
+        <!-- Topbar Title -->
+        <a class="giantboar-title" href="/">{{ site.title }}</a>
+
+        <!--
+        <li class="home-navitem navbar-dropdown">
+            <button onClick="showDropdown() id="dropdown-button">DROPDOWN</button>
+        </li>
+        -->
+
+        <li class="home-navitem"><a href="/">CV</a></li>
+        <li class="home-navitem"><a href="/blog/">BLOG</a></li>
+
+        {{ divider }}
+
+        <li class="home-navitem{% if page.url == '/games/portfolio/' %}{{ " active" }}{% endif %}"><a href="/games/portfolio/">GAMES</a></li>
+        <li class="home-navitem{% if page.url == '/' %}{{ " active" }}{% endif %}"><a href="/">HOME</a></li>
+    </ul>
+</div>
+
+<div style="height: 100px;"></div>
