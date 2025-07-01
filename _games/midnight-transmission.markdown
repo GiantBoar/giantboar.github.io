@@ -1,4 +1,5 @@
 ---
+title: Midnight Transmission
 ---
 
 # Midnight Transmission Videogame

@@ -5,13 +5,15 @@
 
   --accent-blue: #777da1;
   --accent-red: #df928e;
-  --accent-yellow: #ebc950;
-  --accent-green: #84dcb3;
+  --accent-yellow: #e6c550;
+  --accent-green: #85c3a6;
 
   /* home topbar */
 
   --home-topbar-bg: var(--accent-blue);
   --home-topbar-active: var(--accent-red);
+  --home-topbar-current: #9097ba;
+  --home-topbar-dropdown-active: var(--accent-yellow);
   --home-topbar-title-color: #ffffff;
   --home-topbar-navitem: #ffffff;
 

@@ -4,32 +4,40 @@
 
 <script>
 function showDropdown() {
-  document.getElementById("games-dropdown").classList.toggle("dropdown-visible");
+    var dropdownMenu = document.getElementById("games-dropdown");
+    var isOpen = dropdownMenu.classList.contains('visible');
+    dropdownMenu.classList.toggle('visible');
+
+    document.getElementById("dropdown-button").classList.toggle("dropdown-open");
 }
 </script>
 
 {% capture divider %}
-<li class="home-navitem"><i>•</i></li>
+<li class="home-navitem"><i class="fa-solid fa-fish-fins divider"></i></li>
 {% endcapture %}
 
-<div id="homebar" class="flex-d">
-    <ul>
-        <!-- Topbar Title -->
+<div id="Homebar" class="homebar">
+    <ul class="home-navbar">
+        <img src="/assets/img/general/profile-picture-transparent.png" class="logo">
         <a class="giantboar-title" href="/">{{ site.title }}</a>
-
-        <!--
-        <li class="home-navitem navbar-dropdown">
-            <button onClick="showDropdown() id="dropdown-button">DROPDOWN</button>
-        </li>
-        -->
 
         <li class="home-navitem"><a href="/">CV</a></li>
         <li class="home-navitem"><a href="/blog/">BLOG</a></li>
 
         {{ divider }}
 
-        <li class="home-navitem{% if page.url == '/games/portfolio/' %}{{ " active" }}{% endif %}"><a href="/games/portfolio/">GAMES</a></li>
+        <li class="home-navitem{% if page.url contains 'games' %}{{ " active" }}{% endif %}">
+            <button onClick="showDropdown()" id="dropdown-button">GAMES <i class="fa-fw fas fa-caret-down"></i></button>
+        </li>
         <li class="home-navitem{% if page.url == '/' %}{{ " active" }}{% endif %}"><a href="/">HOME</a></li>
+    </ul>
+</div>
+
+<div id="games-dropdown" class="homebar navbar-dropdown flex-d">
+    <ul class="home-navbar">
+        {% for game in site.games reversed %}
+            <li class="home-navitem"><a href="{{ game.url }}" class="dropdown-link">{{ game.title | upcase }}</a></li>
+        {% endfor %}
     </ul>
 </div>
 
