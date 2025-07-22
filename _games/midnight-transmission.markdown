@@ -5,7 +5,7 @@ topbar-style: midnight-transmission
 game-image-path: ../../assets/games/midnight-transmission
 ---
 
-<img src="{{ page.game-image-path }}/mt-logo.png">
+<img alt="Midnight Transmission Logo" src="{{ page.game-image-path }}/mt-logo.png">
 
 **Midnight transmission** is a 2D top-down exploration game about a surreal interconnected world; explore abstract and absurd areas collecting tools that can change the environment or improve exploration. <br>
 The game was developed in Godot with GDScript by a team of **three core developers** and a small team of **collaborative developers**. The unique visual style comes from how much we've capitalised on the game as a collaborative effort, using composers, artists, and developeers with a wide range of aesthetics.
