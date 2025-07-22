@@ -1,3 +1,15 @@
 ---
 layout: boar
 ---
+
+{% if page.topbar-style %}
+{% capture topbarClass %}{{ page.topbar-style }}{% endcapture %}
+{% endif %}
+
+<body id="pagelayout" {% if page.style %}class="{{ page.style }}"{% endif %}>
+    {% include home-topbar.html %}
+
+    <div class="container">
+        {{ content }}
+    </div>
+</body>

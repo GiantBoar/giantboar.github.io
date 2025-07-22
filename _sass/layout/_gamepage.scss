@@ -1,0 +1,153 @@
+@use '../abstracts/breakpoints' as bp;
+@use '../abstracts/mixins' as mx;
+@use '../abstracts/variables' as v;
+
+// used for both general and game-specific page styles
+
+@font-face {
+    font-family: AriW;
+    src: url("../../assets/font/ari-w9500.ttf");
+}
+@font-face {
+    font-family: AriW;
+    src: url("../../assets/font/ari-w9500-bold.ttf");
+    font-weight: bold;
+}
+@font-face {
+    font-family: AriWDisplay;
+    src: url("../../assets/font/ari-w9500-display.ttf");
+}
+@font-face {
+    font-family: AriWDisplay;
+    src: url("../../assets/font/ari-w9500-condensed-display.ttf");
+    font-stretch: condensed;
+}
+@font-face {
+    font-family: AriW;
+    src: url("../../assets/font/ari-w9500-condensed.ttf");
+    font-stretch: condensed;
+}
+@font-face {
+    font-family: AriW;
+    src: url("../../assets/font/ari-w9500-condensed-bold.ttf");
+    font-stretch: condensed;
+}
+
+
+#pagelayout {
+    background: var(--main-bg);
+    justify-content: center;
+
+    h1{
+        color: var(--heading-color);
+        font-weight: bolder;
+
+        margin-top: 30px;
+        margin-bottom: 12px;
+    }
+    h2 {
+        font-weight: bold;
+    }
+    p {
+        color: #d9d9d9;
+    }
+
+    .container {
+        max-width: 60%;
+    }
+
+    iframe.inline-embed {
+        display: inline-block;
+        float:right;
+
+        margin-left: 10px;
+        border-radius: 1rem;
+
+        // @include mx.ml-mr(auto);
+        // margin-bottom: 10px;
+    }
+}
+
+#pagelayout.midnight-transmission {
+    background: #28112e;
+
+    .container{
+        h1 {
+            color: #f2a441;
+            height: 40px;
+            justify-self: center;
+            font-weight: normal;
+
+            font-family: AriWDisplay;
+        }
+        h1::before {
+            content: url("../../assets/games/midnight-transmission/mt-tape.png");
+            image-rendering: pixelated;
+            padding-right: 16px;
+        }
+        h1::after {
+            vertical-align: baseline;
+            content: url("../../assets/games/midnight-transmission/mt-tape-flip.png");
+            image-rendering: pixelated;
+            padding-left: 16px;
+        }
+
+        h2 {
+            color: #cd5296;
+            font-family: AriWDisplay;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-family: AriW;
+        }
+        strong {
+            color: #f4a153;
+        }
+        a {
+            //color: #c74b85;
+            color: #e0e0e0;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        a:hover{
+            //color: #e76ba5;
+            color: #ffffff;
+        }
+    }
+}
+.homebar.midnight-transmission {
+    background-color: #80185a;
+
+    .giantboar-title {
+        font-family: AriWDisplay;
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+
+        margin-top: 0.9rem;
+    }
+
+    ul.home-navbar li.home-navitem {
+        a:hover, button:hover {
+            background-color: #921f68;
+
+            &.dropdown-link {
+                background-color: #ffbb63;
+            }
+        }
+        
+        a, button{
+            font-family: AriW;
+            font-weight: bold;
+        }
+
+        &.active {
+            a, button {
+                background-color: #f2a441;
+            }
+        }
+    }
+}
+.navbar-dropdown.midnight-transmission {
+    background-color: #f2a441;
+}

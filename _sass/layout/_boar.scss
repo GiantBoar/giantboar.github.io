@@ -11,7 +11,7 @@
     z-index: 2;
 
     background-color: var(--home-topbar-bg);
-    mask: conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/40px 100%;
+    mask: conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/32px 100%;
 
     /* Hide scrollbar for IE, Edge and Firefox */
     -ms-overflow-style: none; /* IE and Edge */
@@ -30,7 +30,8 @@
         font-size: 1.75rem;
         line-height: 1.2;
         letter-spacing: 0.25px;
-        margin-top: 1.10rem;
+        
+        margin-top: 0.82rem;
         margin-bottom: 0.5rem;
         width: fit-content;
         text-align: center;
@@ -62,20 +63,19 @@
             a, button{
                 float: right;
                 
-                background-color: #0000;
+                background-color: #00000000;
                 border: none;
                 outline: none;
 
                 display: flex;
                 color: var(--home-topbar-navitem);
                 text-align: center;
-                padding: 24px 20px;
+                padding: 18px 20px;
                 height: v.$home-topbar-size;
                 font-weight: bold;
 
                 &.dropdown-link {
-                    padding-top: 40px;
-                    padding-bottom: 40px;
+                    padding: 32px 16px;
                     height: 100%;
                 }
 
@@ -106,13 +106,12 @@
             i.divider {
                 float: right;
                 @include mx.pl-pr(10px);
-                padding-top: 28px;
+                padding-top: 22px;
                 line-height: 100%;
             }
         }
     }
 }
-
 
 .navbar-dropdown {
     float:top;
@@ -139,11 +138,4 @@
 .visible {
     transform: translateY(v.$home-topbar-size - 20px);
     -webkit-transform: translateY(v.$home-topbar-size - 20px);
-}
-
-#page-contents {
-    max-width: 500px;
-    margin-top: 100px;
-    margin-left: auto;
-    margin-right: auto;
 }
