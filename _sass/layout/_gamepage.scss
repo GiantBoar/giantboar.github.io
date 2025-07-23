@@ -36,42 +36,70 @@
 
 #pagelayout {
     background: var(--main-bg);
-    justify-content: center;
-
-    h1{
-        color: var(--heading-color);
-        font-weight: bolder;
-
-        margin-top: 30px;
-        margin-bottom: 12px;
-    }
-    h2 {
-        font-weight: bold;
-    }
-    p {
-        color: #d9d9d9;
-    }
 
     .container {
-        max-width: 60%;
+        width: 60%;
+        max-width: 1200px;
+
+        @include mx.ml-mr(auto);
+        padding-top: 90px;
+
+        h1{
+            color: var(--heading-color);
+            font-weight: bolder;
+
+            margin-top: 30px;
+            margin-bottom: 12px;
+        }
+        h2 {
+            margin-top: 1rem;
+
+            font-weight: bold;
+        }
+        
+        p {
+            color: #d9d9d9;
+        }
     }
 
-    iframe.inline-embed {
+    .title-image {
+        width: 100%;
+
+        display: flex;
+        margin: 0 auto;
+    }
+
+    iframe.video-embed {
         display: inline-block;
         float:right;
 
         margin-left: 10px;
         border-radius: 1rem;
 
-        // @include mx.ml-mr(auto);
-        // margin-bottom: 10px;
+        width: 38%;
+        aspect-ratio: 1 / 0.5625;
+        max-height: 300px;
+        max-width: 534px;
+    }
+    iframe.game-embed {
+        display: flex;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
 #pagelayout.midnight-transmission {
     background: #28112e;
 
-    .container{
+    .title-image {
+        width: 80%;
+        image-rendering: pixelated;
+        
+        filter: drop-shadow(0 0 0.75rem rgb(50, 103, 216));
+    }
+
+    .container {
         h1 {
             color: #f2a441;
             height: 40px;
@@ -91,7 +119,6 @@
             image-rendering: pixelated;
             padding-left: 16px;
         }
-
         h2 {
             color: #cd5296;
             font-family: AriWDisplay;
@@ -150,4 +177,8 @@
 }
 .navbar-dropdown.midnight-transmission {
     background-color: #f2a441;
+}
+
+.image-row {
+    display: flex;
 }

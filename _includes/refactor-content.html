@@ -43,6 +43,7 @@
 <!-- Handle images -->
 
 {% assign IMG_TAG = '<img ' %}
+{% assign NOREFACTOR = false %}
 
 {% if _content contains IMG_TAG %}
   {% assign _img_content = null %}
@@ -56,6 +57,11 @@
 
     {% assign _left = _img_snippet | split: '>' | first %}
     {% assign _right = _img_snippet | remove: _left %}
+
+    {% if _left contains 'NOREFACTOR' %}
+      {% assign _img_content = _img_content | append: '<img ' | append: _img_snippet %}
+      {% continue %}
+    {% endif %}
 
     {% unless _left contains 'src=' %}
       {% continue %}
@@ -153,7 +159,7 @@
       {% assign _left = _left | replace: 'src=', 'data-src=' | replace: ' lqip=', ' data-lqip="true" src=' %}
 
     {% else %}
-      {% assign _wrapper_class = _wrapper_class | append: ' shimmer' %}
+      {% assign _wrapper_class = _wrapper_class | append: '' %}
     {% endif %}
 
     <!-- lazy-load images -->
@@ -193,15 +199,18 @@
         {% assign _img_content = _img_content | append: _wrapper_start %}
         {% assign _right = '></a' | append: _right %}
       {% endif %}
+
     {% endif %}
 
     <!-- combine -->
     {% assign _img_content = _img_content | append: IMG_TAG | append: _left | append: _right %}
+
   {% endfor %}
 
   {% if _img_content %}
     {% assign _content = _img_content %}
   {% endif %}
+  
 {% endif %}
 
 <!-- Add header for code snippets -->

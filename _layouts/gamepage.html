@@ -1,15 +1,18 @@
 ---
 layout: boar
+refactor: true
 ---
 
-{% if page.topbar-style %}
-{% capture topbarClass %}{{ page.topbar-style }}{% endcapture %}
-{% endif %}
+{% assign pagestyle = page.title | downcase | replace: ' ', '-' %}
 
-<body id="pagelayout" {% if page.style %}class="{{ page.style }}"{% endif %}>
+<body id="pagelayout" {% if page.style %}class="{{ pagestyle }}"{% endif %}>
     {% include home-topbar.html %}
 
     <div class="container">
-        {{ content }}
+        {% if layout.refactor %}
+            {% include refactor-content.html content=content lang=lang %}
+        {% else %}
+            {{ content }}
+        {% endif %}
     </div>
 </body>
