@@ -33,7 +33,7 @@ function showDropdown() {
     </ul>
 </div>
 
-<div id="games-dropdown" class="homebar navbar-dropdown {% if page.topbar-style %}{{ page.topbar-style }}{% endif %}">
+<div id="games-dropdown" class="homebar navbar-dropdown {% if pagestyle %}{{ pagestyle }}{% endif %}">
     <ul class="home-navbar">
         {% for game in site.games reversed %}
             <li class="home-navitem"><a href="{{ game.url }}" class="dropdown-link">{{ game.title | upcase }}</a></li>

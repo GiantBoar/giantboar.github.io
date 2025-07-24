@@ -56,9 +56,20 @@
 
             font-weight: bold;
         }
+        h3 {
+            color: red;
+        }
         
         p {
             color: #d9d9d9;
+        }
+
+        ul {
+            color: white;
+
+            li {
+                color: white;
+            }
         }
     }
 
@@ -124,6 +135,10 @@
             font-family: AriWDisplay;
             letter-spacing: 1px;
         }
+        h3 {
+            color: #cd5296;
+            font-family: AriWDisplay;
+        }
 
         p {
             font-family: AriW;
@@ -140,6 +155,16 @@
         a:hover{
             //color: #e76ba5;
             color: #ffffff;
+        }
+
+        ul {
+            margin-top: -10px;
+            color: white;
+
+            li {
+                color: white;
+                font-family: AriW;
+            }
         }
     }
 }
