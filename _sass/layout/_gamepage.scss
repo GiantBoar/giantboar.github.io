@@ -33,23 +33,28 @@
     font-stretch: condensed;
 }
 
-
+// probably move this to _boar.scss
 #pagelayout {
     background: var(--main-bg);
+    height: 100%;
 
     .container {
         width: 60%;
         max-width: 1200px;
 
+        height: auto !important;
+        min-height: 100%;
+        
         @include mx.ml-mr(auto);
         padding-top: 90px;
+        padding-bottom: 45px;;
 
         h1{
             color: var(--heading-color);
             font-weight: bolder;
 
-            margin-top: 30px;
-            margin-bottom: 12px;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
         }
         h2 {
             margin-top: 1rem;
@@ -100,6 +105,45 @@
     }
 }
 
+.dev-widget-container {
+    list-style-type: none;
+    padding: 0 0;
+    
+    text-align: center;
+    
+    .dev-widget {
+        display: inline-block;
+        min-width: 300px;
+
+        border-style: solid;
+        border-width: 1px;
+        border-color: #ffffff;
+
+        margin: 6px 4px;
+        padding: 8px 8px;
+
+        mask: repeating-conic-gradient(from 45deg at 15px 50%,#0000,#000 1deg 89deg,#0000 90deg 180deg) -15px 50%/100% 30px;
+
+        .dev-icon {
+            width: 100px;
+            border-radius: 50%;
+
+            margin: 1rem 0 1.5rem 0;
+        }
+
+        ul {
+            padding: 0 0;
+            list-style-type: none;
+            
+            li {
+                display: inline-block;
+                padding: 4px 4px;
+                font-size: 1.4rem;
+            }
+        }
+    }
+}
+
 #pagelayout.midnight-transmission {
     background: #28112e;
 
@@ -107,7 +151,13 @@
         width: 80%;
         image-rendering: pixelated;
         
-        filter: drop-shadow(0 0 0.75rem rgb(50, 103, 216));
+        filter: drop-shadow(0 0 1rem rgb(50, 103, 216));
+    }
+
+    .dev-widget {
+        background: #3d163d;
+        border-width: 0;
+        border-radius: 10px;
     }
 
     .container {

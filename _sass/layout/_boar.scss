@@ -113,6 +113,18 @@
     }
 }
 
+#homefooter {
+    bottom: 0;
+
+    margin: 0 0;
+
+    width: 100%;
+    position: relative;
+    background: red;
+
+    overflow: hidden;
+}
+
 .navbar-dropdown {
     float:top;
     display: block;
