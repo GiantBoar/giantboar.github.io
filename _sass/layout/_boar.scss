@@ -123,6 +123,13 @@
     background: red;
 
     overflow: hidden;
+
+    ul {
+        display: flex;
+        li {
+            display: inline;
+        }
+    }
 }
 
 .navbar-dropdown {
