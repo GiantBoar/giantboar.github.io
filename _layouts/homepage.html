@@ -2,10 +2,39 @@
 layout: boar
 ---
 
-{% include home-topbar.html %}
+<body id="pagelayout" class="homepage-layout">
+    {% include home-topbar.html %}
 
-<body id="pagelayout">
+    <div class="header-container">
+        <img src="../assets/img/general/header.gif" class="header-image">
+    </div>
+
     <div class="container">
-        <h1>GIANTBOAR.COM COME AND HANG OUT</h1>
+        <h1 class="mainheading">GIANTBOAR</h1>
+
+        <div class="homepage-widget" style="background-color: #4a4e67;">
+            <div class="column">
+                <h1>About Me</h1>
+            </div>
+            <div class="column">
+                <p>hey hey</p>
+            </div>
+        </div>
+        
+        <div class="homepage-widget" style="background-color: #794b47ff">
+            <h1>Skills</h1>
+        </div>
+        
+        <div class="homepage-widget" style="background-color: #857128ff">
+            <h1>Friends</h1>
+        </div>
+        
+        <div class="homepage-widget" style="background-color: #4a5f5bff">
+            <h1>Recent Games</h1>
+        </div>
+
+        <div class="homepage-widget">
+            <h1 class="test"> TEST </h1>
+        </div>
     </div>
 </body>

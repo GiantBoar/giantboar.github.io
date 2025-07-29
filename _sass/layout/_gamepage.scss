@@ -33,6 +33,11 @@
     font-stretch: condensed;
 }
 
+@font-face {
+    font-family: TheBoldFont;
+    src: url("../../assets/font/THEBOLDFONT-FREEVERSION.ttf");
+}
+
 // probably move this to _boar.scss
 #pagelayout {
     background: var(--main-bg);
@@ -46,36 +51,7 @@
         min-height: 100%;
         
         @include mx.ml-mr(auto);
-        padding-top: 90px;
-        padding-bottom: 45px;;
-
-        h1{
-            color: var(--heading-color);
-            font-weight: bolder;
-
-            margin-top: 3rem;
-            margin-bottom: 1rem;
-        }
-        h2 {
-            margin-top: 1rem;
-
-            font-weight: bold;
-        }
-        h3 {
-            color: red;
-        }
-        
-        p {
-            color: #d9d9d9;
-        }
-
-        ul {
-            color: white;
-
-            li {
-                color: white;
-            }
-        }
+        padding: 90px 0 45px 0;
     }
 
     .title-image {
@@ -102,6 +78,68 @@
         max-width: 800px;
         margin-left: auto;
         margin-right: auto;
+    }
+}
+
+#pagelayout.homepage-layout {
+    .header-container {
+        display: block;
+        background: #464154;
+        padding-top: 60px;
+    }
+
+    .header-image {
+        display: flex;
+        margin: 0 auto;
+
+        image-rendering: pixelated;
+        width: 90%;
+    }
+
+    .container {
+        padding-top: 0;
+
+        .mainheading {
+            color: #eceef9;
+
+            font-family: TheBoldFont;
+            text-align: center;
+            font-weight: normal;
+            letter-spacing: 1px;
+
+            margin-top: 2rem;
+
+            font-size: 5rem;
+        }
+        .mainheading::before {
+            content: url("../../assets/img/general/worm.png");
+            image-rendering: pixelated;
+            padding-right: 20px;
+        }
+        .mainheading::after {
+            content: url("../../assets/img/general/worm.png");
+            image-rendering: pixelated;
+            padding-left: 20px;
+        }
+    }
+}
+
+.homepage-widget {
+    display: flex;
+    padding: 10px 10px;
+    margin-bottom: 1.2rem;
+
+    .column {
+        display: inline-block;
+        height: 100%;
+        width: 50%;
+    }
+
+    h1 {
+        font-family: TheBoldFont;
+        text-align: center;
+        font-weight: normal;
+        color: #ffffff;
     }
 }
 
@@ -166,6 +204,9 @@
             height: 40px;
             justify-self: center;
             font-weight: normal;
+            
+            margin-top: 3rem;
+            margin-bottom: 1rem;
 
             font-family: AriWDisplay;
         }
@@ -184,6 +225,9 @@
             color: #cd5296;
             font-family: AriWDisplay;
             letter-spacing: 1px;
+            
+            margin-top: 1rem;
+            font-weight: bold;
         }
         h3 {
             color: #cd5296;
@@ -192,6 +236,7 @@
 
         p {
             font-family: AriW;
+            color: #d9d9d9;
         }
         strong {
             color: #f4a153;
