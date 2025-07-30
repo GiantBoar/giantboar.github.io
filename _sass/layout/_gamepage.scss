@@ -38,11 +38,6 @@
     src: url("../../assets/font/THEBOLDFONT-FREEVERSION.ttf");
 }
 
-// probably move this to _boar.scss
-        width: 100%;
-
-        display: flex;
-        margin: 0 auto;
 .homepage-widget {
     display: flex;
     padding: 10px 10px;
@@ -105,6 +100,15 @@
 
 #pagelayout.midnight-transmission {
     --mt-bg: #28112e;
+    --mt-header: #80185a;
+    --mt-header-active: #921f68;
+    --mt-footer: #5b1240;
+
+    --mt-dropdown: #f2a441;
+    --mt-dropdown-active: #ffbb63;
+
+    --mt-text: #d9d9d9;
+    --mt-text-important: #cd5296;
 
     background: var(--mt-bg);
 
@@ -123,7 +127,7 @@
 
     .container {
         h1 {
-            color: #f2a441;
+            color: var(--mt-dropdown);
             height: 40px;
             justify-self: center;
             font-weight: normal;
@@ -145,7 +149,7 @@
             padding-left: 16px;
         }
         h2 {
-            color: #cd5296;
+            color: var(--mt-text-important);
             font-family: AriWDisplay;
             letter-spacing: 1px;
             
@@ -153,20 +157,20 @@
             font-weight: bold;
         }
         h3 {
-            color: #cd5296;
+            color: var(--mt-text-important);
             font-family: AriWDisplay;
         }
 
         p {
             font-family: AriW;
-            color: #d9d9d9;
+            color: var(--mt-text);
         }
         strong {
-            color: #f4a153;
+            color: var(--mt-dropdown);
         }
         a {
             //color: #c74b85;
-            color: #e0e0e0;
+            color: var(--mt-text);
             font-weight: bold;
             text-decoration: underline;
         }
@@ -174,20 +178,10 @@
             //color: #e76ba5;
             color: #ffffff;
         }
-
-        ul {
-            margin-top: -10px;
-            color: white;
-
-            li {
-                color: white;
-                font-family: AriW;
-            }
-        }
     }
 }
 .homebar.midnight-transmission {
-    background-color: #80185a;
+    background-color: var(--mt-header);
 
     .giantboar-title {
         font-family: AriWDisplay;
@@ -199,10 +193,10 @@
 
     ul.home-navbar li.home-navitem {
         a:hover, button:hover {
-            background-color: #921f68;
+            background-color: var(--mt-header-active);
 
             &.dropdown-link {
-                background-color: #ffbb63;
+                background-color: var(--mt-dropdown-active);
             }
         }
         
@@ -213,13 +207,16 @@
 
         &.active {
             a, button {
-                background-color: #f2a441;
+                background-color: var(--mt-dropdown);
             }
         }
     }
 }
+#homefooter.midnight-transmission {
+    background: var(--mt-footer);
+}
 .navbar-dropdown.midnight-transmission {
-    background-color: #f2a441;
+    background-color: var(--mt-dropdown);
 }
 
 .image-row {

@@ -116,19 +116,39 @@
 
 #homefooter {
     bottom: 0;
-
     margin: 0 0;
+    padding-top: 16px;
 
     width: 100%;
     position: relative;
     background: red;
-
     overflow: hidden;
+
+    mask: conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) 50%/32px 100%;
 
     ul {
         display: flex;
+        padding-left: 1rem;
+
         li {
+            padding-right: 8px;
+            padding-top: 8px;
             display: inline;
+            font-size: 1rem;
+
+            a {
+                color: #d6d6d6;
+
+                :hover {
+                    color: white;
+                }
+            }
+
+            p {
+                margin: 0;
+                padding-left: 8px;
+                color: #d6d6d6;
+            }
         }
     }
 }
