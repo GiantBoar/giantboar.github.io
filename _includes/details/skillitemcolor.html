@@ -1,0 +1,16 @@
+{% if include.starcolour %}
+    {% assign output = output | append: '<i class="fa-solid fa-star" style="color: var(' | append: include.starcolour | append: ');"></i>' %}
+{% else %}
+    {% assign output = output | append: '<i class="fa-solid fa-star"></i>' %}
+{% endif %}
+
+{% if include.skilllink %}
+    {% assign href = 'href="' | append: include.skilllink | append: '">' %}
+    {% assign output = output | append: '<a ' | append: href | append: include.skilltext | append: '</a>' %}
+{% else %}
+    {% assign output = output | append: '<p>' | append: include.skilltext | append: '</p>' %}
+{% endif %}
+
+{% assign output = output | append: '</li>' %}
+
+{{ output }}

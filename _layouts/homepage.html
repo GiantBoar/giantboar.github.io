@@ -13,28 +13,82 @@ layout: boar
         <h1 class="mainheading">GIANTBOAR</h1>
 
         <div class="homepage-widget" style="background-color: #4a4e67;">
-            <div class="column">
-                <h1>About Me</h1>
-            </div>
-            <div class="column">
-                <p>hey hey</p>
+            <div class="widget-row">
+                <div class="widget-column" style="flex-grow: 0;">
+                    <img alt="test" src="../../assets/img/general/profile-picture.png">
+                </div>
+                <div class="widget-column">
+                    <h1>ABOUT ME</h1>
+                    <p>hey hey</p>
+                </div>
             </div>
         </div>
         
         <div class="homepage-widget" style="background-color: #794b47ff">
-            <h1>Skills</h1>
-        </div>
-        
-        <div class="homepage-widget" style="background-color: #857128ff">
-            <h1>Friends</h1>
+            <div class="widget-column" style="width: 100%;">
+                <h1>SKILLS</h1>
+            </div>
+
+            <div class="widget-row">
+                <div class="widget-column widget-divider-right" style="flex-grow: 0; width: 33.3%">
+                    <h2>Languages</h2>
+
+                    <ul>
+                        {% include details/skillitem.html starcount=3 skilltext="C#" skilllink="/blog/tags/c#" %}
+                        {% include details/skillitem.html starcount=3 skilltext="C++" %}
+                        {% include details/skillitem.html starcount=3 skilltext="Python" %}
+                        {% include details/skillitem.html starcount=3 skilltext="GDScript" %}
+                        
+                        {% include details/skillitem.html starcount=2 skilltext="HTML" %}
+                        {% include details/skillitem.html starcount=2 skilltext="CSS" %}
+                        {% include details/skillitem.html starcount=2 skilltext="Liquid & SCSS" %}
+                        {% include details/skillitem.html starcount=2 skilltext="Unreal Blueprint" %}
+                        
+                        {% include details/skillitem.html starcount=1 skilltext="C" %}
+                    </ul>
+                </div>
+                <div class="widget-column widget-divider-right" style="flex-grow: 0; width: 33.3%">
+                    <h2>Software</h2>
+
+                    <ul>
+                        {% include details/skillitem.html starcount=3 skilltext="Visual Studio" %}
+                        {% include details/skillitem.html starcount=3 skilltext="Unity" skilllink="/blog/tags/unity" %}
+                        {% include details/skillitem.html starcount=3 skilltext="Godot" skilllink="/blog/tags/godot" %}
+                        {% include details/skillitem.html starcount=3 skilltext="Blender" %}
+                        {% include details/skillitem.html starcount=3 skilltext="Aseprite" %}
+                        
+                        {% include details/skillitem.html starcount=2 skilltext="Photoshop" %}
+                        {% include details/skillitem.html starcount=2 skilltext="Unreal Engine" %}
+                        {% include details/skillitem.html starcount=2 skilltext="Github" %}
+                    </ul>
+                </div>
+                <div class="widget-column" style="flex-grow: 0; width: 33.3%">
+                    <h2>Personal</h2>
+
+                    <ul>
+                        {% include details/skillitem.html starcount=3 skilltext="Task Delegation" %}
+                        {% include details/skillitem.html starcount=3 skilltext="Communication" %}
+                        {% include details/skillitem.html starcount=3 skilltext="Adaptability" %}
+                        {% include details/skillitem.html starcount=3 skilltext="Attention to Detail" %}
+                        
+                        {% include details/skillitem.html starcount=2 skilltext="Team Management" %}
+                        {% include details/skillitem.html starcount=2 skilltext="Teamwork" %}
+                        {% include details/skillitem.html starcount=2 skilltext="Time Management" %}
+                    </ul>
+                </div>
+            </div>
         </div>
         
         <div class="homepage-widget" style="background-color: #4a5f5bff">
-            <h1>Recent Games</h1>
-        </div>
+            <h1>RECENT GAMES</h1>
 
-        <div class="homepage-widget">
-            <h1 class="test"> TEST </h1>
+            <div class="widget-row centred">
+                <a href="/games/midnight-transmission"><img alt="midnight transmission logo" src="../../assets/games/midnight-transmission/mt-logo.gif" style="height: 200px; image-rendering: pixelated;"></a>
+            </div>
+        </div>
+        
+        <div class="homepage-widget" style="background-color: #857128ff">
+            <h1>FRIENDS</h1>
         </div>
     </div>
 </body>

@@ -38,22 +38,118 @@
     src: url("../../assets/font/THEBOLDFONT-FREEVERSION.ttf");
 }
 
+@font-face {
+    font-family: Pixellari;
+    src: url("../../assets/font/Pixellari.ttf");
+}
+
+@font-face {
+    font-family: Tondu;
+    src: url("../../assets/font/Tondu-Beta.ttf");
+}
+
+
 .homepage-widget {
-    display: flex;
-    padding: 10px 10px;
-    margin-bottom: 1.2rem;
+    // display: flex;
+    // flex-direction: row;
 
-    border-radius: 10px;
+    // border-radius: 10px;
+    // border-width: 2px;
+    // border-style: solid;
 
-    .column {
-        display: inline-block;
-        height: 100%;
-        width: 50%;
+    // padding: 20px 0px;
+    // mask: 
+    //     conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) top/30px 51% repeat-x,
+    //     conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) calc(50% + 15px) 100%/30px 51% repeat-x;
+
+    padding: 20px 20px;
+    margin: 0 0 2rem 0;
+
+    mask:
+        repeating-conic-gradient(from 45deg at 15px 50%,#0000,#000 1deg 89deg,#0000 90deg 180deg) -15px 50%/100% 30px;
+
+    .widget-column {
+        display: inline-flex;
+        flex-direction: column;
+
+        flex-grow: 1;
+        padding: 0 10px;
+        
+        border-style: solid;
+        border-color: white;
+        border-width: 0;
+
+        &.centred {
+            justify-content: center;
+        }
+    }
+
+    .widget-row {
+        display: inline-flex;
+        flex-direction: row;
+        width: 100%;
+        flex-grow: 1;
+
+        &.centred {
+            justify-content: center;
+        }
+    }
+
+    .widget-divider-right {
+        border-right-width: 2px;
+    }
+
+    ul {
+        list-style: none;
+
+        padding: 0 0;
+        margin: 0 0;
+
+        li {
+            display: flex;
+            vertical-align: middle;
+            margin-bottom: 2px;
+
+            i {
+                padding-top: 4px;
+                padding-right: 1px;
+                color: var(--accent-yellow);
+            }
+
+            p {
+                margin: 0 0 0 8px;
+            }
+            a {
+                margin: 0 0 0 8px;
+                font-weight: bold;
+
+                color: white;
+            }
+        }
     }
 
     h1 {
-        font-family: TheBoldFont;
+        font-family: 'Jost';
         text-align: center;
+        font-weight: 700;
+        color: #ffffff;
+
+        width: 100%;
+
+        margin: 0 0 0.6rem 0;
+    }
+    h2 {
+        font-family: 'Jost';
+        text-align: center;
+        font-weight: 500;
+        color: #ffffff;
+
+        margin: 0.4rem 0;
+
+        width: 100%;
+    }
+
+    p {
         font-weight: normal;
         color: #ffffff;
     }

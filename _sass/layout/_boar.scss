@@ -167,34 +167,6 @@
         @include mx.ml-mr(auto);
         padding-top: 90px;
         padding-bottom: 45px;;
-
-        h1{
-            color: var(--heading-color);
-            font-weight: bolder;
-
-            margin-top: 3rem;
-            margin-bottom: 1rem;
-        }
-        h2 {
-            margin-top: 1rem;
-
-            font-weight: bold;
-        }
-        h3 {
-            color: red;
-        }
-        
-        p {
-            color: #d9d9d9;
-        }
-
-        ul {
-            color: white;
-
-            li {
-                color: white;
-            }
-        }
     }
 
     .title-image {
@@ -250,19 +222,37 @@
             font-weight: normal;
             letter-spacing: 1px;
 
-            margin-top: 2rem;
+            margin-top: 1rem;
 
-            font-size: 5rem;
+            font-size: 4rem;
         }
         .mainheading::before {
-            content: url("../../assets/img/general/worm.png");
+            background-image: url("../../assets/img/general/worm.png");
+            background-repeat: no-repeat;
             image-rendering: pixelated;
-            padding-right: 20px;
+            background-size: 60px 60px;
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+
+            margin-right: 10px;
+
+            content:"";
         }
         .mainheading::after {
-            content: url("../../assets/img/general/worm.png");
+            // content: url("../../assets/img/general/worm.png");
+            // padding-left: 20px;
+
+            background-image: url("../../assets/img/general/worm.png");
+            background-repeat: no-repeat;
             image-rendering: pixelated;
-            padding-left: 20px;
+            background-size: 60px 60px;
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            content:"";
+
+            margin-left: 10px;
         }
     }
 }

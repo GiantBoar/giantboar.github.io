@@ -4,7 +4,7 @@ description: >-
   Starting development on a new RPG in Godot with the working title Oslo
 date: 2025-06-25 00:11:36 +0100
 categories: [Devlog, Oslo]
-tags: [Oslo, Pixelart]
+tags: [Oslo, Pixelart, Godot]
 pin: false
 published: true
 post-image-path: ../assets/postassets/OsloFirstPost

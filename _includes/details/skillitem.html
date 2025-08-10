@@ -1,0 +1,22 @@
+{% assign output='<li><div style="margin: 0; padding: 0; width: 30%; display: flex; justify-content: end;">' %}
+{% if include.starcount %}
+    {% assign range = (1..include.starcount) %}
+    {% for i in range %}
+        {% assign output = output | append: '<i class="fa-solid fa-star"></i>' %}
+    {% endfor %}
+{% else %}
+    {% assign output = output | append: '<i class="fa-solid fa-star"></i>' %}
+{% endif %}
+
+{% assign output = output | append: '</div>' %}
+
+{% if include.skilllink %}
+    {% assign href = 'href="' | append: include.skilllink | append: '">' %}
+    {% assign output = output | append: '<a ' | append: href | append: include.skilltext | append: '</a>' %}
+{% else %}
+    {% assign output = output | append: '<p>' | append: include.skilltext | append: '</p>' %}
+{% endif %}
+
+{% assign output = output | append: '</li>' %}
+
+{{ output }}
