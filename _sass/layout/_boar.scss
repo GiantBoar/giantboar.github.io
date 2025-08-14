@@ -121,14 +121,16 @@
 
     width: 100%;
     position: relative;
-    background: red;
+    background: #4a4e67;;
     overflow: hidden;
 
     mask: conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) 50%/32px 100%;
 
     ul {
         display: flex;
-        padding-left: 1rem;
+        padding: 0 1rem;
+
+        margin: 10px 0 20px 0;
 
         li {
             padding-right: 8px;
@@ -145,7 +147,7 @@
             }
 
             p {
-                margin: 0;
+                margin: 0 0;
                 padding-left: 8px;
                 color: #d6d6d6;
             }
@@ -154,7 +156,6 @@
 }
 
 #pagelayout {
-    background: var(--main-bg);
     height: 100%;
 
     .container {
@@ -167,13 +168,6 @@
         @include mx.ml-mr(auto);
         padding-top: 90px;
         padding-bottom: 45px;;
-    }
-
-    .title-image {
-        width: 100%;
-
-        display: flex;
-        margin: 0 auto;
     }
 
     iframe.video-embed {
@@ -197,6 +191,8 @@
 }
 
 #pagelayout.homepage-layout {
+    background: var(--main-bg);
+    
     .header-container {
         display: block;
         background: #464154;
@@ -257,6 +253,181 @@
     }
 }
 
+.homepage-widget {
+    padding: 20px 30px;
+    margin: 0 0 2rem 0;
+
+    mask:
+        repeating-conic-gradient(from 45deg at 15px 50%,#0000,#000 1deg 89deg,#0000 90deg 180deg) -15px 50%/100% 30px;
+
+    .widget-column {
+        display: inline-flex;
+        flex-direction: column;
+
+        flex-grow: 1;
+        padding: 0 5px;
+
+        &.centred {
+            justify-content: center;
+        }
+    }
+
+    .widget-row {
+        display: inline-flex;
+        flex-direction: row;
+        width: 100%;
+        flex-grow: 1;
+
+        padding-top: 1rem;
+
+        &.centred {
+            justify-content: center;
+        }
+    }
+
+    .widget-divider-right {
+        border-style: solid;
+        border-color: #dedee3;
+        border-width: 0;
+
+        border-right-width: 2px;
+    }
+    .widget-divider-bottom {
+        border-style: solid;
+        border-color: #dedee3;
+        border-width: 0;
+
+        border-bottom-width: 2px;
+
+        padding-bottom: 1rem;
+    }
+
+    ul.skill-list {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: stretch;
+
+        list-style: none;
+
+        padding: 0 0;
+        margin: 0 0;
+
+        li {
+            padding: 4px 4px;
+            margin: 4px 4px;
+
+            display: flex;
+            vertical-align: middle;
+            margin-bottom: 2px;
+            flex-grow: 1;
+
+            i {
+                padding-top: 4px;
+                padding-right: 1px;
+                color: var(--accent-red);
+            
+                transition: inherit;
+            }
+
+            p {
+                margin: 0 8px 0 8px;
+                color: #ffe0de;
+            
+                transition: inherit;
+            }
+            a {
+                margin: 0 8px 0 8px;
+                font-weight: bold;
+                color: var(--accent-red);
+            
+                transition: inherit;
+            }
+        }
+
+        .panel-item {
+            border-style: solid;
+            border-width: 1.5px;
+            border-radius: 8px;
+            border-color: var(--accent-red);
+            
+            transition: 0.3s;
+        }
+        .panel-item:hover {
+            background-color: var(--accent-red);
+
+            a {
+                color: white;
+            }
+            p {
+                color: white;
+            }
+            i {
+                color: white;
+            }
+        }
+    }
+
+    ul.experience-list {
+        list-style-type: none;
+        padding: 0 8px;
+        margin: 0;
+        
+        li {
+            width: 100%;
+
+            display: flex;
+
+            p {
+                color: #ffe0de;
+                margin: 0 0;
+            }
+
+
+            i {
+                padding-top: 4px;
+                padding-right: 8px;
+                color: var(--accent-red);
+            }
+
+            a {
+                font-weight: bold;
+                color: var(--accent-red);
+            
+                transition: 0.3s;
+            }
+            a:hover {
+                color: #ffffff;
+            }
+        }
+    }
+
+    h1 {
+        font-family: 'Jost';
+        text-align: center;
+        font-weight: 700;
+        color: #ffffff;
+
+        width: 100%;
+
+        margin: 0 0 0.6rem 0;
+    }
+    h2 {
+        font-family: 'Jost';
+        text-align: center;
+        font-weight: 500;
+        color: #eaeaef;
+
+        margin-bottom: 0.8rem;
+
+        width: 100%;
+    }
+
+    p {
+        font-weight: normal;
+        color: #eaeaef;
+    }
+}
+
 .navbar-dropdown {
     float:top;
     display: block;
@@ -276,6 +447,82 @@
     &.navbar-visible {
         display: block;
         margin-top: v.$home-topbar-size - 20px;
+    }
+
+    .divider {
+        padding: 36px 12px 0 12px !important;
+    }
+}
+
+.under-construction {
+    border-style: solid;
+    border-color: var(--accent-red);
+    border-width: 4px;
+    border-radius: 20px;
+
+    margin: 0 0 2rem 0;
+
+    h1 {
+        margin-top: 0.5rem;
+
+        color: var(--accent-red);
+        font-family: TheBoldFont;
+
+        width: 100%;
+        text-align: center;
+    }
+    h2 {
+        color: #eceef9;
+        font-family: TheBoldFont;
+
+        width: 100%;
+        text-align: center;
+    }
+
+    p {
+        padding: 0 1rem;
+        color: var(--accent-red);
+        text-align: center;
+
+        font-weight: bold;
+    }
+}
+
+.friend-holder {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: 0 auto;
+    padding: 0 0;
+
+    li.friend-card {
+        display: flex;
+
+        flex-grow: 1;
+        min-width: 500px;
+        background: red;
+
+        margin: 4px 4px;
+
+        img {
+            height: 150px;
+        }
+
+        div {
+            display: inline-block;
+
+            flex-grow: 1;
+            padding: 0 10px;
+        }
+
+        h1 {
+            margin: 0 0;
+            text-align: left;
+        }
+        h2 {
+            text-align: left;
+        }
     }
 }
 

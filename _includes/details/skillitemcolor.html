@@ -1,8 +1,5 @@
-{% if include.starcolour %}
-    {% assign output = output | append: '<i class="fa-solid fa-star" style="color: var(' | append: include.starcolour | append: ');"></i>' %}
-{% else %}
-    {% assign output = output | append: '<i class="fa-solid fa-star"></i>' %}
-{% endif %}
+{% assign output = '<li class="panel-item">' %}
+{% assign output = output | append: '<i class="fa-solid fa-star"></i>' %}
 
 {% if include.skilllink %}
     {% assign href = 'href="' | append: include.skilllink | append: '">' %}

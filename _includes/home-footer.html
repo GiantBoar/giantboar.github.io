@@ -3,5 +3,14 @@
         <li><a href="https://x.com/giant_boar" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
         <li><a href="https://github.com/GiantBoar" target="_blank"><i class="fa-brands fa-github"></i></a></li>
         <li><p>Website made by <b>Max Patteson</b></p></li>
+
+        {% comment %}
+        <div style="flex-grow: 1;"></div>
+
+        <li><p>Latest Blog Post: </p></li>
+        {% for post in site.posts limit:1 %}
+        <li><a href="{{ post.url }}"><b>{{ post.title }}</b></a></li>
+        {% endfor %}
+        {% endcomment %}
     </ul>
 </div>

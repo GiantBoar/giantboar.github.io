@@ -21,7 +21,10 @@ function showDropdown() {
         <img src="/assets/img/general/profile-picture-transparent.png" class="logo" alt="GIANTBOAR profile picture">
         <a class="giantboar-title" href="/">{{ site.title }}</a>
 
+        {% comment %}
         <li class="home-navitem"><a href="/">CV</a></li>
+        {% endcomment %}
+
         <li class="home-navitem"><a href="/blog/">BLOG</a></li>
 
         {{ divider }}
@@ -35,8 +38,12 @@ function showDropdown() {
 
 <div id="games-dropdown" class="homebar navbar-dropdown {% if pagestyle %}{{ pagestyle }}{% endif %}">
     <ul class="home-navbar">
+        <li class="home-navitem" style="flex-order: -100;"><a href="/portfolio/" class="dropdown-link">PORTFOLIO</a></li>
+        {{ divider }}
         {% for game in site.games reversed %}
+            {% if game.dropdown-link %}
             <li class="home-navitem"><a href="{{ game.url }}" class="dropdown-link">{{ game.title | upcase }}</a></li>
+            {% endif %}
         {% endfor %}
     </ul>
 </div>

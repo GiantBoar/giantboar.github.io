@@ -3,6 +3,7 @@ title: Midnight Transmission
 style: true
 topbar-style: true
 game-image-path: ../../assets/games/midnight-transmission
+dropdown-link: true
 ---
 
 <img class="title-image NOREFACTOR" alt="Midnight Transmission Logo" src="{{ page.game-image-path }}/mt-logo.gif">

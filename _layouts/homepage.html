@@ -14,81 +14,115 @@ layout: boar
 
         <div class="homepage-widget" style="background-color: #4a4e67;">
             <div class="widget-row">
-                <div class="widget-column" style="flex-grow: 0;">
-                    <img alt="test" src="../../assets/img/general/profile-picture.png">
+                <div class="widget-column centred" style="flex-grow: 1; min-width: 200px;">
+                    <img alt="GiantBoar Picture" src="../../assets/img/general/profile-picture.png" class="giantboar-icon">
                 </div>
                 <div class="widget-column">
-                    <h1>ABOUT ME</h1>
-                    <p>hey hey</p>
+                    <h1 style="text-align: left;">ABOUT ME</h1>
+                    <p>Hello! I'm Max, a <b>game developer and programmer</b> from England. I've been developing games since I was 15, and designing games for even longer. I'm experienced in a <b>range of languages and programs</b> (as seen below), but I'm always looking for areas to improve and things to learn.</p>
+                    <p>I got a <b>Distinction*</b> studying game design and programming in college where I developed various games in Unity using C#, before pivoting over to Godot to make use of its open-source framework. I've dabbled in creating my own game engine in C++ although there should be <i>more to say about that soon...</i></p>
                 </div>
             </div>
         </div>
+
+        {% include details/construction.html title="Showreel" %}
         
         <div class="homepage-widget" style="background-color: #794b47ff">
-            <div class="widget-column" style="width: 100%;">
-                <h1>SKILLS</h1>
+            <div class="widget-column widget-divider-bottom" style="width: 100%;">
+                <h1>EXPERIENCE</h1>
             </div>
 
-            <div class="widget-row">
-                <div class="widget-column widget-divider-right" style="flex-grow: 0; width: 33.3%">
-                    <h2>Languages</h2>
-
-                    <ul>
-                        {% include details/skillitem.html starcount=3 skilltext="C#" skilllink="/blog/tags/c#" %}
-                        {% include details/skillitem.html starcount=3 skilltext="C++" %}
-                        {% include details/skillitem.html starcount=3 skilltext="Python" %}
-                        {% include details/skillitem.html starcount=3 skilltext="GDScript" %}
-                        
-                        {% include details/skillitem.html starcount=2 skilltext="HTML" %}
-                        {% include details/skillitem.html starcount=2 skilltext="CSS" %}
-                        {% include details/skillitem.html starcount=2 skilltext="Liquid & SCSS" %}
-                        {% include details/skillitem.html starcount=2 skilltext="Unreal Blueprint" %}
-                        
-                        {% include details/skillitem.html starcount=1 skilltext="C" %}
-                    </ul>
-                </div>
-                <div class="widget-column widget-divider-right" style="flex-grow: 0; width: 33.3%">
+            <div class="widget-row widget-divider-bottom">
+                <div class="widget-column" style="flex-grow: 0; width: 33.3%">
                     <h2>Software</h2>
 
-                    <ul>
-                        {% include details/skillitem.html starcount=3 skilltext="Visual Studio" %}
-                        {% include details/skillitem.html starcount=3 skilltext="Unity" skilllink="/blog/tags/unity" %}
-                        {% include details/skillitem.html starcount=3 skilltext="Godot" skilllink="/blog/tags/godot" %}
-                        {% include details/skillitem.html starcount=3 skilltext="Blender" %}
-                        {% include details/skillitem.html starcount=3 skilltext="Aseprite" %}
+                    <ul class="skill-list">
+                        {% include details/skillitemcolor.html skilltext="Visual Studio" %}
+                        {% include details/skillitemcolor.html skilltext="Unity" skilllink="/blog/tags/unity" %}
+                        {% include details/skillitemcolor.html skilltext="Godot" skilllink="/blog/tags/godot" %}
+                        {% include details/skillitemcolor.html skilltext="Blender" %}
+                        {% include details/skillitemcolor.html skilltext="Github" %}
                         
-                        {% include details/skillitem.html starcount=2 skilltext="Photoshop" %}
-                        {% include details/skillitem.html starcount=2 skilltext="Unreal Engine" %}
-                        {% include details/skillitem.html starcount=2 skilltext="Github" %}
+                        {% include details/skillitemcolor.html skilltext="Photoshop" %}
+                        {% include details/skillitemcolor.html skilltext="Unreal Engine" %}
+                    </ul>
+                </div>
+                <div class="widget-column" style="flex-grow: 0; width: 33.3%">
+                    <h2>Languages</h2>
+
+                    <ul class="skill-list">
+                        {% include details/skillitemcolor.html skilltext="C#" skilllink="/blog/tags/c#" %}
+                        {% include details/skillitemcolor.html skilltext="C++" %}
+                        {% include details/skillitemcolor.html skilltext="C" %}
+
+                        {% include details/skillitemcolor.html skilltext="Python" %}
+                        {% include details/skillitemcolor.html skilltext="GDScript" %}
+                        
+                        {% include details/skillitemcolor.html skilltext="HTML & Liquid" %}
+                        {% include details/skillitemcolor.html skilltext="CSS & SCSS" %}
+                        {% include details/skillitemcolor.html skilltext="Unreal Blueprint" %}
                     </ul>
                 </div>
                 <div class="widget-column" style="flex-grow: 0; width: 33.3%">
                     <h2>Personal</h2>
 
-                    <ul>
-                        {% include details/skillitem.html starcount=3 skilltext="Task Delegation" %}
-                        {% include details/skillitem.html starcount=3 skilltext="Communication" %}
-                        {% include details/skillitem.html starcount=3 skilltext="Adaptability" %}
-                        {% include details/skillitem.html starcount=3 skilltext="Attention to Detail" %}
+                    <ul class="skill-list">
+                        {% include details/skillitemcolor.html skilltext="Task Delegation" %}
+                        {% include details/skillitemcolor.html skilltext="Communication" %}
+                        {% include details/skillitemcolor.html skilltext="Adaptability" %}
+                        {% include details/skillitemcolor.html skilltext="Attention to Detail" %}
                         
-                        {% include details/skillitem.html starcount=2 skilltext="Team Management" %}
-                        {% include details/skillitem.html starcount=2 skilltext="Teamwork" %}
-                        {% include details/skillitem.html starcount=2 skilltext="Time Management" %}
+                        {% include details/skillitemcolor.html skilltext="Team Management" %}
+                        {% include details/skillitemcolor.html skilltext="Teamwork" %}
                     </ul>
+                </div>
+            </div>
+
+            <div class="widget-row">
+                <ul class="experience-list" style="width: 100%;">
+                    <li><i class="fa-solid fa-graduation-cap"></i><p><b>Distinction* (A*, A*, A*) - Level 3 Extended Diploma in Art and Design</b> - Game Design at Access Creative College Norwich</p></li>
+                </ul>
+            </div>
+
+            <div class="widget-row">
+                <ul class="experience-list" style="width: 100%;">
+                    <li><i class="fa-solid fa-trophy"></i><p><b>Game of the Year</b> - Access 2022 for <a href="/games/the-pilgrim">The Pilgrim</a></p></li>
+                    <li><i class="fa-solid fa-medal"></i><p><b>Prize Winner</b> - Staffs Start of year Jam for Wire Runner</p></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="homepage-widget midnight-transmission" style="background: #28162dff">
+            <div class="container" style="margin: 0 0; padding: 0 0; width: 100%; height: 100%">
+                <h1 style="margin-top: 0">RECENT GAME</h1>
+
+                <div class="widget-row centred">
+                    <a href="/games/midnight-transmission" style="width: 100%;"><img alt="midnight transmission logo" src="../../assets/games/midnight-transmission/mt-logo.gif" class="title-image" style="width: 60%"></a>
+                </div>
+
+                <div class="widget-row">
+                    <div class="widget-column">
+                        <p><strong>Midnight transmission</strong> is a 2D top-down exploration game about a surreal interconnected world; explore abstract and absurd areas collecting tools that can change the environment or improve exploration.</p>
+                        <p>The game was developed in Godot with GDScript by a team of <strong>three core developers</strong> and a small team of <strong>collaborative developers</strong>. The unique visual style comes from how much we've capitalised on the game as a collaborative effort, using composers, artists, and developers with a wide range of aesthetics.</p>
+                        <p>For more information and a link to the game go to the <a href="/games/midnight-transmission">portfolio page.</a></p>
+                    </div>
                 </div>
             </div>
         </div>
         
         <div class="homepage-widget" style="background-color: #4a5f5bff">
-            <h1>RECENT GAMES</h1>
-
-            <div class="widget-row centred">
-                <a href="/games/midnight-transmission"><img alt="midnight transmission logo" src="../../assets/games/midnight-transmission/mt-logo.gif" style="height: 200px; image-rendering: pixelated;"></a>
-            </div>
-        </div>
-        
-        <div class="homepage-widget" style="background-color: #857128ff">
             <h1>FRIENDS</h1>
+
+            {% include details/construction.html title="Friend portfolio links" %}
+
+            <ul class="friend-holder">
+            {% include friend-card.html %}
+            {% include friend-card.html %}
+            {% include friend-card.html %}
+            {% include friend-card.html %}
+            </ul>
         </div>
     </div>
+
+    {% include home-footer.html %}
 </body>
