@@ -253,4 +253,9 @@
 
 .image-row {
     display: flex;
+
+    img {
+        flex: 1;
+        width: 10%;
+    }
 }

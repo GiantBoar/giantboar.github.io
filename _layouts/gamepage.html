@@ -11,7 +11,7 @@ refactor: true
     {% include home-topbar.html %}
 
     <div class="container">
-        {% if layout.refactor %}
+        {% if page.refactor %}
             {% include refactor-content.html content=content lang=lang %}
         {% else %}
             {{ content }}

@@ -202,6 +202,7 @@ defaults:
     values:
       layout: gamepage
       permalink: /games/:title/
+      refactor: true
 
 
 sass:
