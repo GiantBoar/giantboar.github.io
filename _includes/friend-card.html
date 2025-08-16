@@ -2,8 +2,33 @@
     <img src="../assets/img/general/profile-picture.png">
 
     <div>
-        <h1>FRIEND NAME</h1>
-        <h2>FRIEND NAME</h2>
-        <p>cool guy cool guy</p>
+        {% if include.website %}
+        <h1><a href="{{ include.website }}">{{ include.name }}</a></h1>
+        {% else %}
+        <h1>{{ include.name }}</h1>
+        {% endif %}
+
+        {% if include.altname %}<h2>{{ include.altname }}</h2>{% endif %}
+
+        {% if include.description %}
+        <p>{{ include.description }}</p>
+        {% else %}
+        <p style="color: #00000000">a</p>
+        {% endif %}
+
+        <ul>
+            {% if include.website %}<li><a href="{{ include.website }}" target="_blank"><i class="fa-solid fa-circle-user"></i></a></li>{% assign _linkused="true" %}{% endif %}
+            {% if include.twitter %}<li><a href="{{ include.twitter }}" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>{% assign _linkused="true" %}{% endif %}
+            {% if include.github %}<li><a href="{{ include.github }}" target="_blank"><i class="fa-brands fa-github"></i></a></li>{% assign _linkused="true" %}{% endif %}
+            {% if include.bsky %}<li><a href="{{ include.bsky }}" target="_blank"><i class="fa-brands fa-bluesky"></i></a></li>{% assign _linkused="true" %}{% endif %}
+            {% if include.twitch %}<li><a href="{{ include.twitch }}" target="_blank"><i class="fa-brands fa-twitch"></i></a></li>{% assign _linkused="true" %}{% endif %}
+            {% if include.instagram %}<li><a href="{{ include.instagram }}" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>{% assign _linkused="true" %}{% endif %}
+            {% if include.youtube %}<li><a href="{{ include.youtube }}" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>{% assign _linkused="true" %}{% endif %}
+            {% if include.spotify %}<li><a href="{{ include.spotify }}" target="_blank"><i class="fa-brands fa-spotify"></i></a></li>{% assign _linkused="true" %}{% endif %}
+            {% if include.bandcamp %}<li><a href="{{ include.bandcamp }}" target="_blank"><i class="fa-brands fa-bandcamp"></i></a></li>{% assign _linkused="true" %}{% endif %}
+            {% if include.tiktok %}<li><a href="{{ include.tiktok }}" target="_blank"><i class="fa-brands fa-tiktok"></i></a></li>{% assign _linkused="true" %}{% endif %}
+            {% if include.discord %}<li><a href="{{ include.discord }}" target="_blank"><i class="fa-brands fa-discord"></i></a></li>{% assign _linkused="true" %}{% endif %}
+            {% if include.itch %}<li><a href="{{ include.itch }}" target="_blank"><i class="fa-brands fa-itch-io"></i></a></li>{% assign _linkused="true" %}{% endif %}
+        </ul>
     </div>
 </li>
