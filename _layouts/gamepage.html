@@ -4,8 +4,10 @@ refactor: true
 ---
 
 {% assign pagestyle = page.title | downcase | replace: ' ', '-' %}
+{% assign mstyle = page.style %}
+{% assign tstyle = page.topbar-style %}
 
-<body id="pagelayout" {% if page.style %}class="{{ pagestyle }}"{% endif %}>
+<body id="pagelayout" {% if page.style and mstyle %}class="{{ pagestyle }}"{% endif %}>
     {% include home-topbar.html %}
 
     <div class="container">

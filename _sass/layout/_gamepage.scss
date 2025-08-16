@@ -220,6 +220,37 @@
     background-color: var(--mt-dropdown);
 }
 
+.lamplight {
+    --ll-bg: #000000;
+    --ll-clouds: #2b2a36;
+
+    background: var(--ll-bg);
+
+    .title-image {
+        width: 100%;
+        image-rendering: pixelated;
+    }
+
+    .container {
+        padding: 0 0;
+    }
+    .subcontainer {
+        padding: 10px 10px;
+        
+        background: var(--ll-clouds);
+    }
+
+    h1 {
+        font-family: Pixellari;
+        font-weight: bold;
+        text-align: center;
+    }
+    p {
+        color: #cccccc;
+        font-family: AriW;
+    }
+}
+
 .image-row {
     display: flex;
 }

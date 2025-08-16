@@ -16,7 +16,7 @@ function showDropdown() {
 <li class="home-navitem"><i class="fa-solid fa-fish-fins divider"></i></li>
 {% endcapture %}
 
-<div id="Homebar" class="homebar {% if pagestyle %}{{ pagestyle }}{% endif %}">
+<div id="Homebar" class="homebar {% if pagestyle and tstyle %}{{ pagestyle }}{% endif %}">
     <ul class="home-navbar">
         <img src="/assets/img/general/profile-picture-transparent.png" class="logo" alt="GIANTBOAR profile picture">
         <a class="giantboar-title" href="/">{{ site.title }}</a>
@@ -36,7 +36,7 @@ function showDropdown() {
     </ul>
 </div>
 
-<div id="games-dropdown" class="homebar navbar-dropdown {% if pagestyle %}{{ pagestyle }}{% endif %}">
+<div id="games-dropdown" class="homebar navbar-dropdown {% if pagestyle and tstyle %}{{ pagestyle }}{% endif %}">
     <ul class="home-navbar">
         <li class="home-navitem" style="flex-order: -100;"><a href="/portfolio/" class="dropdown-link">PORTFOLIO</a></li>
         {{ divider }}
