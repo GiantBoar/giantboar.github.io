@@ -2,7 +2,7 @@
 title: Midnight Transmission
 style: true
 topbar-style: true
-game-image-path: ../../assets/games/midnight-transmission
+game-image-path: ../assets/games/midnight-transmission
 dropdown-link: true
 ---
 

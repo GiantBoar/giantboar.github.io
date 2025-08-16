@@ -10,11 +10,7 @@
 
         {% if include.altname %}<h2>{{ include.altname }}</h2>{% endif %}
 
-        {% if include.description %}
         <p>{{ include.description }}</p>
-        {% else %}
-        <p style="color: #00000000">a</p>
-        {% endif %}
 
         <ul>
             {% if include.website %}<li><a href="{{ include.website }}" target="_blank"><i class="fa-solid fa-circle-user"></i></a></li>{% assign _linkused="true" %}{% endif %}
