@@ -253,19 +253,25 @@
     }
 }
 
-.homepage-widget {
-    padding: 20px 30px;
-    margin: 0 0 2rem 0;
+.nopadding {
+    padding: 0 0 !important;
+}
 
-    mask:
-        repeating-conic-gradient(from 45deg at 15px 50%,#0000,#000 1deg 89deg,#0000 90deg 180deg) -15px 50%/100% 30px;
+.dshadow {
+    filter: drop-shadow(0 0 0.75rem #131314);
+}
+
+.homepage-widget {
+    padding: 15px 15px;
+    margin-bottom: 1.5rem;
 
     .widget-column {
         display: inline-flex;
         flex-direction: column;
 
-        flex-grow: 1;
-        padding: 0 5px;
+        flex: 1;
+        padding: 15px 15px;
+        gap: 0.5rem;
 
         &.centred {
             justify-content: center;
@@ -276,9 +282,8 @@
         display: inline-flex;
         flex-direction: row;
         width: 100%;
-        flex-grow: 1;
-
-        padding-top: 1rem;
+        flex: 1;
+        gap: 1rem;
 
         &.centred {
             justify-content: center;
