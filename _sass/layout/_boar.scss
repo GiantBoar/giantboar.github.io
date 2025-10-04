@@ -201,7 +201,7 @@
 
     .header-image {
         display: flex;
-        margin: 0 auto;
+        margin: 0 auto 2rem auto;
 
         image-rendering: pixelated;
         width: 90%;
@@ -331,14 +331,14 @@
 
             p {
                 margin: 0 8px 0 8px;
-                color: #ffe0de;
+                color: #e5b2af;
             
                 transition: inherit;
             }
             a {
                 margin: 0 8px 0 8px;
                 font-weight: bold;
-                color: var(--accent-red);
+                color: #ffe0de;
             
                 transition: inherit;
             }

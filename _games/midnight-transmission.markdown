@@ -14,7 +14,7 @@ The game was developed in Godot with GDScript by a team of **three core develope
 
 See [Game](#the-game) for information about the game itself, and [Development](#development) for information about my development on the project. Also, please see the [Collaborator list](#development-team) for everyone who helped make this game real!
 
-You can play the game at the Itch.io website linked below:
+You can play the game at the Itch.io website [here](https://midnighttransmission.itch.io/midnight-transmission) or at the widget below:
 
 <iframe src="https://itch.io/embed/3067014?bg_color=28112e&amp;fg_color=ffffff&amp;link_color=ffbb63&amp;border_color=933052" class="game-embed" width="100%" height="167" frameborder="0"><a href="https://midnighttransmission.itch.io/midnight-transmission">Midnight Transmission by MidnightTransmission</a></iframe>
 
