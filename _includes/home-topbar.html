@@ -6,7 +6,20 @@
 function showDropdown() {
     var dropdownMenu = document.getElementById("games-dropdown");
     var isOpen = dropdownMenu.classList.contains('visible');
-    dropdownMenu.classList.toggle('visible');
+    dropdownMenu.classList.toggle('navbar-visible');
+
+    document.getElementById("dropdown-button").classList.toggle("dropdown-open");
+}
+
+function expandHomebar() {
+    var expandMenu = document.getElementById("homebar-expand");
+    var dropdownMenu = document.getElementById("games-dropdown");
+    var isOpen = dropdownMenu.classList.contains('navbar-visible');
+
+    expandMenu.classList.toggle('navbar-visible');
+    if(isOpen) {
+        dropdownMenu.classList.toggle('navbar-visible')
+    }
 
     document.getElementById("dropdown-button").classList.toggle("dropdown-open");
 }
@@ -17,7 +30,7 @@ function showDropdown() {
 {% endcapture %}
 
 <div id="Homebar" class="homebar {% if pagestyle and tstyle %}{{ pagestyle }}{% endif %}">
-    <ul class="home-navbar">
+    <ul class="home-navbar hide-shrink">
         <img src="/assets/img/general/profile-picture-transparent.png" class="logo" alt="GIANTBOAR profile picture">
         <a class="giantboar-title" href="/">{{ site.title }}</a>
 
@@ -33,6 +46,23 @@ function showDropdown() {
             <button onClick="showDropdown()" id="dropdown-button">GAMES <i class="fa-fw fas fa-caret-down"></i></button>
         </li>
         <li class="home-navitem{% if page.url == '/' %}{{ " active" }}{% endif %}"><a href="/">HOME</a></li>
+
+        <li class="home-navitem expand-menu">
+            <button onClick="expandHomebar()" id="expand-button"><i class="fas fa-bars fa-fw"></i></button>
+        </li>
+    </ul>
+</div>
+
+<div id="homebar-expand" class="homebar homebar-expanded {% if pagestyle and tstyle %}{{ pagestyle }}{% endif %}">
+    <ul class="home-navbar">
+        <li class="home-navitem"><a href="/blog/" class="expanded-link">BLOG</a></li>
+
+        {{ divider }}
+
+        <li class="home-navitem{% if page.url contains 'games' %}{{ " active" }}{% endif %}">
+            <button onClick="showDropdown()" class="expanded-link" id="dropdown-button">GAMES <i class="fa-fw fas fa-caret-down"></i></button>
+        </li>
+        <li class="home-navitem{% if page.url == '/' %}{{ " active" }}{% endif %}"><a href="/" class="expanded-link">HOME</a></li>
     </ul>
 </div>
 

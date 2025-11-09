@@ -52,8 +52,9 @@
 
 .giantboar-icon {
     border-radius: 50%;
+    max-width: 300px;
 
-    @include mx.ml-mr(1rem);
+    @include mx.ml-mr(auto);
 }
 
 .dev-widget-container {

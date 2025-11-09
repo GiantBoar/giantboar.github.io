@@ -11,72 +11,18 @@ layout: boar
 
     <div class="container">
         <div class="homepage-widget dshadow" style="background-color: #4a4e67;">
-            <div class="widget-row">
-                <div class="widget-column centred" style="flex-grow: 0; min-width: 200px;">
+            <div class="widget-row widget-divider-bottom">
+                <div class="widget-column centred hide-small" style="min-width: 200px;">
                     <img src="../assets/img/general/profile-picture.png" alt="GiantBoar Picture" class="giantboar-icon">
                 </div>
-                <div class="widget-column">
-                    <h1 style="text-align: left;">ABOUT ME</h1>
+                <div class="widget-column" style="flex-grow: 3; padding-left: 0">
+                    <h1 style="text-align: left;">MAX PATTESON</h1>
                     <p>Hello! I'm Max, a <b>game developer and programmer</b> from England. I've been developing games since I was 15, and designing games for even longer. I'm experienced in a <b>range of languages and programs</b> (as seen below), but I'm always looking for areas to improve and things to learn.</p>
                     <p>I got a <b>Distinction*</b> studying game design and programming in college where I developed various games in Unity using C#, before pivoting over to Godot to make use of its open-source framework. I've dabbled in creating my own game engine in C++ although there should be <i>more to say about that soon...</i></p>
                 </div>
             </div>
-        </div>
 
-        <div class="nopadding homepage-widget">
-            <div class="widget-row">
-                <div class="widget-column dshadow" style="background-color: #794b47ff">
-                    <h2>Software</h2>
-
-                    <ul class="skill-list">
-                        {% include details/skillitemcolor.html skilltext="Visual Studio" %}
-                        {% include details/skillitemcolor.html skilltext="Unity" skilllink="/blog/tags/unity" %}
-                        {% include details/skillitemcolor.html skilltext="Godot" skilllink="/blog/tags/godot" %}
-                        {% include details/skillitemcolor.html skilltext="Blender" %}
-                        {% include details/skillitemcolor.html skilltext="Github" %}
-                        
-                        {% include details/skillitemcolor.html skilltext="Photoshop" %}
-                        {% include details/skillitemcolor.html skilltext="Unreal Engine" %}
-                    </ul>
-                </div>
-
-                <div class="widget-column dshadow" style="background-color: #794b47ff">
-                    <h2>Languages</h2>
-
-                    <ul class="skill-list">
-                        {% include details/skillitemcolor.html skilltext="C#" skilllink="/blog/tags/c#" %}
-                        {% include details/skillitemcolor.html skilltext="C++" %}
-                        {% include details/skillitemcolor.html skilltext="C" %}
-
-                        {% include details/skillitemcolor.html skilltext="Python" %}
-                        {% include details/skillitemcolor.html skilltext="GDScript" %}
-                        
-                        {% include details/skillitemcolor.html skilltext="HTML & Liquid" %}
-                        {% include details/skillitemcolor.html skilltext="CSS & SCSS" %}
-                        {% include details/skillitemcolor.html skilltext="Unreal Blueprint" %}
-                    </ul>
-                </div>
-
-                <div class="widget-column dshadow" style="background-color: #794b47ff">
-                    <h2>Personal</h2>
-
-                    <ul class="skill-list">
-                        {% include details/skillitemcolor.html skilltext="Task Delegation" %}
-                        {% include details/skillitemcolor.html skilltext="Communication" %}
-                        {% include details/skillitemcolor.html skilltext="Adaptability" %}
-                        {% include details/skillitemcolor.html skilltext="Attention to Detail" %}
-                        
-                        {% include details/skillitemcolor.html skilltext="Team Management" %}
-                        {% include details/skillitemcolor.html skilltext="Teamwork" %}
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <div class="homepage-widget" style="background-color: #4dc6a0;">
-            <div class="widget-column" style="width: 100%;">
-                <h2>EXPERIENCE</h2>
-
+            <div class="widget-column" style="padding-top: 0">
                 <div class="widget-row">
                     <ul class="experience-list" style="width: 100%;">
                         <li><i class="fa-solid fa-graduation-cap"></i><p><b>Distinction* - Level 3 Extended Diploma in Art and Design</b> - Game Design at Access Creative College Norwich</p></li>
@@ -85,10 +31,77 @@ layout: boar
 
                 <div class="widget-row">
                     <ul class="experience-list" style="width: 100%;">
-                        <li><i class="fa-solid fa-trophy"></i><p><b>Game of the Year</b> - Access 2022 for <a href="/games/the-pilgrim">The Pilgrim</a></p></li>
+                        <li><i class="fa-solid fa-trophy"></i><p><b>Game of the Year</b> - Access 2022 for The Pilgrim</p></li>
                         <li><i class="fa-solid fa-medal"></i><p><b>Prize Winner</b> - Staffs Freshers Jam for Wire Runner</p></li>
                     </ul>
                 </div>
+            </div>
+        </div>
+        
+        {% comment %}
+        <div class="homepage-widget dshadow" style="background-color: #4a5f5bff">
+            <div class="widget-column" style="width: 100%;">
+                <div class="widget-row">
+                    <ul class="experience-list" style="width: 100%;">
+                        <li><i class="fa-solid fa-graduation-cap"></i><p><b>Distinction* - Level 3 Extended Diploma in Art and Design</b> - Game Design at Access Creative College Norwich</p></li>
+                    </ul>
+                </div>
+
+                <div class="widget-row">
+                    <ul class="experience-list" style="width: 100%;">
+                        <li><i class="fa-solid fa-trophy"></i><p><b>Game of the Year</b> - Access 2022 for The Pilgrim</p></li>
+                        <li><i class="fa-solid fa-medal"></i><p><b>Prize Winner</b> - Staffs Freshers Jam for Wire Runner</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endcomment %}
+
+        <div class="widget-row">
+            <div class="widget-column skill-list dshadow" style="background-color: #794b47ff">
+                <h2>Software</h2>
+
+                <ul>
+                    {% include details/skillitemcolor.html skilltext="Visual Studio" %}
+                    {% include details/skillitemcolor.html skilltext="Unity" skilllink="/blog/tags/unity" %}
+                    {% include details/skillitemcolor.html skilltext="Godot" skilllink="/blog/tags/godot" %}
+                    {% include details/skillitemcolor.html skilltext="Blender" %}
+                    {% include details/skillitemcolor.html skilltext="Github" %}
+                    
+                    {% include details/skillitemcolor.html skilltext="Photoshop" %}
+                    {% include details/skillitemcolor.html skilltext="Unreal Engine" %}
+                </ul>
+            </div>
+
+            <div class="widget-column skill-list dshadow" style="background-color: #794b47ff">
+                <h2>Languages</h2>
+
+                <ul>
+                    {% include details/skillitemcolor.html skilltext="C#" skilllink="/blog/tags/c#" %}
+                    {% include details/skillitemcolor.html skilltext="C++" %}
+                    {% include details/skillitemcolor.html skilltext="C" %}
+
+                    {% include details/skillitemcolor.html skilltext="Python" %}
+                    {% include details/skillitemcolor.html skilltext="GDScript" %}
+                    
+                    {% include details/skillitemcolor.html skilltext="HTML & Liquid" %}
+                    {% include details/skillitemcolor.html skilltext="CSS & SCSS" %}
+                    {% include details/skillitemcolor.html skilltext="Unreal Blueprint" %}
+                </ul>
+            </div>
+
+            <div class="widget-column skill-list dshadow" style="background-color: #794b47ff">
+                <h2>Fields</h2>
+
+                <ul>
+                    {% include details/skillitemcolor.html skilltext="Gameplay" %}
+                    {% include details/skillitemcolor.html skilltext="Programming" %}
+                    {% include details/skillitemcolor.html skilltext="Art & Design" %}
+                    {% include details/skillitemcolor.html skilltext="Composition" %}
+                    
+                    {% include details/skillitemcolor.html skilltext="Software Architecture" %}
+                    {% include details/skillitemcolor.html skilltext="UI & UX" %}
+                </ul>
             </div>
         </div>
     </div>
