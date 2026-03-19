@@ -66,13 +66,13 @@ Worlds were developed using a **mind map of levels** currently in the game, with
 The core developers worked hand-in-hand with the **collaborative developers**, even developing worlds for some of the collaborators that couldn't work in-engine, **submitting ideas and design documents** alongside artwork. Management of the project and collaborators was undertaken by a different core developer, Rat, who also handled access to the github repository. 
 
 ## Development Team
-The development team was split up into **three divisions: developers, world creators and musicians**; developers are collaborators that also wrote code and did additional engine work. The three core developers were GiantBoar (myself), Rat, and Operator Haven. The three of us met in college and collaborated together for the foundational ideas behind the project.
+The development team was split up into **three divisions: developers, world creators and musicians**; developers are collaborators that also wrote code and additional engine work. The three core developers were GiantBoar (myself), Rat, and Operator Haven. The three of us met in college and collaborated together for the foundational ideas behind the project.
 
 <ul class="dev-widget-container">
     {% comment %} ADD GITHUB PLS {% endcomment %}
     {% include dev-widget.html devicon="../../assets/img/general/profile-picture.png" devname="GiantBoar" devrole="lead Programmer" twitter="https://x.com/giant_boar" github="https://github.com/GiantBoar" %}
     {% include dev-widget.html devicon="../../assets/games/midnight-transmission/dev-icons/rat-icon.png" devname="Rat" devrole="Lead Developer" %}
-    {% include dev-widget.html devicon="../../assets/games/midnight-transmission/dev-icons/haven-icon.png" devname="OperatorHaven" devrole="World Maker" github="https://github.com/Transference-OperatorHaven" bsky="https://bsky.app/profile/8stardragonball.bsky.social" website="https://floretdev.wixsite.com/havenportfolio" twitch="https://www.twitch.tv/operatorfloret" %}
+    {% include dev-widget.html devicon="../../assets/games/midnight-transmission/dev-icons/haven-icon.png" devname="OperatorHaven" devrole="World Maker" github="https://github.com/Transference-OperatorHaven" bsky="https://bsky.app/profile/8stardragonball.bsky.social" website="https://floretdev.com/#/" twitch="https://www.twitch.tv/operatorfloret" %}
     
     {% include dev-widget.html devicon="../../assets/games/midnight-transmission/dev-icons/virtua-icon.png" devname="VirtuaVirtue" devrole="Developer & Musician" discord="https://discord.com/invite/jRkuQh2nr8" itch="https://virtuavirtues-backlog.itch.io/" %}
 

@@ -65,7 +65,6 @@
     
     .dev-widget {
         display: inline-block;
-        min-width: 300px;
 
         border-style: solid;
         border-width: 1px;
@@ -73,8 +72,17 @@
 
         margin: 6px 4px;
         padding: 8px 8px;
+        
+        @include bp.lte(bp.get(sm)) {
+            width: 100%;
+        }
 
-        mask: repeating-conic-gradient(from 45deg at 15px 50%,#0000,#000 1deg 89deg,#0000 90deg 180deg) -15px 50%/100% 30px;
+        @include bp.sm {
+            min-width: 300px;
+            mask: 
+                conic-gradient(from 45deg at left,#0000,#000 1deg 89deg,#0000 90deg) left/51% 30px repeat-y,
+                conic-gradient(from -135deg at right,#0000,#000 1deg 89deg,#0000 90deg) 100% calc(50% + 15px)/51% 30px repeat-y;
+        }
 
         .dev-icon {
             width: 100px;
@@ -108,7 +116,12 @@
     --mt-text: #d9d9d9;
     --mt-text-important: #cd5296;
 
-    background: var(--mt-bg);
+    //background: var(--mt-bg);
+    background-image: url(../../assets/games/midnight-transmission/mt-bg.png);
+    background-repeat: repeat-y;
+    background-position: center;
+    background-size: contain;
+    image-rendering: pixelated;
 
     .title-image {
         width: 80%;
@@ -119,15 +132,25 @@
         margin: 0 auto;
         
         filter: drop-shadow(0 0 1rem rgb(50, 103, 216));
+
+        @include bp.lte(bp.get(md)) {
+            width: 100%;
+        }
+
+        @include bp.md {
+            width: 60%;
+        }
     }
 
     .dev-widget {
         background: #3d163d;
         border-width: 0;
-        border-radius: 10px;
     }
 
     .container {
+        background-color: var(--mt-bg);
+        padding: 90px 20px 20px 20px !important; 
+
         h1 {
             color: var(--mt-dropdown);
             height: 40px;
@@ -140,15 +163,19 @@
             font-family: AriWDisplay;
         }
         h1::before {
-            content: url("../../assets/games/midnight-transmission/mt-tape.png");
-            image-rendering: pixelated;
-            padding-right: 16px;
+            @include bp.md {
+                content: url("../../assets/games/midnight-transmission/mt-tape.png");
+                image-rendering: pixelated;
+                padding-right: 16px;
+            }
         }
         h1::after {
-            vertical-align: baseline;
-            content: url("../../assets/games/midnight-transmission/mt-tape-flip.png");
-            image-rendering: pixelated;
-            padding-left: 16px;
+            @include bp.md {
+                vertical-align: baseline;
+                content: url("../../assets/games/midnight-transmission/mt-tape-flip.png");
+                image-rendering: pixelated;
+                padding-left: 16px;
+            }
         }
         h2 {
             color: var(--mt-text-important);
@@ -184,6 +211,7 @@
 }
 .homebar.midnight-transmission {
     background-color: var(--mt-header);
+    background-image: none;
 
     .giantboar-title {
         font-family: AriWDisplay;

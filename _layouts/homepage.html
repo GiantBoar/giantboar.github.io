@@ -10,15 +10,15 @@ layout: boar
     </div>
 
     <div class="container">
-        <div class="homepage-widget dshadow" style="background-color: #4a4e67;">
+        <div class="homepage-widget dshadow" style="background-color: #51577eff;">
             <div class="widget-row widget-divider-bottom">
                 <div class="widget-column centred hide-small" style="min-width: 200px;">
                     <img src="../assets/img/general/profile-picture.png" alt="GiantBoar Picture" class="giantboar-icon">
                 </div>
                 <div class="widget-column" style="flex-grow: 3; padding-left: 0">
                     <h1 style="text-align: left;">MAX PATTESON</h1>
-                    <p>Hello! I'm Max, a <b>game developer and programmer</b> from England. I've been developing games since I was 15, and designing games for even longer. I'm experienced in a <b>range of languages and programs</b> (as seen below), but I'm always looking for areas to improve and things to learn.</p>
-                    <p>I got a <b>Distinction*</b> studying game design and programming in college where I developed various games in Unity using C#, before pivoting over to Godot to make use of its open-source framework. I've dabbled in creating my own game engine in C++ although there should be <i>more to say about that soon...</i></p>
+                    <p>Hello! I'm Max, a <b>game developer and programmer</b> from England studying a <b>BSc (Hons) in Computing Science</b> at the University of East Anglia. I've been developing games since I was 15, and designing games for even longer. I'm experienced in a <b>range of languages and programs</b> (as seen below), but I'm always looking for areas to improve and things to learn.</p>
+                    <p>I got a <b>Distinction*</b> studying game design and programming in college where I developed various games in Unity using C#, before pivoting over to Godot to make use of its open-source framework.</p>
                 </div>
             </div>
 
@@ -39,7 +39,7 @@ layout: boar
         </div>
         
         {% comment %}
-        <div class="homepage-widget dshadow" style="background-color: #4a5f5bff">
+        <div class="homepage-widget dshadow" style="background-color: #4f6b66ff">
             <div class="widget-column" style="width: 100%;">
                 <div class="widget-row">
                     <ul class="experience-list" style="width: 100%;">
@@ -57,8 +57,8 @@ layout: boar
         </div>
         {% endcomment %}
 
-        <div class="widget-row">
-            <div class="widget-column skill-list dshadow" style="background-color: #794b47ff">
+        <div class="homepage-widget widget-row" style="padding: 0;">
+            <div class="widget-column skill-list dshadow" style="background-color: #9b514b">
                 <h2>Software</h2>
 
                 <ul>
@@ -73,7 +73,7 @@ layout: boar
                 </ul>
             </div>
 
-            <div class="widget-column skill-list dshadow" style="background-color: #794b47ff">
+            <div class="widget-column skill-list dshadow" style="background-color: #9b514b">
                 <h2>Languages</h2>
 
                 <ul>
@@ -90,7 +90,7 @@ layout: boar
                 </ul>
             </div>
 
-            <div class="widget-column skill-list dshadow" style="background-color: #794b47ff">
+            <div class="widget-column skill-list dshadow" style="background-color: #9b514b">
                 <h2>Fields</h2>
 
                 <ul>
@@ -104,6 +104,33 @@ layout: boar
                 </ul>
             </div>
         </div>
+
+        <div class="homepage-widget dshadow midnight-transmission" style="background-image: none; padding: 0">
+            <div class="container" style="width: 100%; padding: 30px !important;">
+                <h1 style="margin-top:0">Featured Game</h1>
+
+                <a href="/games/midnight-transmission">
+                    <img class="title-image" alt="midnight transmission logo" src="../assets/games/midnight-transmission/mt-logo.gif">
+                </a>
+
+                <p><strong>Midnight transmission</strong> is a 2D top-down exploration game about a surreal interconnected world; explore abstract and absurd areas collecting tools that can change the environment or improve exploration. <br>
+                The game was developed in Godot with GDScript by a team of <strong>three core developers</strong> and a small team of <strong>collaborative developers</strong>. 
+                The unique visual style comes from how much we've capitalised on the game as a collaborative effort, using composers, artists, and developers with a wide range of aesthetics.</p>
+
+                <div class="image-row" style=" padding: 20px 0px">
+                    <img src="../assets/games/midnight-transmission/mt-snowy-forest.png">
+                    <img src="../assets/games/midnight-transmission/mt-clay.png">
+                    <img src="../assets/games/midnight-transmission/mt-neon.png">
+                </div>
+
+                <p style="width: 100%; text-align: center; margin:0"><strong>See the full portfolio page for the game <a href="/games/midnight-transmission">here</a></strong></p>
+            </div>
+        </div>
+
+        <ul class="friend-holder">
+            {% include friend-card.html name="Max" altname="GIANTBOAR" description="a very talented bloke" %}
+            {% include friend-card.html name="Max" %}
+        </ul>
     </div>
 
     {% include home-footer.html %}

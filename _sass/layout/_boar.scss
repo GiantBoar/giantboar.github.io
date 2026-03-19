@@ -287,14 +287,13 @@
         display: flex;
         image-rendering: pixelated;
 
-        margin: 0 auto 0 auto;
-
         @include bp.lte(bp.get(xl)) {
-            width: 100%;
+            width: 120%;
         }
 
         @include bp.xl {
             width: 80%;
+            margin: 0 auto 0 auto;
         }
     }
 
@@ -656,13 +655,22 @@ ease-in-out;
     margin: 0 auto;
     padding: 0 0;
 
+    gap: 1.25rem;
+
     li.friend-card {
+        background: black;
+        border-width: 3px;
+        border-color: white;
+        border-style: solid;
+
         display: flex;
 
         flex: 1;
         min-width: 500px;
 
         margin: 4px 4px;
+
+        padding: 10px;
 
         img {
             height: 150px;
@@ -692,6 +700,8 @@ ease-in-out;
             margin: 0 0;
             margin-top: 0.2rem;
             text-align: left;
+            
+            font-family: AriWDisplay;
 
             a {
                 color: white;
@@ -700,11 +710,18 @@ ease-in-out;
         h2 {
             text-align: left;
             margin-bottom: 0;
+
+            color: #bfbfc3;
+            
+            font-family: AriWDisplay;
         }
 
         p {
             margin-bottom: 1.2rem;
-            font-style: italic;
+            
+            font-family: AriW;
+
+            color: #bfbfc3;
         }
     }
 }
