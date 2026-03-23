@@ -8,7 +8,7 @@ categories: [Blogging, Tutorial]
 tags: [getting started]
 pin: false
 published: false
-post-image-path: ../assets/postassets/20240530
+post-image-path: ../assets/postassets/postfolder
 ---
 
 # h1 title
@@ -33,4 +33,13 @@ if(somethingTrue)
     }
 }
 ```
+
+> this is how you prompt the reader
+{: .prompt-tip }
+> this is how you warn the reader
+{: .prompt-warning }
+> this is how you REALLY warn the reader
+{: .prompt-danger }
+> this is how you tell the reader some useful info
+{: .prompt-info }
 

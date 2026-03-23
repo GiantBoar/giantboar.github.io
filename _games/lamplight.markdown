@@ -1,9 +1,9 @@
 ---
 title: Lamplight
 style: true
-topbar-style: false
+topbar-style: true
 game-image-path: ../../assets/games/lamplight
-dropdown-link: false
+dropdown-link: true
 ---
 
 <p style="margin: 0 0;"><img class="title-image NOREFACTOR" alt="Lamplight Logo" src="{{ page.game-image-path }}/ll-header.png"></p>

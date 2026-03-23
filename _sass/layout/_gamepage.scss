@@ -242,6 +242,33 @@
         }
     }
 }
+.homebar-expanded.midnight-transmission {
+    margin-top: 0px;
+    background-color: var(--accent-green);
+
+    height: fit-content;
+
+    z-index: 2;
+
+    transition: transform 0.5s ease;
+
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    
+    @include bp.lt(bp.get(md)) {
+        display: block;
+    }
+
+    &.navbar-visible {
+        transform: translateY(v.$home-topbar-size - 20px);
+        -webkit-transform: translateY(v.$home-topbar-size - 20px);
+    }
+
+    .divider {
+        padding: 36px 12px 0 12px !important;
+    }
+}
+
 #homefooter.midnight-transmission {
     background: var(--mt-footer);
 }
@@ -279,6 +306,10 @@
         font-family: AriW;
     }
 }
+.homebar.lamplight {
+    background-color: #3b3a4a;
+}
+
 
 .image-row {
     display: flex;
