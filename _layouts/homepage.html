@@ -127,10 +127,14 @@ layout: boar
             </div>
         </div>
 
-        <ul class="friend-holder">
-            {% include friend-card.html name="Max" altname="GIANTBOAR" description="a very talented bloke" %}
-            {% include friend-card.html name="Max" %}
-        </ul>
+        <div class="homepage-widget" style="padding: 1rem 0 0 0;">
+            <h1>FRIENDS OF BOAR</h1>
+            <ul class="friend-holder">
+                {% include friend-card.html name="Thomas Baynham" description="Computer games programmer and martial artist" website="https://thomasbaynham.rocks/" github="https://github.com/Thomas-FullPower" %}
+                {% include friend-card.html name="FloretDev" altname="Haven Blakely-Rivers" description="Games designer and programmer I've worked with many times!" website="https://thomasbaynham.rocks/" github="https://github.com/Thomas-FullPower" %}
+                {% include friend-card.html name="Liammb" description="Talented games designer" website="https://thomasbaynham.rocks/" github="https://github.com/Thomas-FullPower" %}
+            </ul>
+        </div>
     </div>
 
     {% include home-footer.html %}

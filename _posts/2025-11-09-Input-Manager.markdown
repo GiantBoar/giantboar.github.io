@@ -14,12 +14,12 @@ image:
 ---
 
 # Input Device Manager
-Recently, a friend of mine posed an idea for a game they're developing for a local game dev showcase, a platform fighter where each selectable character is associated with a unique controller. For this project, I needed to create a system that could handle inputs from multiple unique controllers to play as different characters, including character selection and pairing input devices to controller types.
+Recently, a friend of mine posed an idea for a game they're developing for a local game dev showcase: a platform fighter where each selectable character is associated with a unique controller. For this project, I needed to create a system that could handle inputs from multiple unique controllers to play as different characters, including character selection and pairing input devices to controller types.
 
 The controllers used in the project are N64, GameCube, WiiMote and DK Bongos. These devices posed a notable issue, since three of the four use the same hardware to interface with the PC, meaning they are read as the same controller *type*. Since we couldn't tell the difference between individual pieces of hardware, creative solutions had to be made to associate controllers with their type.
 
 ## Gameplay
-As a platform fighter, the fundamental gameplay revolves around **choosing a character** using their associated input device, having your opponent do the same, and then using a range of **attacks and special moves** to damage your opponent. The gameplay is inspired by games like Super Smash Brothers, so the health is a percentage that increases with each hit, ranging from 0% (undamaged) up to 400%, with the amount of knock back the enemy takes exponentially growing along side their health. When a player is finally knocked out of bounds, they lose a stock, and when they have no stocks left, they have lost the fight.
+As a platform fighter, the fundamental gameplay revolves around **choosing a character** using their associated input device, having your opponent do the same, and then using a range of **attacks and special moves** to damage your opponent. The gameplay is inspired by games like Super Smash Brothers, so the health is a percentage that increases with each hit, ranging from 0% (undamaged) up, with the amount of knock back the enemy takes exponentially growing along side their health. When a player is finally knocked out of bounds, they lose a stock, and when they have no stocks left, they have lost the fight.
 
 When developing this system, I had to consider its purpose in the game, specifically that not all devices will control a character in a fight (with only one-on-one battles planned for release), and that the *type* of device determined the character's sprites and moves. 
 

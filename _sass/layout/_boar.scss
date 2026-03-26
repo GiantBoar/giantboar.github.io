@@ -651,29 +651,25 @@ ease-in-out;
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-
-    margin: 0 auto;
     padding: 0 0;
 
     gap: 1.25rem;
 
     li.friend-card {
-        background: black;
-        border-width: 3px;
-        border-color: white;
-        border-style: solid;
+        background: rgb(87, 122, 111);
+
+        font-family: 'Jost';
 
         display: flex;
 
+        min-width: 400px;
         flex: 1;
-        min-width: 500px;
 
-        margin: 4px 4px;
-
-        padding: 10px;
+        padding: 16px;
 
         img {
             height: 150px;
+            border-radius: 50%;
         }
 
         div {
@@ -700,8 +696,9 @@ ease-in-out;
             margin: 0 0;
             margin-top: 0.2rem;
             text-align: left;
-            
-            font-family: AriWDisplay;
+
+            font-weight: normal;
+            font-family: TheBoldFont;
 
             a {
                 color: white;
@@ -711,17 +708,13 @@ ease-in-out;
             text-align: left;
             margin-bottom: 0;
 
-            color: #bfbfc3;
-            
-            font-family: AriWDisplay;
+            color: #d1e3dd;
         }
 
         p {
             margin-bottom: 1.2rem;
-            
-            font-family: AriW;
 
-            color: #bfbfc3;
+            color: #d1e3dd;
         }
     }
 }
