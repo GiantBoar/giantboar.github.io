@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+{% assign posts = paginator.posts %}
+
+<div id="post-list">
+    {% for post in posts %}
+    <article class="post-card">
+        <a class="post-preview" href="{{ post.url }}">
+            <h1>{{ post.title }}</h1>
+            <p>
+                {% if post.description %}
+                    {{ post.description }}
+                {% else %}
+                    {{ post.excerpt }}
+                {% endif %}
+            </p>
+        </a>
+    </article>
+    {% endfor %}
+</div>

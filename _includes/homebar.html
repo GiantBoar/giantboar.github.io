@@ -1,0 +1,64 @@
+<!-- navbar header -->
+
+<script>
+    function showGames() {
+        var dropdownMenu = document.getElementById("games-dropdown");
+        var isOpen = dropdownMenu.classList.contains('visible');
+        dropdownMenu.classList.toggle('navbar-visible');
+
+        document.getElementById("games-dropdown-button").classList.toggle("dropdown-open");
+    }
+
+    function expandHomebar() {
+        var expandMenu = document.getElementById("homebar-expand");
+        var gamesDropdown = document.getElementById("games-dropdown");
+        var isOpen = gamesDropdown.classList.contains('navbar-visible');
+
+        expandMenu.classList.toggle('navbar-visible');
+        if(isOpen) {
+            gamesDropdown.classList.toggle('navbar-visible')
+        }
+
+        document.getElementById("expand-homebar-button").classList.toggle("dropdown-open");
+    }
+</script>
+
+<!-- main homebar -->
+<nav id="homebar" class="homebar">
+    <img src="/assets/img/general/profile-picture-transparent.png" class="logo">
+    <a href="/" class="title">GIANTBOAR</a>
+
+    {% for nav in site.data.navigation %}
+        <a href="{{ nav.link | relative_url }}" class="navitem {% if page.url == nav.link %}active{% endif %}">{{ nav.name | upcase }}</a>
+    {% endfor %}
+    
+    <a href="https://www.google.com/search?sca_esv=bef075a73146d0a2&rlz=1C1VDKB_enGB1033GB1033&sxsrf=ANbL-n4ROlrwVERpBVqX2uR5Frcn4AaohA:1774595775737&udm=2&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpaEWjvZ2Py1XXV8d8KvlI3o6iwGk6Iv1tRbZIBNIVs-5-bUj3iBl-UxHsANYwOkWWQqZAJJdwuRaSoLHfELMHARurXwtwWmcdG4V-LDFDd8ecoEtHpZSRelVfCRq2UKwcWKG3jZWtDKY1abjUi6atsGFRNpwlmGKAQF9AXbF8wg8fYd5JIFkWAi8Mz75HFguCKRmBxQ&q=majestic+horse&sa=X&ved=2ahUKEwivqtS2xL-TAxVBTkEAHdgHBewQtKgLegQIGhAB&biw=1920&bih=1031&dpr=1.5" class="navitem"><i class="fa-solid fa-fish-fins"></i></a>
+    <button id="games-dropdown-button" class="navitem" onclick="showGames()">
+        GAMES 
+        <i class="fa-fw fas fa-caret-down"></i>
+    </button>
+
+    <button id="expand-homebar-button" class="navitem expand-homebar-button" onclick="expandHomebar()">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+</nav>
+
+<!-- expandable homebar on smaller devices -->
+<nav id="homebar-expand" class="homebar expanded">
+    {% for nav in site.data.navigation %}
+        <a href="{{ nav.link | relative_url }}" class="navitem {% if page.url == nav.link %}active{% endif %}">{{ nav.name | upcase }}</a>
+    {% endfor %}
+    
+    <a href="https://www.google.com/search?sca_esv=bef075a73146d0a2&rlz=1C1VDKB_enGB1033GB1033&sxsrf=ANbL-n4ROlrwVERpBVqX2uR5Frcn4AaohA:1774595775737&udm=2&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpaEWjvZ2Py1XXV8d8KvlI3o6iwGk6Iv1tRbZIBNIVs-5-bUj3iBl-UxHsANYwOkWWQqZAJJdwuRaSoLHfELMHARurXwtwWmcdG4V-LDFDd8ecoEtHpZSRelVfCRq2UKwcWKG3jZWtDKY1abjUi6atsGFRNpwlmGKAQF9AXbF8wg8fYd5JIFkWAi8Mz75HFguCKRmBxQ&q=majestic+horse&sa=X&ved=2ahUKEwivqtS2xL-TAxVBTkEAHdgHBewQtKgLegQIGhAB&biw=1920&bih=1031&dpr=1.5" class="navitem"><i class="fa-solid fa-fish-fins"></i></a>
+    <button id="games-dropdown-button" class="navitem" onclick="showGames()">
+        GAMES 
+        <i class="fa-fw fas fa-caret-down"></i>
+    </button>
+</nav>
+
+<!-- games list dropdown menu -->
+<nav id="games-dropdown" class="homebar games-dropdown">
+    {% for nav in site.data.navigation %}
+        <a href="{{ nav.link | relative_url }}" class="navitem {% if page.url == nav.link %}active{% endif %}">{{ nav.name | upcase }}</a>
+    {% endfor %}
+</nav>

@@ -1,0 +1,37 @@
+domain: giantboar.com
+url: https://giantboar.com
+
+
+# how many blog posts to show per-page
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - autoprefixer-rails
+  - jekyll-paginate
+  - jekyll-assets
+
+defaults:
+  - scope: # blog posts
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      published: true
+      hidden: false
+      pinned: false
+      permalink: /blog/:year/:title
+
+  - scope: # gamepages
+      path: ""
+      type: "games"
+    values:
+      layout: "gamepage"
+      permalink: /games/:title
+
+  - scope: # default 
+      path: ""
+    values:
+      layout: "default"
