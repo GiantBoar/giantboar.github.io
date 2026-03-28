@@ -1,6 +1,8 @@
 domain: giantboar.github.io
 url: https://giantboar.github.io
 
+title: GiantBoar
+repository: GiantBoar/giantboar.github.io
 
 # how many blog posts to show per-page
 paginate: 5
