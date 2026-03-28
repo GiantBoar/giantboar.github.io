@@ -1,0 +1,106 @@
+:root {
+    @include styles;
+
+    font-family: Roboto;
+}
+
+body {
+    background: var(--main-bg);
+    color: white;
+    margin: 0;
+}
+
+// container handling various screen widths
+.container {
+    width: 80%;
+    height: 100%;
+    min-height: 1000px;
+
+    margin: calc($homebar-height + $homebar-zigzag-height) auto 0 auto;
+
+    transition: width 1s;
+
+    @include lte($bp-md) {
+        width: 100%;
+    }
+
+    @include md {
+        width: 80%;
+    }
+    @include xxl {
+        width: 60%;
+    }
+}
+
+// general-use pixelated image rendering
+.pixel-img {
+    image-rendering: pixelated;
+}
+
+
+// testing stuff
+.testdiv {
+    display: block;
+
+    width: 100px;
+    height: 100px;
+
+    @include lte($bp-sm) {
+        background-color: rgb(58, 0, 0);
+    }
+
+    @include sm {
+        background-color: red;
+    }
+
+    @include md {
+        background-color: rgb(255, 230, 0);
+    }
+
+    @include lg {
+        background-color: rgb(17, 255, 0);
+    }
+
+    @include xl {
+        background-color: rgb(0, 255, 255);
+    }
+
+    @include xxl {
+        background-color: rgb(0, 17, 255);
+    }
+
+    @include xxxl {
+        background-color: rgb(242, 0, 255);
+    }
+}
+.testlabel:before {
+    color: white;
+
+    @include lte($bp-sm) {
+        content: "extra small";
+    }
+
+    @include sm {
+        content: "small";
+    }
+
+    @include md {
+        content: "medium";
+    }
+
+    @include lg {
+        content: "large";
+    }
+
+    @include xl {
+        content: "extra large";
+    }
+
+    @include xxl {
+        content: "extra extra large";
+    }
+
+    @include xxxl {
+        content: "extra extra extra large";
+    }
+}

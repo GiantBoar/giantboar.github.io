@@ -1,0 +1,144 @@
+.homebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 3;
+
+    background-color: var(--homebar-colour);
+    list-style: none;
+    display: flex;
+
+    height: $homebar-height;
+
+    padding: 0 2rem 0 0;
+
+    justify-content: right;
+
+    mask: conic-gradient(from -45deg at bottom, rgba(0, 0, 0, 0), #000 1deg 89deg, rgba(0, 0, 0, 0) 90deg) 50% / 32px 100%;
+}
+
+.homebar .logo {
+    height: calc($homebar-height - $homebar-zigzag-height);
+}
+.homebar .title {
+    font-family: Cal Sans;
+    margin: 10px auto 0 0;
+    padding: auto;
+    font-weight: bolder;
+    font-size: 24pt;
+
+    text-decoration: none;
+    color: var(--homebar-navitem)
+}
+
+.homebar .navitem {
+    font-family: Cal Sans;
+    text-decoration: none;
+    display: flex;
+
+    font-size: large;
+    text-align: center;
+    align-items: center;
+
+    background-color: var(--homebar-colour);
+    border-style: none;
+    color: var(--homebar-navitem);
+
+    padding: 18px 18px calc(18px + $homebar-zigzag-height) 18px;
+
+    &.active { background-color: var(--homebar-navitem-active); }
+
+    @include lte($bp-md) {
+        display: none;
+    }
+}
+.homebar .navitem:hover, .homebar .navitem.dropdown-open {
+    background-color: var(--homebar-navitem-hover);
+
+    // dropdown open colour for the homebar expand button on small screens
+    &.expand-homebar-button {
+        background-color: var(--homebar-expand-colour);
+    }
+}
+
+// button that expands the homebar on smaller screens
+.homebar .navitem.expand-homebar-button {
+    display: none;
+
+    @include lte($bp-md) {
+        display: block;
+    }
+}
+.homebar .navitem.expand-homebar-button:hover {
+    background-color: var(--accent-green);
+}
+
+// expanded homebar if on a small screen
+.homebar.expanded {
+    z-index: 2;
+    height: fit-content;
+    transition: transform .5s;
+
+    background-color: var(--homebar-expand-colour);
+
+    transform: translateY(0px - $homebar-height);
+    -webkit-transform: translateY(0px - $homebar-height);
+}
+.homebar.expanded.navbar-visible {
+    transform: translateY($homebar-height - 20px);
+    -webkit-transform: translateY($homebar-height - 20px);
+}
+.homebar.expanded .navitem {
+    display: flex;
+    background-color: var(--homebar-expand-colour);
+
+    height: $homebar-height + 16px;
+
+    padding: 0 18px;
+
+    &.active {
+        background-color: var(--homebar-expand-navitem-active);
+    }
+}
+.homebar.expanded .navitem:hover {
+    background-color: var(--homebar-expand-navitem-hover);
+}
+
+
+
+// games dropdown
+.homebar.games-dropdown {
+    z-index: 1;
+    height: fit-content;
+
+    background-color: var(--homebar-games-colour);
+
+    transition: transform .5s;
+    transform: translateY(0px - $homebar-height);
+    -webkit-transform: translateY(0px - $homebar-height);
+}
+.homebar.games-dropdown.navbar-visible {
+    @include lte($bp-md) {
+        transform: translateY(calc($homebar-height * 2) - 20px);
+        -webkit-transform: translateY(calc($homebar-height * 2) - 20px);
+    }
+    @include md {
+        transform: translateY($homebar-height - 20px);
+        -webkit-transform: translateY($homebar-height - 20px);
+    }
+}
+.homebar.games-dropdown .navitem {
+    display: flex;
+    background-color: var(--homebar-games-colour);
+
+    height: $homebar-height + 16px;
+
+    padding: 0 18px;
+
+    &.active { background-color: var(--homebar-games-navitem-active); }
+}
+.homebar.games-dropdown .navitem:hover {
+    background-color: var(--homebar-games-navitem-hover);
+}

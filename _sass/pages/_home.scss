@@ -1,0 +1,85 @@
+.home-body {
+    background: var(--main-bg);
+}
+
+.banner {
+    display: block;
+    margin-top: calc($homebar-height - $homebar-zigzag-height); // seat it beneath the homebar
+    width: 100%;
+
+    background-color: var(--banner-bg);
+}
+.banner img {
+    position: relative;
+    top: 0;
+
+    transition: width 1s, height 1s, position 1s;
+
+    margin: calc($homebar-height - $homebar-zigzag-height) auto 0 auto;
+
+    @include lte($bp-sm) {
+        transition: none;
+        position: relative;
+        left: 50%;
+        margin: calc($homebar-height - $homebar-zigzag-height) 0 0 -55%;
+
+        width: 110%;
+    }
+    @include sm {
+        width: 100%;
+    }
+    @include xl {
+        width: 80%;
+    }
+}
+
+.parallax-banner {
+    background-image: url("/assets/img/general/header.gif");
+
+    width: 100%;
+
+    image-rendering: pixelated;
+
+    @supports not (background-attachment: fixed) {
+        background-attachment: scroll;
+        background-position-y: 0;
+    }
+    @supports (background-attachment: fixed) {
+        background-attachment: fixed;
+        background-position-y: $homebar-height - $homebar-zigzag-height;
+    }
+    
+    background-repeat: no-repeat;
+    background-position-x: center;
+
+    transition: background-size 0.5s ease-in-out, height 0.5s ease-in-out;
+    
+    @include lte($bp-sm) {
+        height: 220px;
+        background-size: auto 220px;
+    }
+    @include sm {
+        height: 220px;
+        background-size: auto 220px;
+    }
+
+    @include lg {
+        height: 300px;
+        background-size: auto 300px;
+    }
+
+    @include xl {
+        height: 400px;
+        background-size: auto 400px;
+    }
+
+    @include xxl {
+        height: 480px;
+        background-size: auto 480px;
+    }
+
+    @include xxxl {
+        height: 560px;
+        background-size: auto 560px;
+    }
+}
