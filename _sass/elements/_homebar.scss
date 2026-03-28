@@ -10,7 +10,7 @@
     list-style: none;
     display: flex;
 
-    height: $homebar-height;
+    height: var(--homebar-height);
 
     padding: 0 2rem 0 0;
 
@@ -20,7 +20,7 @@
 }
 
 .homebar .logo {
-    height: calc($homebar-height - $homebar-zigzag-height);
+    height: calc(var(--homebar-height) - var(--homebar-zigzag-height));
 }
 .homebar .title {
     font-family: Cal Sans;
@@ -46,7 +46,7 @@
     border-style: none;
     color: var(--homebar-navitem);
 
-    padding: 18px 18px calc(18px + $homebar-zigzag-height) 18px;
+    padding: 18px 18px calc(18px + var(--homebar-zigzag-height)) 18px;
 
     &.active { background-color: var(--homebar-navitem-active); }
 
@@ -83,18 +83,18 @@
 
     background-color: var(--homebar-expand-colour);
 
-    transform: translateY(0px - $homebar-height);
-    -webkit-transform: translateY(0px - $homebar-height);
+    transform: translateY(0px - var(--homebar-height));
+    -webkit-transform: translateY(0px - var(--homebar-height));
 }
 .homebar.expanded.navbar-visible {
-    transform: translateY($homebar-height - 20px);
-    -webkit-transform: translateY($homebar-height - 20px);
+    transform: translateY(var(--homebar-height) - 20px);
+    -webkit-transform: translateY(var(--homebar-height) - 20px);
 }
 .homebar.expanded .navitem {
     display: flex;
     background-color: var(--homebar-expand-colour);
 
-    height: $homebar-height + 16px;
+    height: var(--homebar-height) + 16px;
 
     padding: 0 18px;
 
@@ -116,24 +116,24 @@
     background-color: var(--homebar-games-colour);
 
     transition: transform .5s;
-    transform: translateY(0px - $homebar-height);
-    -webkit-transform: translateY(0px - $homebar-height);
+    transform: translateY(0px - var(--homebar-height));
+    -webkit-transform: translateY(0px - var(--homebar-height));
 }
 .homebar.games-dropdown.navbar-visible {
     @include lte($bp-md) {
-        transform: translateY(calc($homebar-height * 2) - 20px);
-        -webkit-transform: translateY(calc($homebar-height * 2) - 20px);
+        transform: translateY(calc(var(--homebar-height) * 2) - 20px);
+        -webkit-transform: translateY(calc(var(--homebar-height) * 2) - 20px);
     }
     @include md {
-        transform: translateY($homebar-height - 20px);
-        -webkit-transform: translateY($homebar-height - 20px);
+        transform: translateY(var(--homebar-height) - 20px);
+        -webkit-transform: translateY(var(--homebar-height) - 20px);
     }
 }
 .homebar.games-dropdown .navitem {
     display: flex;
     background-color: var(--homebar-games-colour);
 
-    height: $homebar-height + 16px;
+    height: var(--homebar-height) + 16px;
 
     padding: 0 18px;
 

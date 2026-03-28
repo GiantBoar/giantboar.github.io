@@ -4,7 +4,7 @@
 
 .banner {
     display: block;
-    margin-top: calc($homebar-height - $homebar-zigzag-height); // seat it beneath the homebar
+    margin-top: calc(var(--homebar-height) - var(--homebar-zigzag-height)); // seat it beneath the homebar
     width: 100%;
 
     background-color: var(--banner-bg);
@@ -15,13 +15,13 @@
 
     transition: width 1s, height 1s, position 1s;
 
-    margin: calc($homebar-height - $homebar-zigzag-height) auto 0 auto;
+    margin: calc(var(--homebar-height) - var(--homebar-zigzag-height)) auto 0 auto;
 
     @include lte($bp-sm) {
         transition: none;
         position: relative;
         left: 50%;
-        margin: calc($homebar-height - $homebar-zigzag-height) 0 0 -55%;
+        margin: calc(var(--homebar-height) - var(--homebar-zigzag-height)) 0 0 -55%;
 
         width: 110%;
     }
@@ -46,7 +46,7 @@
     }
     @supports (background-attachment: fixed) {
         background-attachment: fixed;
-        background-position-y: $homebar-height - $homebar-zigzag-height;
+        background-position-y: calc(var(--homebar-height) - var(--homebar-zigzag-height));
     }
     
     background-repeat: no-repeat;

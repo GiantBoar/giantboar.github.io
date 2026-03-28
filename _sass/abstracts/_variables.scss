@@ -1,4 +1,6 @@
 // homebar
 
-$homebar-height: 80px; // height of the homebar in pixels
-$homebar-zigzag-height: 16px; // has no bearing on the actual size of the zigzags visually, just a reference variable
+@mixin variables{
+    --homebar-height: 80px; // height of the homebar in pixels
+    --homebar-zigzag-height: 16px; // has no bearing on the actual size of the zigzags visually, just a reference variable
+}

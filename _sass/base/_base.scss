@@ -1,6 +1,8 @@
 :root {
     @include styles;
 
+    @include variables;
+
     font-family: Roboto;
 }
 
@@ -16,7 +18,7 @@ body {
     height: 100%;
     min-height: 1000px;
 
-    margin: calc($homebar-height + $homebar-zigzag-height) auto 0 auto;
+    margin: calc(var(--homebar-height) + var(--homebar-zigzag-height)) auto 0 auto;
 
     transition: width 1s;
 
