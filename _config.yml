@@ -1,5 +1,6 @@
 domain: giantboar.github.io
 url: https://giantboar.github.io
+baseurl: /giantboar.github.io/
 
 title: GiantBoar
 repository: GiantBoar/giantboar.github.io
