@@ -18,6 +18,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
+url: giantboar.com
+repository: giantboar.github.io
+
 title: GIANTBOAR
 
 plugins:
