@@ -1,0 +1,18 @@
+
+footer {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    height: var(--footer-height);
+    padding: var(--footer-zigzag-height) 30px 0 30px;
+
+    background-color: var(--footer-colour);
+    mask: conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) 50%/32px 100%;
+
+    a, p {
+        margin: auto 0 auto 0;
+        text-decoration: none;
+        color: var(--footer-text);
+    }
+}

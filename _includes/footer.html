@@ -1,0 +1,10 @@
+<footer>
+    {% comment %}   social links   {% endcomment %}
+    {% if site.socials.github %} <a href="{{ site.socials.github }}"><i class="fa-brands fa-square-github fa-lg"></i></a> {% endif %}
+    {% if site.socials.linkedin %} <a href="{{ site.socials.linkedin }}"><i class="fa-brands fa-linkedin fa-lg"></i></a> {% endif %}
+    {% if site.socials.twitter %} <a href="{{ site.socials.twitter }}"><i class="fa-brands fa-square-x-twitter fa-lg"></i></a> {% endif %}
+
+    <!-- <p style="margin-left: 20px;">Website made entirely by <strong>Max Patteson</strong> using <a href="https://jekyllrb.com/">Jekyll</a> and hosted on <a href="https://docs.github.com/en/pages">GitHub Pages</a></p> -->
+    <p style="margin-left: 20px;"><strong>© Max Patteson {{ site.time | date: "%Y" }}</strong></p>
+    <p style="margin-left: auto;">Website that way <i class="fa-solid fa-arrow-up"></i></p>
+</footer>
