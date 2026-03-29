@@ -83,18 +83,18 @@
 
     background-color: var(--homebar-expand-colour);
 
-    transform: translateY(0px - var(--homebar-height));
-    -webkit-transform: translateY(0px - var(--homebar-height));
+    transform: translateY(calc(0px - var(--homebar-height)));
+    -webkit-transform: translateY(calc(0px - var(--homebar-height)));
 }
 .homebar.expanded.navbar-visible {
-    transform: translateY(var(--homebar-height) - 20px);
-    -webkit-transform: translateY(var(--homebar-height) - 20px);
+    transform: translateY(calc(var(--homebar-height) - 20px));
+    -webkit-transform: translateY(calc(var(--homebar-height) - 20px));
 }
 .homebar.expanded .navitem {
     display: flex;
     background-color: var(--homebar-expand-colour);
 
-    height: var(--homebar-height) + 16px;
+    height: calc(var(--homebar-height) + 16px);
 
     padding: 0 18px;
 
@@ -116,24 +116,24 @@
     background-color: var(--homebar-games-colour);
 
     transition: transform .5s;
-    transform: translateY(0px - var(--homebar-height));
-    -webkit-transform: translateY(0px - var(--homebar-height));
+    transform: translateY(calc(0px - var(--homebar-height)));
+    -webkit-transform: translateY(calc(0px - var(--homebar-height)));
 }
 .homebar.games-dropdown.navbar-visible {
     @include lte($bp-md) {
-        transform: translateY(calc(var(--homebar-height) * 2) - 20px);
-        -webkit-transform: translateY(calc(var(--homebar-height) * 2) - 20px);
+        transform: translateY(calc(calc(var(--homebar-height) * 2) - 20px));
+        -webkit-transform: translateY(calc(calc(var(--homebar-height) * 2) - 20px));
     }
     @include md {
-        transform: translateY(var(--homebar-height) - 20px);
-        -webkit-transform: translateY(var(--homebar-height) - 20px);
+        transform: translateY(calc(var(--homebar-height) - 20px));
+        -webkit-transform: translateY(calc(var(--homebar-height) - 20px));
     }
 }
 .homebar.games-dropdown .navitem {
     display: flex;
     background-color: var(--homebar-games-colour);
 
-    height: var(--homebar-height) + 16px;
+    height: calc(var(--homebar-height) + 16px);
 
     padding: 0 18px;
 
