@@ -1,0 +1,14 @@
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+         var navVisible = localStorage.getItem("navbar-visible");
+
+        if (navVisible == null) { localStorage.setItem("navbar-visible", "true") }
+        
+        if (navVisible != "true") { 
+            //var homebar = document.getElementById("homebar");
+            //homebar.classList.add("animate-shown");
+
+            localStorage.setItem("navbar-visible", "true");
+        }
+    });
+</script>

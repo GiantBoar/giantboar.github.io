@@ -16,7 +16,7 @@
 
     justify-content: right;
 
-    mask: conic-gradient(from -45deg at bottom, rgba(0, 0, 0, 0), #000 1deg 89deg, rgba(0, 0, 0, 0) 90deg) 50% / 32px 100%;
+    mask: conic-gradient(from -45deg at bottom, rgba(0, 0, 0, 0), #000 1deg 89deg, rgba(0, 0, 0, 0) 90deg) 50% / calc(var(--homebar-zigzag-height)*2) 100%;
 }
 
 .homebar .logo {
@@ -63,6 +63,34 @@
     }
 }
 
+.homebar.animate-hidden {
+    display: flex !important;
+
+    @keyframes animate-hidden {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-100%);
+        }
+    }
+
+    animation: 0.5s ease-out 0s 1 animate-hidden;
+    transform: translateY(-100%);
+}
+.homebar.animate-shown {
+    @keyframes animate-shown {
+        0% {
+            transform: translateY(-100%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    animation: 0.5s ease-out 0s 1 animate-shown;
+}
+
 // button that expands the homebar on smaller screens
 .homebar .navitem.expand-homebar-button {
     display: none;
@@ -83,8 +111,8 @@
 
     background-color: var(--homebar-expand-colour);
 
-    transform: translateY(calc(0px - var(--homebar-height)));
-    -webkit-transform: translateY(calc(0px - var(--homebar-height)));
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
 }
 .homebar.expanded.navbar-visible {
     transform: translateY(calc(var(--homebar-height) - 20px));
@@ -116,8 +144,8 @@
     background-color: var(--homebar-games-colour);
 
     transition: transform .5s;
-    transform: translateY(calc(0px - var(--homebar-height)));
-    -webkit-transform: translateY(calc(0px - var(--homebar-height)));
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
 }
 .homebar.games-dropdown.navbar-visible {
     @include lte($bp-md) {

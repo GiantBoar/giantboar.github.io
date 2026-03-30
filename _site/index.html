@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+
+
 <html>
     <head>
     <meta charset="utf-8">
@@ -70,7 +72,7 @@
 </nav>
 
 <!-- expandable homebar on smaller devices -->
-<nav id="homebar-expand" class="homebar expanded">
+<nav id="homebar-expand" class="homebar expanded ">
     
         <a href="/" class="navitem active">HOME</a>
     
@@ -85,7 +87,7 @@
 </nav>
 
 <!-- games list dropdown menu -->
-<nav id="games-dropdown" class="homebar games-dropdown">
+<nav id="games-dropdown" class="homebar games-dropdown ">
     
         <a href="/" class="navitem active">HOME</a>
     
@@ -93,7 +95,24 @@
     
 </nav>
 
-        <div class="banner">
+        <script>
+    document.addEventListener("DOMContentLoaded", function() {
+         var navVisible = localStorage.getItem("navbar-visible");
+
+        if (navVisible == null) { localStorage.setItem("navbar-visible", "true") }
+        
+        if (navVisible != "true") { 
+            //var homebar = document.getElementById("homebar");
+            //homebar.classList.add("animate-shown");
+
+            localStorage.setItem("navbar-visible", "true");
+        }
+    });
+</script>
+
+<!-- this is kind of stupid but exists for the animated banner -->
+
+<div class="banner">
     <!--<img src="/assets/img/general/header.gif" class="parallax-banner pixel-img">-->
     <div class="parallax-banner"></div>
 </div>
@@ -112,7 +131,7 @@
     
 
     <!-- <p style="margin-left: 20px;">Website made entirely by <strong>Max Patteson</strong> using <a href="https://jekyllrb.com/">Jekyll</a> and hosted on <a href="https://docs.github.com/en/pages">GitHub Pages</a></p> -->
-    <p style="margin-left: 20px;"><strong>© Max Patteson 2026</strong></p>
+    <p style="margin-left: 20px;"><strong>© 2026 Max Patteson</strong></p>
     <p style="margin-left: auto;">Website that way <i class="fa-solid fa-arrow-up"></i></p>
 </footer>
     </body>

@@ -44,7 +44,7 @@
 </nav>
 
 <!-- expandable homebar on smaller devices -->
-<nav id="homebar-expand" class="homebar expanded">
+<nav id="homebar-expand" class="homebar expanded {% if page.layout == "blog" %}hidden{% endif %}">
     {% for nav in site.data.navigation %}
         <a href="{{ nav.link | relative_url }}" class="navitem {% if page.url == nav.link %}active{% endif %}">{{ nav.name | upcase }}</a>
     {% endfor %}
@@ -57,7 +57,7 @@
 </nav>
 
 <!-- games list dropdown menu -->
-<nav id="games-dropdown" class="homebar games-dropdown">
+<nav id="games-dropdown" class="homebar games-dropdown {% if page.layout == "blog" %}hidden{% endif %}">
     {% for nav in site.data.navigation %}
         <a href="{{ nav.link | relative_url }}" class="navitem {% if page.url == nav.link %}active{% endif %}">{{ nav.name | upcase }}</a>
     {% endfor %}

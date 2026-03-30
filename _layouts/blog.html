@@ -2,25 +2,32 @@
 layout: default
 ---
 
-<div id="post-list">
-    {% for post in site.posts %}
+<div style="display: flex; flex-direction: row;">
+    <div class="testerbox">
 
-    <article class="post-card">
-        <a class="post-preview" href="{{ post.url }}">
-            <div class="post-info">
-                <h1>{{ post.title }}</h1>
-                
-                <p style="margin-bottom: auto; margin-top: 0;">
-                    {% if post.description %}
-                        {{ post.description }}
-                    {% else %}
-                        {{ post.excerpt }}
-                    {% endif %}
-                </p>
-                <p><i class="fa-regular fa-calendar" style="margin-right: 8px;"></i>{{ post.date | date: "%d %b, %Y" }}</p>
-            </div>
-            <img class="preview-img" src="/assets/img/general/profile-picture.png">
-        </a>
-    </article>
-    {% endfor %}
+    </div>
+    <div id="post-list">
+        <a href="/">BACK</a>
+
+        {% for post in site.posts %}
+
+        <article class="post-card">
+            <a class="post-preview" href="{{ post.url }}">
+                <div class="post-info">
+                    <h1>{{ post.title }}</h1>
+                    
+                    <p style="margin-bottom: auto; margin-top: 0;">
+                        {% if post.description %}
+                            {{ post.description }}
+                        {% else %}
+                            {{ post.excerpt }}
+                        {% endif %}
+                    </p>
+                    <p><i class="fa-regular fa-calendar" style="margin-right: 8px;"></i>{{ post.date | date: "%d %b, %Y" }}</p>
+                </div>
+                <img class="preview-img" src="/assets/img/general/profile-picture.png">
+            </a>
+        </article>
+        {% endfor %}
+    </div>
 </div>

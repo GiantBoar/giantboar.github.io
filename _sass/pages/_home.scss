@@ -4,7 +4,7 @@
 
 .banner {
     display: block;
-    margin-top: calc(var(--homebar-height) - var(--homebar-zigzag-height)); // seat it beneath the homebar
+    padding-top: calc(var(--homebar-height) - var(--homebar-zigzag-height)); // seat it beneath the homebar
     width: 100%;
 
     background-color: var(--banner-bg);

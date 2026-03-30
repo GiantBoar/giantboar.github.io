@@ -1,0 +1,18 @@
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var navVisible = localStorage.getItem("navbar-visible");
+
+        if (navVisible == null) { localStorage.setItem("navbar-visible", "false") }
+
+        if (navVisible != "false") { 
+            var homebar = document.getElementById("homebar");
+            homebar.classList.add("animate-hidden");
+
+            localStorage.setItem("navbar-visible", "false");
+        }
+        else {
+            var homebar = document.getElementById("homebar");
+            homebar.classList.add("hidden");
+        }
+    });
+</script>

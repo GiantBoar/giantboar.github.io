@@ -16,7 +16,7 @@ body {
 .container {
     width: 80%;
     height: 100%;
-    min-height: 1000px;
+    min-height: 100vh;
 
     margin: calc(var(--homebar-height) + var(--homebar-zigzag-height)) auto 0 auto;
 
@@ -33,6 +33,13 @@ body {
         width: 60%;
     }
 }
+
+
+// general use classes
+.hidden {
+    display: none !important;
+}
+
 
 // general-use pixelated image rendering
 .pixel-img {
