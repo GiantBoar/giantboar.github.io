@@ -23,11 +23,12 @@
     }
 </script>
 
+
 <!-- main homebar -->
 <nav id="homebar" class="homebar">
     <img src="/assets/img/general/profile-picture-transparent.png" class="logo">
     <a href="/" class="title">GIANTBOAR</a>
-
+    
     {% for nav in site.data.navigation %}
         <a href="{{ nav.link | relative_url }}" class="navitem {% if page.url == nav.link %}active{% endif %}">{{ nav.name | upcase }}</a>
     {% endfor %}

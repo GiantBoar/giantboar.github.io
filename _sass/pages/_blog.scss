@@ -1,17 +1,33 @@
 
+.blog-container {
+    display: flex;
+
+    width: 800px; 
+    height: 100%; 
+    border: 1px solid blue;
+    position: relative; 
+    margin: var(--blog-navbox-top-spacing) 20% 0 auto;
+}
+
 #post-list {
     display: flex;
     flex-direction: column;
 
-    margin: 0 auto;
-    padding: 80px 0;
-    width: 800px;
+    width: 100%;
 }
 
-#blog-sidebar {
-    position: fixed;
-    height: 100%;
-    left: 0;
+.navbox-positioner {
+    // the positioner element for the navbox
+    position: absolute;
+    left: calc(var(--blog-navbox-width) * -1 + var(--blog-navbox-spacing) * -1);
+}
+.blog-navbox {
+    width: var(--blog-navbox-width); 
+    border: 1px solid red; 
+    height: 100px; 
+    position: fixed; 
+    top: var(--blog-navbox-top-spacing); 
+    margin-right: 15px;
 }
 
 // the small card used to represent posts in the paginator
@@ -59,12 +75,4 @@
 
 .post-preview .preview-img {
     //height: 100%;
-}
-
-.testerbox {
-    background-color: blue;
-    height: 100px;
-    width: 100px;
-    flex: 1;
-    position: fixed;
 }
