@@ -5,8 +5,10 @@
     width: 800px; 
     height: 100%; 
     border: 1px solid blue;
-    position: relative; 
-    margin: var(--blog-navbox-top-spacing) 20% 0 auto;
+    position: relative;
+
+    padding-left: calc(var(--blog-navbox-spacing) + var(--blog-navbox-width));
+    margin: var(--blog-navbox-top-spacing) auto 0 auto;
 }
 
 #post-list {
@@ -19,15 +21,16 @@
 .navbox-positioner {
     // the positioner element for the navbox
     position: absolute;
-    left: calc(var(--blog-navbox-width) * -1 + var(--blog-navbox-spacing) * -1);
+    left:  0;// calc(var(--blog-navbox-width) * -1 + var(--blog-navbox-spacing) * -1);
 }
 .blog-navbox {
     width: var(--blog-navbox-width); 
-    border: 1px solid red; 
     height: 100px; 
     position: fixed; 
     top: var(--blog-navbox-top-spacing); 
     margin-right: 15px;
+
+    background-color: var(--blog-navbox-bg);
 }
 
 // the small card used to represent posts in the paginator
