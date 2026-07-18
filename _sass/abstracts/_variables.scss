@@ -7,7 +7,11 @@
     --footer-height: 60px;
     --footer-zigzag-height: var(--homebar-zigzag-height); // height of the zigzags on the footer in pixels (should match header)
 
+
+    --home-widget-padding: 30px; // spacing around widgets on the home screen
+
+
     --blog-navbox-width: 400px; // width of the navigation box beside the post list on the blog page
     --blog-navbox-spacing: 20px; // spacing between the navbox and the post list (navbox floats on the left side)
-    --blog-navbox-top-spacing: 120px; // spacing between the navbox and the top of the page
+    --blog-navbox-top-spacing: 100px; // spacing between the navbox and the top of the page
 }

@@ -9,29 +9,6 @@
 
     background-color: var(--banner-bg);
 }
-.banner img {
-    position: relative;
-    top: 0;
-
-    transition: width 1s, height 1s, position 1s;
-
-    margin: calc(var(--homebar-height) - var(--homebar-zigzag-height)) auto 0 auto;
-
-    @include lte($bp-sm) {
-        transition: none;
-        position: relative;
-        left: 50%;
-        margin: calc(var(--homebar-height) - var(--homebar-zigzag-height)) 0 0 -55%;
-
-        width: 110%;
-    }
-    @include sm {
-        width: 100%;
-    }
-    @include xl {
-        width: 80%;
-    }
-}
 
 .parallax-banner {
     background-image: url("/assets/img/general/header.gif");
@@ -81,5 +58,104 @@
     @include xxxl {
         height: 560px;
         background-size: auto 560px;
+    }
+}
+
+
+// basic widget element
+.widget {
+    display: flex;
+    margin-top: 2rem;
+
+    padding: var(--home-widget-padding);
+
+    h1 {
+        font-family: "Cal Sans";
+        font-weight: normal;
+        margin: 0;
+        color: var(--main-header);
+    }
+    p {
+        font-family: Lato;
+        color: var(--main-text);
+    }
+}
+
+// the profile picture element in the about me widget
+.profile-picture {
+    border-radius: 50%;
+
+    @include lte($bp-md) {
+        width: 150px;
+    }
+    @include md {
+        width: 200px;
+    }
+}
+
+
+ul.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    list-style: none;
+
+    padding: 0;
+    gap: 4px;
+
+    margin-bottom: 0;
+}
+.skill-list li {
+    display: flex;
+    flex-grow: 1;
+
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: var(--accent-red);
+    border-radius: 12px;
+
+    padding: 6px 6px;
+
+    transition: 0.3s;
+
+    i {
+        margin: 0 8px 0 0;
+        color: var(--accent-red);
+    }
+    p {
+        margin: 0;
+        padding-right: 6px;
+        color: #eeadaa;
+    }
+}
+.skill-list li:hover {
+    background-color: var(--accent-red);
+
+    i, p {
+        color: white;
+    }
+}
+
+.widget.experience-widget {
+    background-color: #985f5d;
+}
+
+.widget.achievements-widget {
+    background-color: #577d6b;
+}
+
+ul.experience-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.experience-list li {
+    margin-bottom: 4px;
+
+    i {
+        margin-right: 6px;
+    }
+    p {
+        margin: 0;
     }
 }

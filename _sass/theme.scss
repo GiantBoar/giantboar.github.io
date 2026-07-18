@@ -2,7 +2,7 @@
     // general colours
     --main-bg: #201f26;
     --main-header: #ffffff;
-    --main-text: #b8b6c7;
+    --main-text: #d6d5e0;
 
     --accent-blue: #777da1;
     --accent-red: #df928e;
@@ -134,4 +134,8 @@
         .gi { color: var(--class-name); } /* Generic.Inserted & Diff Inserted */
         .gl { color: var(--code-comment) } // line numbers
     }
+}
+
+.drop-shadow {
+    filter: drop-shadow(0 0 15px #1a1a1c);
 }

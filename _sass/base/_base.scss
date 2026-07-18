@@ -47,6 +47,32 @@ body {
 }
 
 
+
+.col {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+.row {
+    display: flex;
+    flex: 1;
+
+    gap: 20px;
+
+    @include lte($bp-md) {
+        flex-direction: column;
+    }
+    @include md {
+        flex-direction: row;
+    }
+}
+
+
+.centred {
+    margin: auto auto;
+}
+
+
 // testing stuff
 .testdiv {
     display: block;
