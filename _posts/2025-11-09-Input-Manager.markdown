@@ -8,9 +8,6 @@ tags: [Unity, C#]
 pin: false
 published: true
 post-image-path: ../assets/postassets/InputManager
-image:
-    path: ../assets/postassets/InputManager/devices-image.png
-    alt: Diagrams of the four input device types
 ---
 
 # Input Device Manager

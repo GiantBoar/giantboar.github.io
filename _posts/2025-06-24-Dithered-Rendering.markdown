@@ -7,9 +7,9 @@ categories: [Tutorial, Unity]
 tags: [Rendering, Unity, C#]
 pin: false
 published: true
-post-image-path: ../assets/postassets/DitheredRendering
+post-image-path: /assets/postassets/DitheredRendering
 image:
-    path: ../assets/postassets/DitheredRendering/lighthouse-screenshot.png
+    path: /assets/postassets/DitheredRendering/lighthouse-screenshot.png
     alt: A lighthouse scene rendered using the dithering shader
 ---
 
@@ -20,9 +20,9 @@ image:
 Visually standing out in the modern era of indie games is almost impossible with the sheer creativity many people are now striving towards when it comes to unconventional graphics, one growing field being the realm of PSX-style games, stylised after the PS1-PS2 era of video game consoles.
 An interesting way of achieving this effect visually is through the use of **dithered rendering**, a technique that crunches down the number of colours displayed on-screen while preserving the shading and depth. This tutorial goes over the basics of rendering using dithering, specifically using the bayer matrix. (as well as how to use shadergraph and a custom render feature in unity's URP)
 
-<div style="display:flex">
-    <img src="{{ page.post-image-path }}/lighthouse-screenshot.png" title="A lighthouse rendered using the dithering effect" alt="A low-poly 3D lighthouse rendered with a ps1 dithering filter" height="20%">
-    <img src="{{ page.post-image-path }}/city-screenshot.png" title="A snowy city scene rendered with dithering" alt="A low-poly 3D snowy city rendered with a ps1 dithering filter" height="20%">
+<div class="image-row">
+    <img src="{{ page.post-image-path }}/lighthouse-screenshot.png" title="A lighthouse rendered using the dithering effect" alt="A low-poly 3D lighthouse rendered with a ps1 dithering filter">
+    <img src="{{ page.post-image-path }}/city-screenshot.png" title="A snowy city scene rendered with dithering" alt="A low-poly 3D snowy city rendered with a ps1 dithering filter">
 </div>
 
 *these are two scenes from a very work in progress game, currently called Twin Angels*
@@ -69,9 +69,9 @@ We can use the result of this (the little dither square on the right) to interpo
 
 Here I have a shot of the lighthouse rendered normally, no dithering, against one rendered using a one-bit dithering filter:
 
-<div style="display:flex">
-    <img src="{{ page.post-image-path }}/multiple-bit-lighthouse.png" title="The Lighthouse rendered normally" alt="The Lighthouse rendered normally" height="20%">
-    <img src="{{ page.post-image-path }}/one-bit-lighthouse.png" title="The Lighthouse rendered with a one-bit filter" alt="The Lighthouse rendered with a one-bit filter" height="20%">
+<div class="image-row">
+    <img src="{{ page.post-image-path }}/multiple-bit-lighthouse.png" title="The Lighthouse rendered normally" alt="The Lighthouse rendered normally">
+    <img src="{{ page.post-image-path }}/one-bit-lighthouse.png" title="The Lighthouse rendered with a one-bit filter" alt="The Lighthouse rendered with a one-bit filter">
 </div>
 
 (these can look weird on some screens, click to enhance the one-bit picture to see it better)
@@ -210,16 +210,17 @@ public class DitherPassFeature : ScriptableRendererFeature
 
 ### Basic Setup
 
-![Universal Render Pipeline Assets]({{ page.post-image-path }}/urp-assets.png){: width="125px" .right }
+![Universal Render Pipeline Assets]({{ page.post-image-path }}/urp-assets.png){: width="200px" }
+
 Once you have these two scripts in your project, and hopefully have set up URP so that you have a **Universal Render Pipeline Asset** and **Unviersal Renderer Data** objects, you can add your render pass to the Universal Renderer Data object.
 
 By clicking **'Add Render Feature'** and selecting your custom render feature from the dropdown, you've added it to your render pipeline. Hooray! but unfortunately you haven't actually set anything else up yet, so either nothing has happened or your project has started throwing errors.
 
-![Add Render Feature Context Menu]({{ page.post-image-path }}/dither-pass-add.png){: width="100%" }
+![Add Render Feature Context Menu]({{ page.post-image-path }}/dither-pass-add.png){: width="50%" }
 
 The next thing to do is to create a Render Texture asset to assign to this render feature in the inspector, as well as set up your **Render Pass Event** (which should preferably be *before rendering post processing*). 
 
-![Render Feature Inspector]({{ page.post-image-path }}/render-feature-inspector.png){: width="100%"  }
+![Render Feature Inspector]({{ page.post-image-path }}/render-feature-inspector.png){: width="50%"  }
 
 You can create a Render Texture by doing **Assets > Create > Custom Render Texture**. Since this will be the squashed down resolution we want, its probably good to set it to something like **640 x 360**, or **480 x 270**, basically some multiple of 16 x 9 (the standard screen ratio). If you want to try some different ratios, like 4x3 for that retro aesthetic, thats probably better done by adding black bars either side of the screen than by actually messing with the output resolution, since on a full-screen application it will warp and stretch otherwise.
 Its **very important** that you make sure your Render Texture has **no anti-aliasing** and **Filter Mode is set to Point**, since if either of these things aren't true it will look strange.
@@ -248,11 +249,13 @@ The basic idea behind our dithering shader is **4 steps**:
 
 Here's the lighthouse scene again, this time showcasing each step of our shader, first without any effects applied. As you can see, the second and third stages are really dark, this is because we're using tiny number values, which are visually represented as very very dark colours. Games like [Buckshot Roulette](https://store.steampowered.com/app/2835570/Buckshot_Roulette/) just use the result of the first step, creating cool colour banding (callback to how dithering was originally used to alleviate colour banding in compressed images)
 
-<div style="display:flex">
-    <img src="{{ page.post-image-path }}/shader-step-1.png" title="The first step, featuring heavy colour banding" alt="A 3D low-poly lighthouse rendered with heavy colour banding" height="20%">
-    <img src="{{ page.post-image-path }}/shader-step-2.png" title="The second step, just the remainder of the inital rounding of colours" alt="A 3D low-poly lighthouse with very dark colours, almost like a ghost imprint of the missing aspects of the lighthouse after step 1" height="20%">
-    <img src="{{ page.post-image-path }}/shader-step-3.png" title="The third step, this remainder with dithering applied" alt="A 3D low-poly lighthouse ghost imprint rendered with a dithered filter" height="20%">
-    <img src="{{ page.post-image-path }}/shader-step-4.png" title="The fourth step, and the compilation of our inital rounded image with the additional dithering" alt="A 3D low-poly psx style lighthouse rendered with a dithering filter" height="20%">
+<div class="image-row">
+    <img src="{{ page.post-image-path }}/shader-step-1.png" title="The first step, featuring heavy colour banding" alt="A 3D low-poly lighthouse rendered with heavy colour banding">
+    <img src="{{ page.post-image-path }}/shader-step-2.png" title="The second step, just the remainder of the inital rounding of colours" alt="A 3D low-poly lighthouse with very dark colours, almost like a ghost imprint of the missing aspects of the lighthouse after step 1">
+</div>
+<div class="image-row">
+    <img src="{{ page.post-image-path }}/shader-step-3.png" title="The third step, this remainder with dithering applied" alt="A 3D low-poly lighthouse ghost imprint rendered with a dithered filter">
+    <img src="{{ page.post-image-path }}/shader-step-4.png" title="The fourth step, and the compilation of our inital rounded image with the additional dithering" alt="A 3D low-poly psx style lighthouse rendered with a dithering filter">
 </div>
 
 ### Shadergraph Setup
@@ -260,6 +263,7 @@ Here's the lighthouse scene again, this time showcasing each step of our shader,
 Shadergraph is unity's node-based shader editor. If you have installed and set up URP, you should be able to make a **Fullscreen Shader Graph** by doing **Assets > Create > Shader Graph > URP > Fullscreen Shader Graph**. 
 
 In order to make this shader work with our custom render pass, we need to first give it a Texture2D parameter called `MainTex`. This name is really important, as the reference name for this variable, _MainTex, needs to be accurate in order for the render pipeline to give our material the correct information.
+
 ![MainTex parameter in shadergraph]({{ page.post-image-path }}/main-tex-parameter.png){: width="600px" }
 
 This **MainTex** parameter is the texture for our render, and contains the result of the screen's render. To create a simple test shader, just put this node into a **One-Minus** node, and then have that output to the base colour out value. 
@@ -268,9 +272,9 @@ This **MainTex** parameter is the texture for our render, and contains the resul
 
 Then, you can make a material using **Assets > Create > Material** and drag the Shadergraph asset onto that material. You can then assign this material in the render feature settings on your URP asset, which should hopefully output this inverted colours render. (without, and then with the shader active)
 
-<div style="display:flex">
-    <img src="{{ page.post-image-path }}/shader-step-0.png" title="The lighthouse without any effects" alt="A 3D low-poly lighthouse" height="20%">
-    <img src="{{ page.post-image-path }}/inverted-colours-render.png" title="The lighthouse with inverted colours" alt="A 3D low-poly lighthouse showcasing inverted colours" height="20%">
+<div class="image-row">
+    <img src="{{ page.post-image-path }}/shader-step-0.png" title="The lighthouse without any effects" alt="A 3D low-poly lighthouse">
+    <img src="{{ page.post-image-path }}/inverted-colours-render.png" title="The lighthouse with inverted colours" alt="A 3D low-poly lighthouse showcasing inverted colours">
 </div>
 
 ### Constructing The Shader
@@ -322,9 +326,9 @@ Now all thats left is to add this final result to the result of our colour round
 
 You can now happily enjoy the many fruits of your labour. I hope you make some cool scenes using this shader, and learned how to create a custom post processing path in unity!
 
-<div style="display:flex">
-    <img src="{{ page.post-image-path }}/lighthouse-screenshot.png" title="A lighthouse rendered using the dithering effect" alt="A low-poly 3D lighthouse rendered with a ps1 dithering filter" height="20%">
-    <img src="{{ page.post-image-path }}/city-screenshot.png" title="A snowy city scene rendered with dithering" alt="A low-poly 3D snowy city rendered with a ps1 dithering filter" height="20%">
+<div class="image-row">
+    <img src="{{ page.post-image-path }}/lighthouse-screenshot.png" title="A lighthouse rendered using the dithering effect" alt="A low-poly 3D lighthouse rendered with a ps1 dithering filter">
+    <img src="{{ page.post-image-path }}/city-screenshot.png" title="A snowy city scene rendered with dithering" alt="A low-poly 3D snowy city rendered with a ps1 dithering filter">
 </div>
 
 ## Footnotes

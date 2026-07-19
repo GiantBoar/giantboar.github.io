@@ -8,14 +8,14 @@ categories: [Blogging, Tutorial]
 tags: [getting started]
 pin: false
 published: false
-post-image-path: ../assets/postassets/20240530
+post-image-path: /assets/postassets/
 ---
 
 # h1 title
 ## h2 title
 ### h3, etc
 
-Whats up poopers, this is how you write a baller thingy
+Whats up bloggers, this is how you write a post
 
 Unordered List:
 * something

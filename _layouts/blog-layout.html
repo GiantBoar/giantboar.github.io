@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<script>
+    function showNavbox() {
+        var navbox = document.getElementById("navbox");
+        var navboxTab = document.getElementById("navbox-tab");
+        var navboxTabIcon = document.getElementById("navbox-tab-icon");
+
+        var isOpen = navbox.classList.contains('show-navbox');
+
+        navbox.classList.toggle('show-navbox');
+        navboxTab.classList.toggle('show-navbox');
+
+        if(isOpen) {
+            navboxTabIcon.className = "fa-solid fa-angles-right";
+        }
+        else {
+            navboxTabIcon.className = "fa-solid fa-angles-left";
+        }
+    }
+</script>
+
+<div class="blog-container">
+    <div class="navbox-positioner"> <!-- positioner for the fixed menu -->
+        <div id="navbox" class="blog-navbox">
+            <h1>GIANTBLOG</h1>
+            <p>A programming & game development blog for projects I do</p>
+
+            <nav>
+                <a href="/blog/"><i class="fa-solid fa-house"></i>BLOG HOME</a>
+                <a><i class="fa-solid fa-folder"></i>CATEGORIES</a>
+                <a><i class="fa-solid fa-tag"></i>TAGS</a>
+            </nav>
+        </div>
+        <button id="navbox-tab" class="navbox-tab" onclick="showNavbox()"><i id="navbox-tab-icon" class="fa-solid fa-angles-right"></i></button>
+    </div>
+
+    {{ content }}
+</div>

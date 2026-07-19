@@ -38,11 +38,22 @@
     --post-preview-header: #b8b6c7;
 
     --blog-navbox-bg: var(--accent-blue);
+    --blog-navbox-header: var(--main-bg);
+    --blog-navbox-text: var(--main-bg);
+
+    // posts
+    --post-h1-colour: #ededf0;
+    --post-h2-colour: #dfdfe5;
+    --post-h3-colour: #bfbfca;
+    --post-text-colour: #bebecf;
+    --post-link-colour: #df928e;
+    --post-subtitle-colour: #9e9ead;
 
 
     // code syntax
-    --code-bg: #0D1B2A;
+    --code-bg: #292831;
     --code-highlight: #0D1B2A;
+    --code-border: #34333f;
 
     --code-font-size: 10pt;
     --code-default: #CEC3C1;

@@ -17,12 +17,12 @@ socials:
   #- twitter: 
 
 # compilation variables
-paginate: 5
-paginate_path: "/blog/page:num/"
+pagination:
+  active: true
+  paginate: 6
 
 plugins:
   - jekyll-feed
-  - jekyll-paginate
 
 defaults:
   - scope: # blog posts

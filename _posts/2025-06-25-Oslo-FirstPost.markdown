@@ -7,9 +7,9 @@ categories: [Devlog, Oslo]
 tags: [Oslo, Pixelart, Godot]
 pin: false
 published: true
-post-image-path: ../assets/postassets/OsloFirstPost
+post-image-path: /assets/postassets/OsloFirstPost
 image:
-  path: ../assets/postassets/OsloFirstPost/oslo-forest-1.png
+  path: /assets/postassets/OsloFirstPost/oslo-forest-1.png
   alt: a development screenshot of Elias standing in a forest with metal fencing blocking off the treeline
 ---
 
@@ -37,8 +37,8 @@ While all things in development are ultimately subject to change in the lengthy 
 My goal with the world of Oslo is to make a single contained map with a sequence of areas (e.g. town districts, a forest, encampments outside the town) that the player can learn intimately during their playtime. I really enjoy playing games that rely on the player learning their environment, such as the <a href="https://store.steampowered.com/sale/DarkSoulsFranchise">Dark Souls</a> series, or the russian RPG <a href="https://store.steampowered.com/app/384110/Pathologic_Classic_HD/">Pathologic</a>. Both of these games rely on traversing areas, sometimes multiple times, and getting a deeper connection with the world these areas exist in. A huge point of inspiration is the art of having the player return to older areas that are now changed by the events of the game, such as the spread of infection in <a href="https://store.steampowered.com/app/367520/Hollow_Knight/">Hollow Knight</a>.
 
 <div style="display:flex">
-    <img src="{{ page.post-image-path }}/hk-forgotten-crossroads.png" title="A lighthouse rendered using the dithering effect" alt="A low-poly 3D lighthouse rendered with a ps1 dithering filter" height="20%">
-    <img src="{{ page.post-image-path }}/hk-infected-crossroads.png" title="A snowy city scene rendered with dithering" alt="A low-poly 3D snowy city rendered with a ps1 dithering filter" height="20%">
+    <img src="{{ page.post-image-path }}/hk-forgotten-crossroads.png" title="A lighthouse rendered using the dithering effect" alt="A low-poly 3D lighthouse rendered with a ps1 dithering filter" width="50%">
+    <img src="{{ page.post-image-path }}/hk-infected-crossroads.png" title="A snowy city scene rendered with dithering" alt="A low-poly 3D snowy city rendered with a ps1 dithering filter" width="50%">
 </div>
 
 I want the world of my game to **change and decay** as the story progresses, breathing new life into old areas and adding a ludonarrative harmony between the way the world is changing in the story and the way the environment is changing around the player.

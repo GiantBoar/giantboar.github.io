@@ -18,7 +18,7 @@ body {
     height: 100%;
     min-height: 100vh;
 
-    margin: calc(var(--homebar-height) + var(--homebar-zigzag-height)) auto 0 auto;
+    margin: calc(var(--homebar-height) + var(--homebar-zigzag-height)) auto 4rem auto;
 
     transition: width 1s;
 
