@@ -1,72 +1,147 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://giantboar.custom/feed.xml" rel="self" type="application/atom+xml" /><link href="https://giantboar.custom/" rel="alternate" type="text/html" /><updated>2026-07-19T17:29:19+01:00</updated><id>https://giantboar.custom/feed.xml</id><title type="html">GiantBoar</title><subtitle>a website of sorts</subtitle><entry><title type="html">Variable Input Device System</title><link href="https://giantboar.custom/blog/2025/Input-Manager" rel="alternate" type="text/html" title="Variable Input Device System" /><published>2025-11-08T23:15:30+00:00</published><updated>2025-11-08T23:15:30+00:00</updated><id>https://giantboar.custom/blog/2025/Input-Manager</id><content type="html" xml:base="https://giantboar.custom/blog/2025/Input-Manager"><![CDATA[<h1 id="input-device-manager">Input Device Manager</h1>
-<p>Recently, a friend of mine posed an idea for a game they’re developing for a local game dev showcase: a platform fighter where each selectable character is associated with a unique controller. For this project, I needed to create a system that could handle inputs from multiple unique controllers to play as different characters, including character selection and pairing input devices to controller types.</p>
+<!DOCTYPE html>
 
-<p>The controllers used in the project are N64, GameCube, WiiMote and DK Bongos. These devices posed a notable issue, since three of the four use the same hardware to interface with the PC, meaning they are read as the same controller <em>type</em>. Since we couldn’t tell the difference between individual pieces of hardware, creative solutions had to be made to associate controllers with their type.</p>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>
+        
+            GiantBoar | Dithered Rendering
+        
+    </title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<h2 id="gameplay">Gameplay</h2>
-<p>As a platform fighter, the fundamental gameplay revolves around <strong>choosing a character</strong> using their associated input device, having your opponent do the same, and then using a range of <strong>attacks and special moves</strong> to damage your opponent. The gameplay is inspired by games like Super Smash Brothers, so the health is a percentage that increases with each hit, ranging from 0% (undamaged) up, with the amount of knock back the enemy takes exponentially growing along side their health. When a player is finally knocked out of bounds, they lose a stock, and when they have no stocks left, they have lost the fight.</p>
+    <!-- font awesome API -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.1/css/all.min.css">
 
-<p>When developing this system, I had to consider its purpose in the game, specifically that not all devices will control a character in a fight (with only one-on-one battles planned for release), and that the <em>type</em> of device determined the character’s sprites and moves.</p>
+    <!-- google fonts API -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Cal+Sans&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    
+    
+</head>
+    <body>
+        <!-- navbar header -->
 
-<h2 id="overview">Overview</h2>
-<p>This system comes in three parts, the <strong>InputMapHandler</strong>, <strong>CharacterControllers</strong>, and <strong>PlayableCharacters</strong>. Each of these parts controls a different aspect of binding unique controllers to characters.
-Because part of this system was developed to be independent to the game itself, specifically the InputMapHandler, <strong>generic types</strong> were used to have it fit into projects outside of this specific game.</p>
+<script>
+    function showGames() {
+        var dropdownMenu = document.getElementById("games-dropdown");
+        var isOpen = dropdownMenu.classList.contains('visible');
+        dropdownMenu.classList.toggle('navbar-visible');
 
-<h3 id="input-map-handler">Input Map Handler</h3>
-<p>The <strong>Input Map Handler</strong> is the beating heart of this system, it creates input maps from Unity’s InputSystem for each device connected to the user’s PC, from keyboards to controllers; the system pairs created input maps with each device, setting it as the only input device read by that map. Using this, individual devices can be enabled, disabled, or read from, allowing for a range of different devices to be plugged in and read from at will.</p>
+        document.getElementById("games-dropdown-button").classList.toggle("dropdown-open");
+    }
 
-<p>The <strong>Input Map Handler</strong> is generically typed, allowing a system to create one with any type created by an input map asset. In Unity’s Input System, assets can generate a C# class so input maps can better interface with C# code. The class generated by the asset will always inherit from <code class="language-plaintext highlighter-rouge">IInputActionCollection2</code>, which we can use in our generic type class to specify that the type used in arguments should be generated from one of these assets.
-// insert declaration of InputMapHandler</p>
+    function expandHomebar() {
+        var expandMenu = document.getElementById("homebar-expand");
+        var gamesDropdown = document.getElementById("games-dropdown");
+        var isOpen = gamesDropdown.classList.contains('navbar-visible');
 
-<h3 id="character-controller">Character Controller</h3>
+        expandMenu.classList.toggle('navbar-visible');
+        if(isOpen) {
+            gamesDropdown.classList.toggle('navbar-visible')
+        }
 
-<h3 id="playable-character">Playable Character</h3>]]></content><author><name></name></author><category term="Programming" /><category term="Unity" /><category term="C#" /><summary type="html"><![CDATA[Working on a friend's project to create a system that supports mapping various unique input devices to characters in a smash-style fighter.]]></summary></entry><entry><title type="html">Oslo RPG Starting Development</title><link href="https://giantboar.custom/blog/2025/Oslo-FirstPost" rel="alternate" type="text/html" title="Oslo RPG Starting Development" /><published>2025-06-25T00:11:36+01:00</published><updated>2025-06-25T00:11:36+01:00</updated><id>https://giantboar.custom/blog/2025/Oslo-FirstPost</id><content type="html" xml:base="https://giantboar.custom/blog/2025/Oslo-FirstPost"><![CDATA[<h1 id="oslo">Oslo</h1>
-<p><i class="subtitle">A new game project RPG inspired by Fear and Hunger (mechanically), Pathologic, as well as Dark Souls and similar Dark Fantasy games</i></p>
+        document.getElementById("expand-homebar-button").classList.toggle("dropdown-open");
+    }
+</script>
 
-<p>Oslo (working title) is a game I’ve relatively recently started work on to expand my knowledge of GDScript as well as just make a playable project by myself. Since RPGs are an overwhelmingly common indie game genre I’ve been trying to fill in some of the gaps caused by other games adherence to the traditional genre conventions, as well as add some unique mechanics (to the detriment of my development speed).</p>
 
-<p><img src="/assets/postassets/OsloFirstPost/oslo-forest-2.png" alt="Oslo Development Screenshot" /></p>
+<!-- main homebar -->
+<nav id="homebar" class="homebar">
+    <img src="/assets/img/general/profile-picture-transparent.png" class="logo">
+    <a href="/" class="title">GIANTBOAR</a>
+    
+    
+        <a href="/" class="navitem ">HOME</a>
+    
+        <a href="/blog/" class="navitem ">BLOG</a>
+    
+    
+    <a href="https://www.google.com/search?sca_esv=bef075a73146d0a2&rlz=1C1VDKB_enGB1033GB1033&sxsrf=ANbL-n4ROlrwVERpBVqX2uR5Frcn4AaohA:1774595775737&udm=2&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpaEWjvZ2Py1XXV8d8KvlI3o6iwGk6Iv1tRbZIBNIVs-5-bUj3iBl-UxHsANYwOkWWQqZAJJdwuRaSoLHfELMHARurXwtwWmcdG4V-LDFDd8ecoEtHpZSRelVfCRq2UKwcWKG3jZWtDKY1abjUi6atsGFRNpwlmGKAQF9AXbF8wg8fYd5JIFkWAi8Mz75HFguCKRmBxQ&q=majestic+horse&sa=X&ved=2ahUKEwivqtS2xL-TAxVBTkEAHdgHBewQtKgLegQIGhAB&biw=1920&bih=1031&dpr=1.5" class="navitem"><i class="fa-solid fa-fish-fins"></i></a>
+    <button id="games-dropdown-button" class="navitem" onclick="showGames()">
+        GAMES 
+        <i class="fa-fw fas fa-caret-down"></i>
+    </button>
 
-<p>This game will be developed in Godot, an engine thats fairly new to me but one that I have a boundless amount of personal control over, being able to edit the code for the engine as its open source.</p>
+    <button id="expand-homebar-button" class="navitem expand-homebar-button" onclick="expandHomebar()">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+</nav>
 
-<p>When making anything in an existing genre you have to appreciate the titles that came before it, but I think so many games (specifically in the 2D turn-based RPG subgenre) think that the games that came before are teplates to be replicated and barely iterated on, especially mechanically. Some games make minor adjustments to the formula, such as the enemy moods in <a href="https://store.steampowered.com/app/1150690/OMORI/">Omori</a>, but some of the best indie darlings are ones that really shake things up, such as <a href="https://store.steampowered.com/app/391540/Undertale/">Undertale</a>’s talk and pacify system.</p>
+<!-- expandable homebar on smaller devices -->
+<nav id="homebar-expand" class="homebar expanded ">
+    
+        <a href="/" class="navitem ">HOME</a>
+    
+        <a href="/blog/" class="navitem ">BLOG</a>
+    
+    
+    <a href="https://www.google.com/search?sca_esv=bef075a73146d0a2&rlz=1C1VDKB_enGB1033GB1033&sxsrf=ANbL-n4ROlrwVERpBVqX2uR5Frcn4AaohA:1774595775737&udm=2&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpaEWjvZ2Py1XXV8d8KvlI3o6iwGk6Iv1tRbZIBNIVs-5-bUj3iBl-UxHsANYwOkWWQqZAJJdwuRaSoLHfELMHARurXwtwWmcdG4V-LDFDd8ecoEtHpZSRelVfCRq2UKwcWKG3jZWtDKY1abjUi6atsGFRNpwlmGKAQF9AXbF8wg8fYd5JIFkWAi8Mz75HFguCKRmBxQ&q=majestic+horse&sa=X&ved=2ahUKEwivqtS2xL-TAxVBTkEAHdgHBewQtKgLegQIGhAB&biw=1920&bih=1031&dpr=1.5" class="navitem"><i class="fa-solid fa-fish-fins"></i></a>
+    <button id="games-dropdown-button" class="navitem" onclick="showGames()">
+        GAMES 
+        <i class="fa-fw fas fa-caret-down"></i>
+    </button>
+</nav>
 
-<h2 id="plot">Plot</h2>
+<!-- games list dropdown menu -->
+<nav id="games-dropdown" class="homebar games-dropdown ">
+    
+        <a href="/" class="navitem ">HOME</a>
+    
+        <a href="/blog/" class="navitem ">BLOG</a>
+    
+</nav>
 
-<p>You are Elias, a warrior from a small town sent in holy pilgrimage to Oslo (a heavily fictional take on the real town of Oslo, Norway) in search of ascention to ruler. You are an emissary for <strong>The Moon</strong>, an otherworldly entity presiding over obscurity and knowledge, to which your small hometown has become loyal to. During the modern era, all external deities are suffering as their strength wanes, causing a deadly disease to spread through your town called <strong>Moon Blight</strong>. Emissaries of an array of major entities have also come to Oslo in what is almost a tournament to give the throne of the world to their gods, settling the battle for power with only a single external entity ruling. Elias’ pilgrimage through Oslo will have him facing agains the many forces on the same journey as him, growing a party of travellers to accomplish your goals.</p>
+        <script>
+    function showNavbox() {
+        var navbox = document.getElementById("navbox");
+        var navboxTab = document.getElementById("navbox-tab");
+        var navboxTabIcon = document.getElementById("navbox-tab-icon");
 
-<h2 id="mechanics">Mechanics</h2>
+        var isOpen = navbox.classList.contains('show-navbox');
 
-<p>While all things in development are ultimately subject to change in the lengthy process, there are a handful of core mechanics I have in mind going forward.</p>
+        navbox.classList.toggle('show-navbox');
+        navboxTab.classList.toggle('show-navbox');
 
-<h3 id="exploration">Exploration</h3>
+        if(isOpen) {
+            navboxTabIcon.className = "fa-solid fa-angles-right";
+        }
+        else {
+            navboxTabIcon.className = "fa-solid fa-angles-left";
+        }
+    }
+</script>
 
-<p>My goal with the world of Oslo is to make a single contained map with a sequence of areas (e.g. town districts, a forest, encampments outside the town) that the player can learn intimately during their playtime. I really enjoy playing games that rely on the player learning their environment, such as the <a href="https://store.steampowered.com/sale/DarkSoulsFranchise">Dark Souls</a> series, or the russian RPG <a href="https://store.steampowered.com/app/384110/Pathologic_Classic_HD/">Pathologic</a>. Both of these games rely on traversing areas, sometimes multiple times, and getting a deeper connection with the world these areas exist in. A huge point of inspiration is the art of having the player return to older areas that are now changed by the events of the game, such as the spread of infection in <a href="https://store.steampowered.com/app/367520/Hollow_Knight/">Hollow Knight</a>.</p>
+<div class="blog-container">
+    <div class="navbox-positioner"> <!-- positioner for the fixed menu -->
+        <div id="navbox" class="blog-navbox">
+            <h1>GIANTBLOG</h1>
+            <p>A programming & game development blog for projects I do</p>
 
-<div style="display:flex">
-    <img src="/assets/postassets/OsloFirstPost/hk-forgotten-crossroads.png" title="A lighthouse rendered using the dithering effect" alt="A low-poly 3D lighthouse rendered with a ps1 dithering filter" width="50%" />
-    <img src="/assets/postassets/OsloFirstPost/hk-infected-crossroads.png" title="A snowy city scene rendered with dithering" alt="A low-poly 3D snowy city rendered with a ps1 dithering filter" width="50%" />
-</div>
+            <nav>
+                <a href="/blog/"><i class="fa-solid fa-house"></i>BLOG HOME</a>
+                <a><i class="fa-solid fa-folder"></i>CATEGORIES</a>
+                <a><i class="fa-solid fa-tag"></i>TAGS</a>
+            </nav>
+        </div>
+        <button id="navbox-tab" class="navbox-tab" onclick="showNavbox()"><i id="navbox-tab-icon" class="fa-solid fa-angles-right"></i></button>
+    </div>
 
-<p>I want the world of my game to <strong>change and decay</strong> as the story progresses, breathing new life into old areas and adding a ludonarrative harmony between the way the world is changing in the story and the way the environment is changing around the player.</p>
+    <div class="post-container">
+    <div class="post-header">
+        
+            <img src="/assets/postassets/DitheredRendering/lighthouse-screenshot.png" alt="A lighthouse scene rendered using the dithering shader">
+        
+        <h1>Dithered Rendering</h1>
+        <p>Creating stylised 3D graphics using dithering in Unity's Universal Render Pipeline</p>
+        <p><i class="fa-regular fa-calendar" style="margin-right: 8px;"></i>24 Jun 2025</p>
+    </div>
 
-<h3 id="turn-based-combat">Turn Based Combat</h3>
-
-<p>Combat is one of the most active gameplay features in an RPG, and traditional turn-based combat can become dragged down by its simplicity, which is why most games of the genre try to add some unique element to it. I want to take this in a completely crazy direction by taking inspiration from a turn based fighting game called <a href="https://store.steampowered.com/app/2212330/Your_Only_Move_Is_HUSTLE/">YOMI Hustle</a>.</p>
-
-<p><img src="/assets/postassets/OsloFirstPost/yomihustle-combat.gif" alt="Yomi Hustle Combat Gif" /></p>
-<div style="text-align: center;">
-<i class="subtitle">Image source <a href="https://steamdb.info/patchnotes/12485106/">SteamDB</a></i>
-</div>
-
-<p>You will choose each character’s moves in a <strong>2D top-down arena</strong>, which each have their own duration; selected moves will play out in real-time after you’ve selected what each character is to do. The goal of this becomes predicting your enemies moves and acting accordingly, similar to any real-time fighting mechanic, however, with the added feature of being able to carefully plot out and consider your moves in a turn-based system.
-You can benefit by choosing shorter moves that end quickly, hoping to catch the enemy mid-way through a move they can’t just cancel out of. This way you have an assured hit, dodge, or generally a definitive knowledge of what the enemy is about to do. The predicted moves for the enemies will be simulated, as will the currently chosen moves for the characters, so you can see the next ‘stage’ of the battle play out before you decide on your actions.</p>
-
-<h3 id="skills-and-world-interactions">Skills and World Interactions</h3>
-
-<p>I want the player’s skills to affect their progression in dialogue as well as their interactions with the world, the same way that those skills would affect a real person. This feature is heavily inspired by <a href="https://store.steampowered.com/app/632470/Disco_Elysium__The_Final_Cut/">Disco Elysium</a>, which is a major mechanical and narrative inspiration for this project.</p>
-
-<p>Dialogue options will be locked off or available depending on certain skills, as well as the level of detail you are able to interact with or experience the environment. This will help add depth to each of the player’s skills beyond simple combat interaction and give them a deeper connection with the world of the game too.</p>]]></content><author><name></name></author><category term="Devlog" /><category term="Oslo" /><category term="Oslo" /><category term="Pixelart" /><category term="Godot" /><summary type="html"><![CDATA[Starting development on a new RPG in Godot with the working title Oslo]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://giantboar.custom/assets/postassets/OsloFirstPost/oslo-forest-1.png" /><media:content medium="image" url="https://giantboar.custom/assets/postassets/OsloFirstPost/oslo-forest-1.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Dithered Rendering</title><link href="https://giantboar.custom/blog/2025/Dithered-Rendering" rel="alternate" type="text/html" title="Dithered Rendering" /><published>2025-06-24T05:28:00+01:00</published><updated>2025-06-24T05:28:00+01:00</updated><id>https://giantboar.custom/blog/2025/Dithered-Rendering</id><content type="html" xml:base="https://giantboar.custom/blog/2025/Dithered-Rendering"><![CDATA[<p><em>this post was initiallly written in 2024, but has been reworked</em></p>
+    <div class="post-body">
+    <p><em>this post was initiallly written in 2024, but has been reworked</em></p>
 
 <h2 id="summary">Summary</h2>
 
@@ -407,4 +482,21 @@ Its <strong>very important</strong> that you make sure your Render Texture has <
       <p>A blit is basically rendering something from one texture to another, optionally using a material. In unity’s built-in render pipleine you can add a custom blit using a script, but with URP you need to blit in a custom render feature. <a href="#fnref:blitfooter" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
-</div>]]></content><author><name></name></author><category term="Tutorial" /><category term="Unity" /><category term="Rendering" /><category term="Unity" /><category term="C#" /><summary type="html"><![CDATA[Creating stylised 3D graphics using dithering in Unity's Universal Render Pipeline]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://giantboar.custom/assets/postassets/DitheredRendering/lighthouse-screenshot.png" /><media:content medium="image" url="https://giantboar.custom/assets/postassets/DitheredRendering/lighthouse-screenshot.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</div>
+
+    </div>
+</div>
+</div>
+
+        <footer>
+    
+     <a href="https://github.com/giantboar"><i class="fa-brands fa-square-github fa-lg"></i></a> 
+     <a href="https://www.linkedin.com/in/giantboar/"><i class="fa-brands fa-linkedin fa-lg"></i></a> 
+    
+
+    <!-- <p style="margin-left: 20px;">Website made entirely by <strong>Max Patteson</strong> using <a href="https://jekyllrb.com/">Jekyll</a> and hosted on <a href="https://docs.github.com/en/pages">GitHub Pages</a></p> -->
+    <p style="margin-left: 20px;"><strong>© 2026 Max Patteson</strong></p>
+    <p style="margin-left: auto;">Website that way <i class="fa-solid fa-arrow-up"></i></p>
+</footer>
+    </body>
+</html>
