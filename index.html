@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>
+        
+            GiantBoar - Game Developer Portfolio
+        
+    </title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- font awesome API -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.1/css/all.min.css">
+
+    <!-- google fonts API -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Cal+Sans&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    
+    
+</head>
+    <body>
+        <!-- navbar header -->
+
+<script>
+    function showGames() {
+        var dropdownMenu = document.getElementById("games-dropdown");
+        var isOpen = dropdownMenu.classList.contains('visible');
+        dropdownMenu.classList.toggle('navbar-visible');
+
+        document.getElementById("games-dropdown-button").classList.toggle("dropdown-open");
+    }
+
+    function expandHomebar() {
+        var expandMenu = document.getElementById("homebar-expand");
+        var gamesDropdown = document.getElementById("games-dropdown");
+        var isOpen = gamesDropdown.classList.contains('navbar-visible');
+
+        expandMenu.classList.toggle('navbar-visible');
+        if(isOpen) {
+            gamesDropdown.classList.toggle('navbar-visible')
+        }
+
+        document.getElementById("expand-homebar-button").classList.toggle("dropdown-open");
+    }
+</script>
+
+
+<!-- main homebar -->
+<nav id="homebar" class="homebar">
+    <img src="/assets/img/general/profile-picture-transparent.png" class="logo">
+    <a href="/" class="title">GIANTBOAR</a>
+    
+    
+        <a href="/" class="navitem active">HOME</a>
+    
+        <a href="/blog/" class="navitem ">BLOG</a>
+    
+    
+    <a href="https://www.google.com/search?sca_esv=bef075a73146d0a2&rlz=1C1VDKB_enGB1033GB1033&sxsrf=ANbL-n4ROlrwVERpBVqX2uR5Frcn4AaohA:1774595775737&udm=2&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpaEWjvZ2Py1XXV8d8KvlI3o6iwGk6Iv1tRbZIBNIVs-5-bUj3iBl-UxHsANYwOkWWQqZAJJdwuRaSoLHfELMHARurXwtwWmcdG4V-LDFDd8ecoEtHpZSRelVfCRq2UKwcWKG3jZWtDKY1abjUi6atsGFRNpwlmGKAQF9AXbF8wg8fYd5JIFkWAi8Mz75HFguCKRmBxQ&q=majestic+horse&sa=X&ved=2ahUKEwivqtS2xL-TAxVBTkEAHdgHBewQtKgLegQIGhAB&biw=1920&bih=1031&dpr=1.5" class="navitem"><i class="fa-solid fa-fish-fins"></i></a>
+    <button id="games-dropdown-button" class="navitem" onclick="showGames()">
+        GAMES 
+        <i class="fa-fw fas fa-caret-down"></i>
+    </button>
+
+    <button id="expand-homebar-button" class="navitem expand-homebar-button" onclick="expandHomebar()">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+</nav>
+
+<!-- expandable homebar on smaller devices -->
+<nav id="homebar-expand" class="homebar expanded ">
+    
+        <a href="/" class="navitem active">HOME</a>
+    
+        <a href="/blog/" class="navitem ">BLOG</a>
+    
+    
+    <a href="https://www.google.com/search?sca_esv=bef075a73146d0a2&rlz=1C1VDKB_enGB1033GB1033&sxsrf=ANbL-n4ROlrwVERpBVqX2uR5Frcn4AaohA:1774595775737&udm=2&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpaEWjvZ2Py1XXV8d8KvlI3o6iwGk6Iv1tRbZIBNIVs-5-bUj3iBl-UxHsANYwOkWWQqZAJJdwuRaSoLHfELMHARurXwtwWmcdG4V-LDFDd8ecoEtHpZSRelVfCRq2UKwcWKG3jZWtDKY1abjUi6atsGFRNpwlmGKAQF9AXbF8wg8fYd5JIFkWAi8Mz75HFguCKRmBxQ&q=majestic+horse&sa=X&ved=2ahUKEwivqtS2xL-TAxVBTkEAHdgHBewQtKgLegQIGhAB&biw=1920&bih=1031&dpr=1.5" class="navitem"><i class="fa-solid fa-fish-fins"></i></a>
+    <button id="games-dropdown-button" class="navitem" onclick="showGames()">
+        GAMES 
+        <i class="fa-fw fas fa-caret-down"></i>
+    </button>
+</nav>
+
+<!-- games list dropdown menu -->
+<nav id="games-dropdown" class="homebar games-dropdown ">
+    
+        <a href="/" class="navitem active">HOME</a>
+    
+        <a href="/blog/" class="navitem ">BLOG</a>
+    
+</nav>
+
+        <script>
+    document.addEventListener("DOMContentLoaded", function() {
+         var navVisible = localStorage.getItem("navbar-visible");
+
+        if (navVisible == null) { localStorage.setItem("navbar-visible", "true") }
+        
+        if (navVisible != "true") { 
+            //var homebar = document.getElementById("homebar");
+            //homebar.classList.add("animate-shown");
+
+            localStorage.setItem("navbar-visible", "true");
+        }
+    });
+</script>
+
+<!-- this is kind of stupid but exists for the animated banner -->
+
+<div class="banner">
+    <!--<img src="/assets/img/general/header.gif" class="parallax-banner pixel-img">--> 
+    <div class="parallax-banner"></div>
+</div>
+
+<div class="container" style="margin-top: 0;">
+    <!-- about me widget -->
+    <div class="widget drop-shadow row" style="background-color: #ff0000"> <!-- #606687 -->
+        <!-- profile picture -->
+        <div class="centred">
+            <img class="profile-picture" src="../assets/img/general/profile-picture.png">
+        </div>
+
+        <!-- about me text -->
+        <div class="col">
+            <h1>ABOUT ME</h1>
+            <p>
+                I'm a <strong>Game Designer and Programmer</strong> from the UK, and I've been developing games since I was 15.
+                I'm currently studying an undergraduate degree in Computer Science at the University of East Anglia, and I'm always working on little projects to further my knowledge and experience.
+                I'm a passionate programmer and I'm particularly interested in software architecture, game engine design and tools development, especially
+                when I'm helping designers to achieve interesting concepts, such as this project I undertook for a friend. <br> <br>
+                I'm experienced in a <strong>range of languages and software</strong>, as seen below, and I achieved a <strong>Distinction*</strong> in my college degree in games design.
+            </p>
+        </div>
+    </div>
+
+    <!-- skills widget -->
+    <div class="row">
+        <div class="widget experience-widget col drop-shadow">
+            <h1 style="text-align: center;">Software</h1>
+            <ul class="skill-list">
+                
+                <li>
+    <i class="fa-solid fa-star"></i>
+    <p>Visual Studio</p>
+</li>
+                
+                <li>
+    <i class="fa-solid fa-star"></i>
+    <p>Unity</p>
+</li>
+                
+                <li>
+    <i class="fa-solid fa-star"></i>
+    <p>Godot</p>
+</li>
+                
+                <li>
+    <i class="fa-solid fa-star"></i>
+    <p>Blender</p>
+</li>
+                
+                <li>
+    <i class="fa-solid fa-star"></i>
+    <p>Github</p>
+</li>
+                
+                <li>
+    <i class="fa-solid fa-star"></i>
+    <p>Photoshop</p>
+</li>
+                
+                <li>
+    <i class="fa-solid fa-star"></i>
+    <p>Git</p>
+</li>
+                
+                <li>
+    <i class="fa-solid fa-star"></i>
+    <p>Unreal</p>
+</li>
+                
+                <li>
+    <i class="fa-solid fa-star"></i>
+    <p>Microsoft Office</p>
+</li>
+                
+            </ul>
+        </div>
+
+        <div class="widget experience-widget col drop-shadow">
+            <h1 style="text-align: center;">Languages</h1>
+            <ul class="skill-list">
+                
+                <li>
+    <i class="fa-solid fa-star"></i>
+    <p>C#</p>
+</li>
+                
+                <li>
+    <i class="fa-solid fa-star"></i>
+    <p>C++</p>
+</li>
+                
+                <li>
+    <i class="fa-solid fa-star"></i>
+    <p>C</p>
+</li>
+                
+                <li>
+    <i class="fa-solid fa-star"></i>
+    <p>Python</p>
+</li>
+                
+                <li>
+    <i class="fa-solid fa-star"></i>
+    <p>GDScript</p>
+</li>
+                
+                <li>
+    <i class="fa-solid fa-star"></i>
+    <p>HTML & Liquid</p>
+</li>
+                
+                <li>
+    <i class="fa-solid fa-star"></i>
+    <p>CSS & SCSS</p>
+</li>
+                
+                <li>
+    <i class="fa-solid fa-star"></i>
+    <p>Unreal Blueprint</p>
+</li>
+                
+            </ul>
+        </div>
+
+        <div class="widget experience-widget col drop-shadow">
+            <h1 style="text-align: center;">Personal</h1>
+            <ul class="skill-list">
+                
+                <li>
+    <i class="fa-solid fa-star"></i>
+    <p>Communication</p>
+</li>
+                
+                <li>
+    <i class="fa-solid fa-star"></i>
+    <p>Task Delegation</p>
+</li>
+                
+                <li>
+    <i class="fa-solid fa-star"></i>
+    <p>Adaptability</p>
+</li>
+                
+                <li>
+    <i class="fa-solid fa-star"></i>
+    <p>Attention to Detail</p>
+</li>
+                
+                <li>
+    <i class="fa-solid fa-star"></i>
+    <p>Team Management</p>
+</li>
+                
+                <li>
+    <i class="fa-solid fa-star"></i>
+    <p>Teamwork</p>
+</li>
+                
+            </ul>
+        </div>
+    </div>
+
+    <div class="widget achievements-widget col drop-shadow">
+        <ul class="experience-list">
+            <li><p><i class="fa-solid fa-graduation-cap"></i> <strong>Distinction* (A*, A*, A*) - Level 3 Extended Diploma in Art and Design</strong> - Game Design at Access Creative College Norwich</p></li>
+            <li style="height: 8px"></li>
+            <li><p><i class="fa-solid fa-trophy"></i> <strong>Game of the Year</strong> - Access 2022 for The Pilgrim</p></li>
+            <li><p><i class="fa-solid fa-medal"></i> <strong>Prize Winner</strong> - Staffs Freshers Jam for Wire Runner</p></li>
+        </ul>
+    </div>
+</div>
+
+        <footer>
+    
+     <a href="https://github.com/giantboar"><i class="fa-brands fa-square-github fa-lg"></i></a> 
+     <a href="https://www.linkedin.com/in/giantboar/"><i class="fa-brands fa-linkedin fa-lg"></i></a> 
+    
+
+    <!-- <p style="margin-left: 20px;">Website made entirely by <strong>Max Patteson</strong> using <a href="https://jekyllrb.com/">Jekyll</a> and hosted on <a href="https://docs.github.com/en/pages">GitHub Pages</a></p> -->
+    <p style="margin-left: 20px;"><strong>© 2026 Max Patteson</strong></p>
+    <p style="margin-left: auto;">Website that way <i class="fa-solid fa-arrow-up"></i></p>
+</footer>
+    </body>
+</html>
